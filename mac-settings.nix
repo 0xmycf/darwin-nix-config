@@ -8,10 +8,18 @@
     shell = pkgs.fish;
   };
 
-  # set some OSX preferences that I always end up hunting down and changing.
   system.defaults.dock = {
-    # minimal dock
+
+    magnification = true;
+    largesize = 105;
+    tilesize = 55;
+
     autohide = true;
+    autohide-delay = 0.0;
+    autohide-time-modifier = 0.0;
+
+    show-recents = true;
+
     orientation = "bottom";
   };
 
