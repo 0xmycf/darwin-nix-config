@@ -1,3 +1,3 @@
 #! /usr/bin/env bash
 
-darwin-rebuild build --flake .#Golden-Delicous
+darwin-rebuild switch --flake .#Golden-Delicous
