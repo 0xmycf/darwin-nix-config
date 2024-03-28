@@ -28,6 +28,9 @@
   # programs.zsh.enable = true;  # default shell on catalina
   programs.fish.enable = true;
 
+  # DO NOT ENABLE!!! DELETES ALL CURRENT FONTS
+  # fonts.fontDir.enable
+
   # Set Git commit hash for darwin-version.
   system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
 

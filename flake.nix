@@ -16,6 +16,7 @@
       modules = 
           [ ./configuration.nix
             ./mac-settings.nix
+            ./kneipe/brew.nix
           ];
       specialArgs = { inherit inputs; };
     };
