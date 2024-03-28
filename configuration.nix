@@ -3,7 +3,19 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
-    [ pkgs.nodejs_20
+    # TODO change this once home-manager is working
+    with pkgs;
+    [ nodejs_20
+      neovim
+      zoxide
+      fzf
+      neovide
+      gh
+      ripgrep
+      tldr
+      tree
+      thefuck
+      watchexec
     ];
 
   # Auto upgrade nix package and the daemon service.
