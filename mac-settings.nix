@@ -38,6 +38,24 @@
 
     # i dont like dark mode
     AppleInterfaceStyleSwitchesAutomatically = false;
+
+    NSAutomaticPeriodSubstitutionEnabled = false;
+    NSAutomaticCapitalizationEnabled = false;
+  };
+
+  system.defaults.trackpad = {
+    TrackpadThreeFingerDrag = true;
+    TrackpadRightClick = true;
+  };
+
+  system.defaults.finder = {
+    # default search scope is current folder
+    FXDefaultSearchScope = "SCcf";
+    # preferred view is list view
+    FXPreferredViewStyle = "Nlsv";
+    # show breadcrumbs
+    ShowPathbar = true;
+    ShowStatusBar = false;
   };
 
   # ask for password immediately
@@ -49,6 +67,7 @@
   system.defaults.screencapture = {
     # TODO I probably want to remove the tilde
     location = "~/Documents/screenshots";
+    type = "png";
     disable-shadow = true;
   };
 

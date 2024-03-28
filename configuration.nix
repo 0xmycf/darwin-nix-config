@@ -21,7 +21,6 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   # nix.package = pkgs.nix;
-
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
 
@@ -39,4 +38,5 @@
   # The platform the configuration will be used on.
   # if on aarch use aarch64-darwin
   nixpkgs.hostPlatform = "x86_64-darwin";
+  nixpkgs.config.allowUnfree = true;
 }
