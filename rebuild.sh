@@ -39,7 +39,7 @@ git diff -U0 '*.nix'
 echo "Darwin-Nix Rebuilding..."
 
 # Rebuild, output simplified errors, log trackebacks
-darwin-rebuild switch --flake .?submodules=1#Golden-Delicous &>darwin-switch.log || (cat darwin-switch.log | grep --color error && exit 1)
+darwin-rebuild switch --flake .?submodules=1#Golden-Delicous | tee darwin-switch.log || (cat darwin-switch.log | grep --color error && exit 1)
 
 # Get current generation metadata
 current=$(darwin-rebuild --list-generations | grep current)
