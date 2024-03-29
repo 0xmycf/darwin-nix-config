@@ -8,6 +8,8 @@
 
     # TODO discord
     casks = import ./casks.nix;
+    # app store apps
+    masApps = import ./mas.nix;
     taps = [];
     brews = [];
   };
