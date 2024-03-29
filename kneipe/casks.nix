@@ -32,6 +32,7 @@
 
   "microsoft-excel"
   "microsoft-powerpoint"
+  "adobe-acrobat-reader"
 ]
 # Missing:
 #
