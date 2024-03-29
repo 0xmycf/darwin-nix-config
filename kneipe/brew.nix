@@ -3,8 +3,9 @@
 #
 {...}: {
   homebrew = {
-    global.autoUpdate = false;
     enable = true;
+    global.autoUpdate = false;
+    onActivation.cleanup = "uninstall";
 
     # TODO discord
     casks = import ./casks.nix;
