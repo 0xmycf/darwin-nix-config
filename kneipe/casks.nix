@@ -4,4 +4,5 @@
   "kitty"
   "linearmouse"
   "obsidian"
+  "fontforge"
 ]

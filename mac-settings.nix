@@ -1,8 +1,11 @@
 # some things cannot be set:
 # EnableStandardClickToShowDesktop for example
-{ pkgs, lib, inputs, ... }:
 {
-
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   users.users.mycf = {
     name = "mycf";
     home = "/Users/mycf/";
@@ -10,7 +13,6 @@
   };
 
   system.defaults.dock = {
-
     magnification = true;
     largesize = 105;
     tilesize = 55;
@@ -28,7 +30,6 @@
   system.defaults.".GlobalPreferences"."com.apple.mouse.scaling" = -1.0;
 
   system.defaults.NSGlobalDomain = {
-
     # nvim goes brrrr
     ApplePressAndHoldEnabled = false;
     KeyRepeat = 1;

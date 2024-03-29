@@ -1,3 +1,6 @@
 [submodule "./home-manager/.config/nvim/lua/me/private/"]
 	path = ./home-manager/.config/nvim/lua/me/private
 	url = git@github.com:0xmycf/nvim-private.git
+[submodule "home-manager/.config/nvim/lua/me/private"]
+	path = home-manager/.config/nvim/lua/me/private
+	url = git@github.com:0xmycf/nvim-private.git

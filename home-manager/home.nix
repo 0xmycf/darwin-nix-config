@@ -1,5 +1,4 @@
-{ pkgs, ...}: {
-
+{pkgs, ...}: {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -9,40 +8,18 @@
     stateVersion = "23.11";
   };
 
+  imports = [
+    ./programs
+    ./programs/git.nix
+    ./programs/kitty.nix
+    ./programs/fish
+    ./programs/neovim
+  ];
 
-  xdg.configFile.nvim = {  
-    source = ./.config/nvim;  
-    recursive = true;  
-  };
-  programs.neovim = (import ./programs/neovim.nix) { inherit pkgs; };
-
-  programs.git = import ./programs/git.nix;
-  programs.fish = (import ./programs/fish.nix) { inherit pkgs; };
-  programs.thefuck = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
-  programs.zoxide = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
-  programs.fzf = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
-  programs.gh = {
-    enable = true;
-    extensions = []; # TODO add copiolt later
-  };
-  programs.ripgrep.enable = true;
-
-  # not in nix???
-  # programs.tldr.enable = true;
-  # programs.tree.enable = true;
-  # programs.watchexec.enable = true;
-
+  home.packages = with pkgs; [
+    tldr
+    tree
+    watchexec
+    alejandra # nix formatter
+  ];
 }
-
