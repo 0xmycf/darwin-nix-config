@@ -5,17 +5,17 @@
   environment.systemPackages =
     # TODO change this once home-manager is working
     with pkgs;
-    [ nodejs_20
+    [ # nodejs_20
       neovim
-      zoxide
+      # zoxide
       fzf
-      neovide
-      gh
-      ripgrep
-      tldr
-      tree
-      thefuck
-      watchexec
+      # neovide
+      # gh
+      # ripgrep
+      # tldr
+      # tree
+      # thefuck
+      # watchexec
     ];
 
   # Auto upgrade nix package and the daemon service.

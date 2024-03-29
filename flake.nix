@@ -24,7 +24,7 @@
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.jdoe = import ./home-manager/home.nix;
+          home-manager.users.mycf = import ./home-manager/home.nix;
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
         }

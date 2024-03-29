@@ -5,6 +5,7 @@
 
   users.users.mycf = {
     name = "mycf";
+    home = "/Users/mycf/";
     shell = pkgs.fish;
   };
 
