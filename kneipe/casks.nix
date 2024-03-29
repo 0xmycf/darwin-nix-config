@@ -20,8 +20,12 @@
   "whatsapp"
   "telegram-desktop"
 
-  "affinity-designer"
-  "affinity-photo"
+  # these are version 2 which I dont own
+  # I can manually install v1 from the website
+  #######################
+  # "affinity-designer"
+  # "affinity-photo"
+  #######################
 
   "logitech-g-hub"
   "logitech-options"
