@@ -16,6 +16,7 @@
     extraPackages = with pkgs; [
       nodejs_20
       nil
+      lua-language-server
     ];
 
     withNodeJs = true;

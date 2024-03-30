@@ -107,17 +107,16 @@ noremap({ "n", "v", "o" }, "<Leader>1", "<cmd>noh<cr>")
 local NS = { noremap = true, silent = true }
 
 map("x", "aa", function()
-  require("align").align_to_char(1, true)
+  require("align").align_to_char { length = 1, preview = true}
 end, NS) -- Aligns to 1 character, looking left
+
 map("x", "as", function()
-  require("align").align_to_char(2, true, true)
+  require("align").align_to_char { length = 2, preview = true, regex = true}
 end, NS) -- Aligns to 2 characters, looking left and with previews
+
 map("x", "aw", function()
-  require("align").align_to_string(false, true, true)
+  require("align").align_to_string { preview = false, regex = true }
 end, NS) -- Aligns to a string, looking left and with previews
-map("x", "ar", function()
-  require("align").align_to_string(true, true, true)
-end, NS) -- Aligns to a Lua pattern, looking left and with previews
 
 noremap({"n", "v"}, "<Leader>.", vim.fn["pointfree#suggestions"])
 

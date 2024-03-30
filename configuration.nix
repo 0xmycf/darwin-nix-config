@@ -31,4 +31,13 @@
   # if on aarch use aarch64-darwin
   nixpkgs.hostPlatform = "x86_64-darwin";
   nixpkgs.config.allowUnfree = true;
+
+  nix.gc = {
+    automatic = true;
+    interval = {
+      Hour = 17;
+      Minute = 0;
+    };
+    options = "--delete-older-than 30d";
+  };
 }

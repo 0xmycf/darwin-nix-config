@@ -16,6 +16,8 @@
     enable = true;
 
     interactiveShellInit = ''
+      fish_add_path "/Users/mycf/my-scripts/bin"
+
       fish_vi_key_bindings
       bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
       set fish_cursor_default block
@@ -33,6 +35,9 @@
       };
       now = {
         body = builtins.readFile ./now.fish;
+      };
+      mtt = {
+        body = "mv $argv[1] /Users/mycf/.Trash/";
       };
     };
 
