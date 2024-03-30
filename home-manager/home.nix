@@ -17,9 +17,14 @@
   ];
 
   home.packages = with pkgs; [
+    alejandra # nix formatter
+
     tldr
+
     tree
     watchexec
-    alejandra # nix formatter
+    pandoc
+
+    neovide
   ];
 }

@@ -5,7 +5,7 @@
   ...
 }: {
   xdg.configFile.nvim = {
-    source = config.lib.file.mkOutOfStoreSymlink ../../.config/nvim;
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nix-darwin/home-manager/.config/nvim";
     recursive = true;
   };
 
