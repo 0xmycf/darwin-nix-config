@@ -13,6 +13,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+local fn_dev_repos = require("me.private.private").local_plugins
+
 local lazy_opts = {
   lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
   install = {
@@ -22,9 +24,10 @@ local lazy_opts = {
     border = "rounded",
     size = { height = 0.8, width = 0.8 },
   },
+  dev = {
+    path = fn_dev_repos,
+  },
 }
-
-local private = require("me.private.private").local_plugins
 
 local gh_copilot
 do
@@ -249,11 +252,14 @@ require("lazy").setup({
   "hrsh7th/vim-vsnip-integ",
 
   -- Treesitter
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   build = ":TSUpdate"
-  -- },
-  -- "nvim-treesitter/playground",
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dev = true,
+  },
+  {
+    "nvim-treesitter/playground",
+    lazy = true,
+  },
 
   {
     "nvim-treesitter/nvim-treesitter-context",
@@ -335,7 +341,4 @@ require("lazy").setup({
     end,
     -- ft = "haskell",
   },
-
-  { dir = private }
-
 }, lazy_opts)

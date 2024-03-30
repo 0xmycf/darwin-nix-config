@@ -15,7 +15,7 @@ require("me.private.private") -- mine muhahahaha
 vim.o.spell = false
 
 -- todo outsource this
- -- tex stuff
+-- tex stuff
 vim.cmd("map mkw ysiw}i\\wip<ESC>f}")
 vim.cmd("vmap mkw S}i\\wip<ESC>f}")
 -- tex stuff but less specific
@@ -25,4 +25,3 @@ vim.cmd("vmap mke S}i\\<ESC>a")
 
 vim.cmd("map <leader>cn :cn<CR>")
 vim.cmd("map <leader>cp :cp<CR>")
-

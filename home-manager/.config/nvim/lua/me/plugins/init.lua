@@ -1,7 +1,12 @@
 -- load plugins
 require("me.plugins.gitsigns")
 require("me.plugins.nvim-surround")
--- require("me.plugins.treesitter")
+
+local ok, reason = pcall(require, "me.plugins.treesitter")
+if not ok then
+  print("treesitter not working: ", reason)
+end
+
 require("me.plugins.lualine")
 require("me.plugins.comment")
 require("me.plugins.cmp")
