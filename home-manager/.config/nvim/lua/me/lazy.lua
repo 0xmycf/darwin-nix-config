@@ -249,11 +249,11 @@ require("lazy").setup({
   "hrsh7th/vim-vsnip-integ",
 
   -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate"
-  },
-  "nvim-treesitter/playground",
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   build = ":TSUpdate"
+  -- },
+  -- "nvim-treesitter/playground",
 
   {
     "nvim-treesitter/nvim-treesitter-context",
@@ -295,7 +295,7 @@ require("lazy").setup({
   {
     "hedyhli/outline.nvim",
     dependencies = {
-      "nvim-treesitter/nvim-treesitter",
+      -- "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons",
     },
     config = function()
