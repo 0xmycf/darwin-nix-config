@@ -25,6 +25,7 @@
     watchexec
     pandoc
 
-    neovide
+    # this is a cask on macos
+    # neovide
   ];
 }

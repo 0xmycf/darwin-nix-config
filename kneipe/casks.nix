@@ -9,6 +9,7 @@
   "intellij-idea"
   "jetbrains-toolbox"
   "visual-studio-code"
+  "neovide"
 
   "deepl"
   "obs"
