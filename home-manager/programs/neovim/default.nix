@@ -10,7 +10,12 @@
   };
   homeDir = config.home.homeDirectory;
   treesitterDir = "${homeDir}/.local/share/nvim/nix/nvim-treesitter/";
+  nvim = pkgs.neovim-unwrapped;
 in {
+  home.shellAliases = {
+    nvim = "${nvim}/bin/nvim"; #-u ${homeDir}/.config/init.lua";
+  };
+
   xdg.configFile.nvim = {
     source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/.config/nix-darwin/home-manager/.config/nvim";
     recursive = true;
@@ -19,6 +24,7 @@ in {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    package = nvim;
 
     extraPackages = with pkgs; [
       nodejs_20

@@ -62,11 +62,11 @@
       cc = "cd && clear";
       vim = "nvim";
       ls = "ls -GF";
-      exa = "exa -l --icons --no-user --no-permissions";
       wordle = "open https://wordle.at";
-      copium = "codium";
+
       dev = "nix develop --command fish";
-      flake-new = "nix flake init --template github:vimjoyer/simple-template";
+      flake-new = "nix flake init --template github:the-nix-way/dev-templates#";
+      dev-env-new = "nix flake init --template github:the-nix-way/nix-flake-dev-environments#";
 
       devim = "nvim -u /Users/mycf/.config/nvim/dev.lua";
 
@@ -76,6 +76,9 @@
       dvide = "neovide (find /Users/mycf/Documents -type f -print | fzf)";
       hvim = "nvim (fzf)";
       hvide = "neovide (fzf)";
+
+      # exa = "exa -l --icons --no-user --no-permissions";
+      #- copium = "codium";
     };
   };
 }

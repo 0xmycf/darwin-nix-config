@@ -28,8 +28,7 @@
     # this is a cask on macos
     # neovide
 
-    # for now well manage haskell gloablly
-    # and imperatively
+    # brews because some build error here
     # haskellPackages.ghcup
   ];
 }
