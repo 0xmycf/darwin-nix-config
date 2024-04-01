@@ -60,6 +60,7 @@
 
       cc = "cd && clear";
       vim = "nvim";
+      v = "nvim";
       ls = "ls -GF";
       wordle = "open https://wordle.at";
 
