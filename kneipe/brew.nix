@@ -11,6 +11,6 @@
     # app store apps
     masApps = import ./mas.nix;
     taps = [];
-    brews = [];
+    brews = import ./brews.nix;
   };
 }

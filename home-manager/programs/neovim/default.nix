@@ -46,9 +46,4 @@ in {
     recursive = true;
     source = "${parsers}/parser";
   };
-
-  home.file."${homeDir}/.config/nvim/foobar" = {
-    recursive = true;
-    source = "${ts}";
-  };
 }

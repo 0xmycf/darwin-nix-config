@@ -28,6 +28,8 @@
     # this is a cask on macos
     # neovide
 
+    # for now well manage haskell gloablly
+    # and imperatively
     # haskellPackages.ghcup
   ];
 }
