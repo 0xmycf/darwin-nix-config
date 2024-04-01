@@ -16,8 +16,8 @@
     ./programs/neovim
   ];
 
-  home.shellAliases = {
-    foobar = "echo 'Hello, world!'";
+  programs.fish.shellAliases = {
+    barfoo = "echo 'Hello, world!'";
   };
 
   home.packages = with pkgs; [

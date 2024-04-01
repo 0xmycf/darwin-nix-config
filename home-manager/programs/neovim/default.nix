@@ -12,9 +12,13 @@
   treesitterDir = "${homeDir}/.local/share/nvim/nix/nvim-treesitter/";
   nvim = pkgs.neovim-unwrapped;
 in {
-  home.shellAliases = {
+  programs.fish.shellAliases = {
     nvim = "${nvim}/bin/nvim"; #-u ${homeDir}/.config/init.lua";
   };
+
+  # config = {
+  #   fishNvimAlias = "${nvim}/bin/nvim";
+  # };
 
   xdg.configFile.nvim = {
     source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/.config/nix-darwin/home-manager/.config/nvim";

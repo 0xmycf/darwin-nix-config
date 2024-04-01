@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: {
   home.file = {
@@ -14,6 +13,10 @@
 
   programs.fish = {
     enable = true;
+
+    # shellAliases = {
+    #   nvim = config.fihsNvimAlias;
+    # };
 
     interactiveShellInit = ''
       fish_add_path "/Users/mycf/my-scripts/bin"
