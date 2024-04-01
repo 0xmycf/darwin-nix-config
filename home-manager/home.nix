@@ -16,10 +16,6 @@
     ./programs/neovim
   ];
 
-  programs.fish.shellAliases = {
-    barfoo = "echo 'Hello, world!'";
-  };
-
   home.packages = with pkgs; [
     alejandra # nix formatter
 

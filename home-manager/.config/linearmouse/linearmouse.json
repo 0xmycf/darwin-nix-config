@@ -1,0 +1,47 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.8.0",
+  "schemes" : [
+    {
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.15,
+        "disableAcceleration" : false
+      },
+      "if" : {
+        "device" : {
+          "productName" : "G502 HERO Gaming Mouse",
+          "serialNumber" : "087639533536",
+          "productID" : "0xc08b",
+          "category" : "mouse",
+          "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "speed" : {
+          "vertical" : 0
+        },
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "reverse" : {
+          "vertical" : false
+        },
+        "distance" : "auto"
+      }
+    },
+    {
+      "pointer" : {
+        "speed" : 0,
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "productName" : "2.4G Wireless Mouse",
+          "productID" : "0x4102",
+          "category" : "mouse",
+          "vendorID" : "0x62a"
+        }
+      }
+    }
+  ]
+}

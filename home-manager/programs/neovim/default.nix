@@ -11,14 +11,15 @@
   homeDir = config.home.homeDirectory;
   treesitterDir = "${homeDir}/.local/share/nvim/nix/nvim-treesitter/";
   nvim = pkgs.neovim-unwrapped;
+  profileDirectory = config.home.profileDirectory;
 in {
+  # I should probably do it like this:
+  # config.nvimAlias = "${profileDirectory}/bin/nvim";
+  # but this doesn't work and I don't know how to get it working
   programs.fish.shellAliases = {
-    nvim = "${nvim}/bin/nvim"; #-u ${homeDir}/.config/init.lua";
+    # nvim = "${nvim}/bin/nvim";
+    nvim = "${profileDirectory}/bin/nvim";
   };
-
-  # config = {
-  #   fishNvimAlias = "${nvim}/bin/nvim";
-  # };
 
   xdg.configFile.nvim = {
     source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/.config/nix-darwin/home-manager/.config/nvim";

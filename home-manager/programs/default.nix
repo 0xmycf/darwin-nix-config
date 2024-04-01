@@ -23,4 +23,8 @@
       italic-text = "always";
     };
   };
+
+  xdg.configFile.linearmouse = {
+    source = ../.config/linearmouse/linearmouse.json;
+  };
 }
