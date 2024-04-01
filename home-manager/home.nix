@@ -27,5 +27,7 @@
 
     # this is a cask on macos
     # neovide
+
+    # haskellPackages.ghcup
   ];
 }
