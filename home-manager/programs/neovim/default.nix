@@ -16,6 +16,9 @@ in {
   # I should probably do it like this:
   # config.nvimAlias = "${profileDirectory}/bin/nvim";
   # but this doesn't work and I don't know how to get it working
+  #
+  # I do this to avaoid the possibility of nvim being installed by
+  # brew a second time (via casks for neovide)
   programs.fish.shellAliases = {
     # nvim = "${nvim}/bin/nvim";
     nvim = "${profileDirectory}/bin/nvim";

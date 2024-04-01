@@ -9,7 +9,7 @@
   "intellij-idea"
   "jetbrains-toolbox"
   "visual-studio-code"
-  # "neovide" # this installs besides others nvim, which is not acceptable
+  "neovide"
 
   "deepl"
   "obs"
