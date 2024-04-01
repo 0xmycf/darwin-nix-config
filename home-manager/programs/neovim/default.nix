@@ -12,6 +12,7 @@
   treesitterDir = "${homeDir}/.local/share/nvim/nix/nvim-treesitter/";
   nvim = pkgs.neovim-unwrapped;
   profileDirectory = config.home.profileDirectory;
+  nvimPath = "${profileDirectory}/bin/nvim";
 in {
   # I should probably do it like this:
   # config.nvimAlias = "${profileDirectory}/bin/nvim";
@@ -20,8 +21,12 @@ in {
   # I do this to avaoid the possibility of nvim being installed by
   # brew a second time (via casks for neovide)
   programs.fish.shellAliases = {
-    # nvim = "${nvim}/bin/nvim";
-    nvim = "${profileDirectory}/bin/nvim";
+    nvim = nvimPath;
+  };
+
+  xdg.configFile.neovide = {
+    text = ''neovim-bin = "${nvimPath}"'';
+    target = "/neovide/config.toml";
   };
 
   xdg.configFile.nvim = {
