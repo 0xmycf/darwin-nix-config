@@ -26,7 +26,7 @@ in {
 
   xdg.configFile.neovide = {
     text = ''neovim-bin = "${nvimPath}"'';
-    target = "/neovide/config.toml";
+    target = "neovide/config.toml";
   };
 
   xdg.configFile.nvim = {
