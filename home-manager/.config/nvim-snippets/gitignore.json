@@ -1,0 +1,19 @@
+{
+    "dsstore": {
+        "prefix": ["dsstore","macos"],
+        "body": [".DS_Store"]
+    },
+    "cs": {
+        "prefix": ["cs","c#", "c-sharp", "csharp"],
+        "body": [
+            "bin",
+            "obj"
+        ]
+    },
+    "hs": {
+        "prefix": ["hs","haskell"],
+        "body": [
+            "to be implemented"
+        ]
+    }
+}

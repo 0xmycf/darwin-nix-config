@@ -1,0 +1,51 @@
+{
+    "import option": {
+        "prefix": [
+            "importoption",
+            "imo"
+        ],
+        "body": [
+            "import gleam/option.{type Option, None, Some}"
+        ]
+    },
+    "import": {
+        "prefix": [
+            "import"
+        ],
+        "body": [
+            "import $1/$0"
+        ]
+    },
+    "case": {
+        "prefix": [
+            "case"
+        ],
+        "body": [
+            "case $1 {",
+            "  $2 -> $3",
+            "  $0",
+            "}"
+        ]
+    },
+    "if": {
+        "prefix": [
+            "if"
+        ],
+        "body": [
+            "case $1 {",
+            "  True  -> $2",
+            "  False -> $3",
+            "}",
+            "$0"
+        ]
+    },
+    "tuple": {
+        "prefix": [
+            "tuple",
+            "#"
+        ],
+        "body": [
+            "#($1, $2)$0"
+        ]
+    }
+}

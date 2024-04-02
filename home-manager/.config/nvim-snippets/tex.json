@@ -1,0 +1,208 @@
+{
+    "Footnote": {
+        "scope": "tex, latex, xelatex, markdown, md",
+        "prefix": "footnote",
+        "body": [
+            "\\footnote{%",
+            "                   $0",
+            "                   }%"
+        ],
+        "description": "foonote"
+    },
+    "Headblock": {
+        "scope": "tex, latex, xelatex, markdown, md",
+        "prefix": "headblock",
+        "body": [
+            "% $1 {{{$3",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "% $1",
+            "% keywords  | $2",
+            "% questions |",
+            "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%",
+            "% }}}$3",
+            "$0"
+        ],
+        "description": "header"
+    },
+    "bold": {
+        "scope": "tex, latex, xelatex",
+        "prefix": "bold",
+        "body": [
+            "\\textbf{$1}$0"
+        ]
+    },
+    "italic": {
+        "scope": "tex, latex, xelatex",
+        "prefix": "italic",
+        "body": [
+            "\\textit{$1}$0"
+        ]
+    },
+    "bold-italic": {
+        "scope": "tex, latex, xelatex",
+        "prefix": "bolditalic",
+        "body": [
+            "\\textbf{\\textit{$1}}$0"
+        ]
+    },
+    "italic-bold": {
+        "scope": "tex, latex, xelatex",
+        "prefix": "italicbold",
+        "body": [
+            "\\textit{\\textbf{$1}}$0"
+        ]
+    },
+    "citation-needed": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "citation-needed",
+        "body": [
+            "\\wip{(CITATION NEEDED)}"
+        ]
+    },
+    "wip": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "wip",
+        "body": [
+            "\\wip{$1}$0"
+        ]
+    },
+    "mcite": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "mcite",
+        "body": [
+            "\\mcite{$1}$0"
+        ]
+    },
+    "cite": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "cite",
+        "body": [
+            "\\cite{$1}$0"
+        ]
+    },
+    "citep": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "citep",
+        "body": [
+            "\\citep{$1}$0"
+        ]
+    },
+    "stehen lassen": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "stehen-lassen",
+        "body": [
+            "% TODO kann man das so stehen lassen?"
+        ]
+    },
+    "wording": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "wording",
+        "body": [
+            "% TODO wording"
+        ]
+    },
+    "super-script": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "superscript",
+        "body": [
+            "\\textsuperscript{$1}$0"
+        ]
+    },
+    "sub-script": {
+        "scope": "tex, latex, xelatex, md, markdown",
+        "prefix": "subscript",
+        "body": [
+            "\\textsubscript{$1}$0"
+        ]
+    },
+    "Make Minipage": {
+        "scope": "tex, latex, xelatex, mardown, md",
+        "prefix": "makeminipage",
+        "body": [
+            "\\begin{figure}[H]",
+            "   \\centering",
+            "   \\begin{minipage}[b]{0.35\\textwidth}",
+            "       \\includegraphics[width=\\textwidth]{images/$1}",
+            "   \\end{minipage}",
+            "   \\hfill",
+            "   \\begin{minipage}[b]{0.35\\textwidth}",
+            "       \\includegraphics[width=\\textwidth]{images/$2}",
+            "   \\end{minipage}",
+            "\\end{figure}",
+            "$0"
+        ],
+        "description": "Create a minipage to display pictures."
+    },
+    "Make Picture": {
+        "scope": "tex, latex, xelatex, mardown, md",
+        "prefix": [ "makepicture", "makeimage", "makefigure" ],
+        "body": [
+            "\\begin{figure}[H] % change [H] to whatever fits best",
+            "   \\centering",
+            "       \\includegraphics[width=\\textwidth]{images/$1}",
+            "       \\caption{$2}",
+            "\\end{figure}",
+            "$0"
+        ],
+        "description": "Create a picture template to display pictures."
+    },
+    "Table": {
+        "prefix": "tab",
+        "body": [
+            "\\begin{table}[H]",
+            "\t\\centering",
+            "\t\\begin{tabular}{${1:ccc}}",
+            "\t\t\\toprule",
+            "\t\ta & b & c \\\\\\ \\midrule",
+            "\t\t1 & 2 & 3 \\\\\\",
+            "\t\t\\bottomrule",
+            "\t\\end{tabular}",
+            "\t\\caption{${2:caption}\\label{tab:${3:sample}}}",
+            "\\end{table}",
+            "$0"
+        ]
+    },
+	"fraction": {
+		"prefix": "frac",
+		"body": [
+			"\\frac{$1}{$2}$0"
+		]
+	},
+    "ref": {
+        "prefix": "ref",
+        "body": [
+            "\\ref{$1}$0"
+        ]
+    },
+    "subfigure": {
+        "prefix": ["makesubfigure", "subfigure"],
+
+        "body": [
+  
+    "% IMAGE {{{5",
+    "\\begin{figure}[h]",
+    "\t\\centering",
+    "\t\\begin{subfigure}{0.5\\textwidth}",
+    "\t\t\\centering",
+    "\t\t\\includegraphics[width=\\linewidth]{images/$1}",
+    "\t\t\\caption{caption1}",
+    "\t\t\\label{fig:label1}",
+    "\t\\end{subfigure}%",
+    "\t\\begin{subfigure}{0.5\\textwidth}",
+    "\t\t\\centering",
+    "\t\t\\includegraphics[width=\\linewidth]{images/$2}",
+    "\t\t\\caption{caption2}",
+    "\t\t\\label{fig:label2}",
+    "\t\\end{subfigure}",
+    "\t\\caption{caption}",
+    "\t\\label{fig:labelxxx}",
+    "\\end{figure}",
+    "% }}}5"
+
+        ]
+    },
+    "captionsetup": {
+        "body": "\\captionsetup{width=$0\\linewidth}",
+        "prefix": "captionsetup"
+    }
+}

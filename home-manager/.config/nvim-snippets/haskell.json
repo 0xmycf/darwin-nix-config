@@ -1,0 +1,36 @@
+{
+    "Haddock Module Description": {
+        "prefix": [
+            "haddockmodule",
+            "desc-module"
+        ],
+        "body": [
+            "{-| Haddock {{{",
+            "Module      : ${1:Main}",
+            "Description : Short description",
+            "Copyright   : (c) 0xmycf, $CURRENT_YEAR",
+            "License     : MIT",
+            "Maintainer  : mycf.mycf.mycf@gmail.com",
+            "Stability   : experimental",
+            "Portability : POSIX",
+            "",
+            "$0",
+            "}}}-}",
+            "module ${1:Main}",
+            "    (",
+            "    ) where"
+        ],
+        "description": "Top Level Haddock for Modules."
+    },
+    "Views": {
+        "prefix": [
+            "views",
+            "newblaze"
+        ],
+        "body": [
+            "import           Text.Blaze.Html5",
+            "import           Text.Blaze.Html5.Attributes"
+        ],
+        "description": "imports for the views (imports blaze)"
+    }
+}

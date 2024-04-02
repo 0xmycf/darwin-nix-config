@@ -56,9 +56,9 @@ in {
 
       # its always good to have these installed outside of a flake
       # since those are common filetypes across projects and configs
-      jsonnet-language-server
-      yaml-language-server
+      nodePackages_latest.vscode-json-languageserver
       nodePackages_latest.bash-language-server
+      yaml-language-server
     ];
 
     withNodeJs = true;
@@ -80,5 +80,9 @@ in {
   home.file."${treesitterDir}/parser" = {
     recursive = true;
     source = "${parsers}/parser";
+  };
+
+  xdg.configFile."nvim-snippets" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/.config/nix-darwin/home-manager/.config/nvim-snippets";
   };
 }

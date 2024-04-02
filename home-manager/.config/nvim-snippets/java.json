@@ -1,0 +1,23 @@
+{
+    "sout": {
+        "languages": ["java"],
+        "body": [
+            "System.out.println($0);"
+        ],
+        "prefix": "sout"
+    },
+    "sprint": {
+        "languages": ["java"],
+        "body": [
+            "System.out.print($0);"
+        ],
+        "prefix": "sprint"
+    },
+    "fout": {
+        "languages": ["java"],
+        "body": [
+            "System.out.printf($0);"
+        ],
+        "prefix": "fout"
+    }
+}
