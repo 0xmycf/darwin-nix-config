@@ -34,11 +34,12 @@ in {
     recursive = true;
   };
 
-  # bash, does not work in fish
   home.sessionVariables = {
     EDITOR = nvimPath;
   };
 
+  # this is technically not needed anymore, but its a good example
+  # for my future self on how to set options with home-manager
   nvimPathOpt = nvimPath;
 
   programs.neovim = {
@@ -52,6 +53,12 @@ in {
       nodejs_20
       nil
       lua-language-server
+
+      # its always good to have these installed outside of a flake
+      # since those are common filetypes across projects and configs
+      jsonnet-language-server
+      yaml-language-server
+      nodePackages_latest.bash-language-server
     ];
 
     withNodeJs = true;
