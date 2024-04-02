@@ -25,6 +25,7 @@
   };
 
   xdg.configFile.linearmouse = {
-    source = ../.config/linearmouse/linearmouse.json;
+    source = ../.config/linearmouse;
+    recursive = true;
   };
 }
