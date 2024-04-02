@@ -25,6 +25,7 @@
     tree
     watchexec
     pandoc
+    openconnect
 
     # this is a cask on macos
     # neovide

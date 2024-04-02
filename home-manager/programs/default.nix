@@ -28,4 +28,16 @@
     source = ../.config/linearmouse;
     recursive = true;
   };
+
+  xdg.configFile.rubocop = {
+    text = ''
+      Style/StringLiterals:
+        Enabled: false
+        EnforcedStyle: single_quotes
+        SupportedStyles:
+          - single_quotes
+          - double_quotes
+    '';
+    target = "rubocop/config.yml";
+  };
 }
