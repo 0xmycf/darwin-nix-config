@@ -8,7 +8,7 @@ local opts = {
   -- add a colored column after 83 chars (doesnt work mh)
   colorcolumn = 83,
   -- font used by neovide or other graphical UI
-  guifont = "CaskaydiaCove Nerd Font Mono:15",
+  guifont = "MonoLisa:12",
   -- guifont = "BQN386 Unicode:18", -- Set this font for use with neovide
   -- well if you wanna use any modern theme, this is a must
   termguicolors = true,
@@ -74,10 +74,15 @@ for key, value in pairs(opts) do
   vim.o[key] = value
 end
 
-vim.g.python3_host_prog = "/usr/local/bin/python3.10"
+-- because of nix not needed
+-- vim.g.python3_host_prog = "/usr/local/bin/python3.10"
+
 vim.g.omni_sql_no_default_maps = 1
 vim.g.neovide_cursor_animation_length = 0
 vim.g.neovide_cursor_trail_length = 0
+vim.g.neovide_scroll_animation_far_lines = 0
+vim.g.neovide_scroll_animation_length = 0.0
+vim.g.neovide_remember_window_size = true
 
 if vim.fn.executable('rg') then
   vim.o.grepprg = "rg --vimgrep --hidden -g '!.git'"
