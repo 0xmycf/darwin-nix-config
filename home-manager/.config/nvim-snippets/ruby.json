@@ -1,0 +1,13 @@
+{
+    "class": {
+        "prefix": "mkclass",
+        "body": [
+            "class ${1:ClassName}",
+            "  def initialize(${2:arg})",
+            "    @${3:variable} = ${2:arg}",
+            "  end",
+            "end"
+        ],
+        "description": "creates a ruby class"
+    } 
+}

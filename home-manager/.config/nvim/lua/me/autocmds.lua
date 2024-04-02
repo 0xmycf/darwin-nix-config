@@ -19,6 +19,7 @@ cmd("FileType") {
     "ml",
     "ocaml",
     "lua",
+    "ruby",
     "markdown",
     "haskell",
     "lhaskell",

@@ -29,6 +29,11 @@ pushd ~/.config/nix-darwin/
 #     exit 0
 # fi
 
+if ! git diff --quiet 'home-manager/.config/nvim-snippets/'; then
+    echo "There are still changes in the nvim-snippets config folder."
+    exit -1
+fi
+
 # Autoformat your nix files
 alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
