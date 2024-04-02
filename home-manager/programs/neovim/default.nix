@@ -34,9 +34,15 @@ in {
     recursive = true;
   };
 
+  home.sessionVariables = {
+    EDITOR = nvimPath;
+  };
+
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
+    # setting this through home.sessionVariables,
+    # because otherwise nvim from brew is used (nvim is dependency on neovide)
+    defaultEditor = false;
     package = nvim;
 
     extraPackages = with pkgs; [
