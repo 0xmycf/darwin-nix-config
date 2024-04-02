@@ -34,9 +34,12 @@ in {
     recursive = true;
   };
 
+  # bash, does not work in fish
   home.sessionVariables = {
     EDITOR = nvimPath;
   };
+
+  nvimPathOpt = nvimPath;
 
   programs.neovim = {
     enable = true;

@@ -9,6 +9,7 @@
   };
 
   imports = [
+    ./options.nix
     ./programs
     ./programs/git.nix
     ./programs/kitty.nix

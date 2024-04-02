@@ -2,7 +2,9 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  nvimPath = config.nvimPathOpt;
+in {
   home.file = {
     ".config/fish/conf.d/omf.fish".source = ./omf.fish;
   };
@@ -16,6 +18,8 @@
 
     interactiveShellInit = ''
       fish_add_path "/Users/mycf/my-scripts/bin"
+
+      set -gx EDITOR ${nvimPath}
 
       fish_vi_key_bindings
       bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
