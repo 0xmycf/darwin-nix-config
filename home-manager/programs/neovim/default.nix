@@ -56,8 +56,12 @@ in {
 
       # its always good to have these installed outside of a flake
       # since those are common filetypes across projects and configs
-      nodePackages_latest.vscode-json-languageserver-bin
+      nodePackages_latest.vscode-json-languageserver
+
+      # bash
+      shellcheck
       nodePackages_latest.bash-language-server
+
       yaml-language-server
     ];
 

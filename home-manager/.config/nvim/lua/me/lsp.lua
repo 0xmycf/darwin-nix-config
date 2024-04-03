@@ -238,6 +238,7 @@ local not_by_mason = {
   },
   ["erlangls"] = true, -- for gleam interop
   ["solargraph"] = true,
+  ["tsserver"] = true,
   -- ["fsautocomplete"] = true,
 }
 
