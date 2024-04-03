@@ -38,6 +38,7 @@
     interval = {
       Hour = 17;
       Minute = 0;
+      Day = 0;
     };
     options = "--delete-older-than 30d";
   };

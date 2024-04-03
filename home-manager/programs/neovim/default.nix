@@ -56,7 +56,14 @@ in {
 
       # its always good to have these installed outside of a flake
       # since those are common filetypes across projects and configs
-      nodePackages_latest.vscode-json-languageserver
+
+      # this adds:
+      # - vscode-css-language-server
+      # - vscode-markdown-language-server
+      # - vscode-eslint-language-server
+      # - vscode-json-language-server
+      # - vscode-html-language-server
+      nodePackages_latest.vscode-langservers-extracted
 
       # bash
       shellcheck

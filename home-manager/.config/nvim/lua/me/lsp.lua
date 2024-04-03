@@ -16,7 +16,6 @@ local lsps = {
   -- always good to have
   "html",
   "cssls",
-  "tsserver",
   "bashls",
   "clangd",
   "dockerls",
@@ -229,7 +228,6 @@ local not_by_mason = {
     on_attach = on_attach,
     capabilties = capabilities,
     filetypes = { "gleam" },
-    capabilities = capabilities,
     cmd = { "gleam", "lsp" },
     settings = {
       gleam = {

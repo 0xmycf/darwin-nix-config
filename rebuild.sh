@@ -33,7 +33,7 @@ if ! git diff --quiet 'home-manager/.config/nvim-snippets/'; then
     echo "There are still changes in the nvim-snippets config folder."
     echo "Go to home-manager/.config/nvim-snippets/ and commit the changes."
     echo "cd home-manager/.config/nvim-snippets/ && git add . && git commit && git push" && cd ../../..
-    exit -1
+    exit 1
 fi
 
 # Autoformat your nix files
