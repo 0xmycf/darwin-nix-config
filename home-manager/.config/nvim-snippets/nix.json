@@ -1,0 +1,15 @@
+{
+    "nixpkgs": {
+        "prefix": "url.nixpkgs",
+        "body": [
+            "nixpkgs.url =  \"github:nixos/nixpkgs/23.11\";" 
+        ]
+    },
+    "utils.url" : {
+        "prefix": "url.utils",
+        "body": [
+            "utils.url = \"github:numtide/flake-utils\";"
+        ]
+    }
+
+}

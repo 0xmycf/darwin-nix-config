@@ -9,5 +9,9 @@
             "end"
         ],
         "description": "creates a ruby class"
-    } 
+    },
+    "froozen": {
+        "prefix": "froozen",
+        "body": ["# frozen_string_literal: true"]
+    }
 }
