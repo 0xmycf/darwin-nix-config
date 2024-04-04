@@ -50,7 +50,7 @@ local opts = {
   -- scroll down 0 items earlier (change this so the cursor stays in the middle when scrolling up)
   scrolloff = 16,
   -- scroll to the side 8 items earlier
-  sidescrolloff = 8,
+  sidescrolloff = 8 ,
   foldmethod = "marker", -- markers are cool, give them a try with {\{{(just remove the \) and 'za'
   -- uses block cursor, just remove this if you don't like it
   -- guicursor = "",

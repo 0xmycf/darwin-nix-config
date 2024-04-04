@@ -93,4 +93,14 @@ cmd("FileType") {
   group = group("nospellcheck"),
 }
 
+cmd("BufEnter") {
+  pattern = { "*" },
+  callback = function()
+    vim.cmd [[
+    set formatoptions-=r
+    setlocal formatoptions-=r
+  ]]
+  end,
+}
+
 return M

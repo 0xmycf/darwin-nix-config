@@ -183,6 +183,42 @@ require("lazy").setup({
     end
   },
 
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      local highlight = {
+        "RainbowBlue",
+      }
+      local highlightAll = {
+        "mycfGreyOrSomething",
+      }
+
+      local hooks = require "ibl.hooks"
+      -- create the highlight groups in the highlight setup hook, so they are reset
+      -- every time the colorscheme changes
+      hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+        vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+        -- 81 88 100
+        vim.api.nvim_set_hl(0, "mycfGreyOrSomething", { fg = "#515864" })
+      end)
+
+      require("ibl").setup({
+        exclude = {
+          filetypes = { "text", "txt", "undotree", "latex", "md", "rmd", "bibtex", "tex" },
+        },
+        indent = {
+          char = { "┋" },
+          tab_char = { "|" },
+          highlight = highlightAll,
+        },
+        scope = {
+          enabled = true,
+          highlight = highlight,
+        },
+      })
+    end
+  },
+
   -- general required dependency adding icons
   "nvim-tree/nvim-web-devicons",
 
@@ -195,8 +231,14 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "mg979/vim-visual-multi",
 
-  "dag/vim-fish",
-  "lervag/vimtex",
+  {
+    "dag/vim-fish",
+    ft = "fish",
+  },
+  {
+    "lervag/vimtex",
+    ft = { "latex", "bibtex", "tex" }
+  },
 
   "ThePrimeagen/harpoon",
 
@@ -279,8 +321,8 @@ require("lazy").setup({
       }
     end,
   },
-  "kamwitsta/flatwhite-vim",
-  "ellisonleao/gruvbox.nvim",
+  -- "kamwitsta/flatwhite-vim",
+  -- "ellisonleao/gruvbox.nvim",
 
   -- status line
   {
@@ -328,7 +370,10 @@ require("lazy").setup({
     end,
   },
 
-  "simrat39/rust-tools.nvim",
+  {
+    "simrat39/rust-tools.nvim",
+    ft = "rust",
+  },
 
   {
     "m00qek/vim-pointfree",

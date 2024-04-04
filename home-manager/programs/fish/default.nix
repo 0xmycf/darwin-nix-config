@@ -63,7 +63,8 @@
 
       dev = "nix develop --command fish";
       flake-new = "nix flake init --template github:the-nix-way/dev-templates#";
-      dev-env-new = "nix flake init --template github:the-nix-way/nix-flake-dev-environments#";
+      my-flake = "nix flake init -t github:0xmycf/my-nix-flake-templates#";
+      nixshell = "nix-shell --run fish -p ";
 
       devim = "nvim -u /Users/mycf/.config/nvim/dev.lua";
 
