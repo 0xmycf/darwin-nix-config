@@ -11,8 +11,10 @@
   homeDir = config.home.homeDirectory;
   treesitterDir = "${homeDir}/.local/share/nvim/nix/nvim-treesitter/";
   nvim = pkgs.neovim-unwrapped;
-  # profileDirectory = config.home.profileDirectory;
-  nvimPath = "${nvim}/bin/nvim";
+  profileDirectory = config.home.profileDirectory;
+  # I must use this insead of '${nvim}/bin/nvim' otherwise the extraPrograms
+  # for nvim are not found (I don't know why) 
+  nvimPath = "${profileDirectory}/bin/nvim";
 in {
   # I do this to avaoid the possibility of using the nvim installed by
   # homebrew a second time (via casks for neovide)
