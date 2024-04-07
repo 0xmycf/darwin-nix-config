@@ -11,6 +11,7 @@
   imports = [
     ./options.nix
     ./programs # programs imports all programs
+    ./fonts.nix
   ];
 
   home.packages = with pkgs; [
