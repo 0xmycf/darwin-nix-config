@@ -1,27 +1,16 @@
 {
   pkgs,
   config,
-  lib,
   ...
 }: let
   homeDir = config.home.homeDirectory;
-  teatimerGithub = pkgs.fetchFromGitHub {
-    owner = "0xmycf";
-    repo = "SimpleTeaTimer";
-    rev = "1613eddef4ebd4cf011ac819bc7c671d3fff88e5";
-    sha256 = "sha256-UhQwNhsHkYTqapZ292sEPo95LvlqCUcrxLVH2V8C0rQ=";
+in {
+  home.file = {
+    ".config/fish/conf.d/omf.fish".source = ./functions/omf.fish;
   };
 
-  teatimer = pkgs.haskellPackages.callCabal2nix "teatimer" teatimerGithub {};
-  teatimerNoHaddock = pkgs.haskell.lib.dontHaddock teatimer;
-in {
-  # home.file = {
-  #   ".config/fish/conf.d/omf.fish".source = ./functions/omf.fish;
-  # };
-
   home.packages = [
-    # pkgs.oh-my-fish
-    teatimerNoHaddock
+    pkgs.oh-my-fish
   ];
 
   programs.fish = {
@@ -42,7 +31,7 @@ in {
 
     functions = {
       fish_prompt = {
-        # TDOO do i even need omf then?
+        # this depends on the oh-my-fish (their lib secifically) being installed
         body = builtins.readFile ./functions/fish_prompt.fish;
       };
       zet = {
@@ -57,19 +46,7 @@ in {
       };
     };
 
-    plugins = [
-      # oh-my-fish plugins are stored in their own repositories, which
-      # makes them simple to import into home-manager.
-      # {
-      #   name = "default";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "oh-my-fish";
-      #     repo = "theme-default";
-      #     rev = "38a404d533f49c402f4a9212319ce70395d740d8";
-      #     sha256 = "sha256-FVZhJo6BTz5Gt7RSOnXXU0Btxejg/p89AhZOvB9Xk1k=";
-      #   };
-      # }
-    ];
+    plugins = [];
 
     shellAbbrs = {
       # TODO install this via home-manager

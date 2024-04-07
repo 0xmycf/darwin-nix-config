@@ -10,11 +10,7 @@
 
   imports = [
     ./options.nix
-    ./programs
-    ./programs/git.nix
-    ./programs/kitty.nix
-    ./programs/fish
-    ./programs/neovim
+    ./programs # programs imports all programs
   ];
 
   home.packages = with pkgs; [

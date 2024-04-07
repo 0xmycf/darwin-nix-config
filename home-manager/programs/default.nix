@@ -1,4 +1,12 @@
 {
+  imports = [
+    ./neovim
+    ./fish
+    ./teatimer.nix
+    ./git.nix
+    ./kitty.nix
+  ];
+
   programs.thefuck = {
     enable = true;
     enableBashIntegration = true;
