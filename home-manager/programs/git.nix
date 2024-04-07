@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  homeDir = config.home.homeDirectory;
+in {
   programs.gh = {
     enable = true;
     extensions = []; # TODO add copiolt later
@@ -12,13 +18,12 @@
       cane = "commit --amend --no-edit";
       s = "status";
       new = "init -b main";
-      ec = "config --global -e";
       tree = "log --graph --pretty=oneline --abbrev-commit";
     };
 
     includes = [
       {
-        path = "/Users/mycf/Documents/WingChun/.gitconfig";
+        path = "${homeDir}/.config/WingChun/.gitconfig";
         condition = "gitdir:~/Documents/WingChun/";
       }
     ];
@@ -29,5 +34,10 @@
       "result/"
     ];
     # hooks = []; # TODO
+  };
+
+  xdg.configFile.WingChun = {
+    source = ./../.config/private/wc-submodules/.gitconfig;
+    target = "WingChun/.gitconfig";
   };
 }

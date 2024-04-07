@@ -4,7 +4,7 @@
 
   home = {
     username = "mycf";
-    homeDirectory = "/Users/mycf/";
+    homeDirectory = "/Users/mycf";
     stateVersion = "23.11";
   };
 

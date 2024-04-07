@@ -8,7 +8,7 @@
 }: {
   users.users.mycf = {
     name = "mycf";
-    home = "/Users/mycf/";
+    home = "/Users/mycf";
   };
 
   system.defaults.dock = {

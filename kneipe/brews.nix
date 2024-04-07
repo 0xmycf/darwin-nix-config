@@ -1,4 +1,4 @@
 [
   # haskell
-  "ghcup"
+  # "ghcup"
 ]

@@ -237,8 +237,21 @@ local not_by_mason = {
   ["erlangls"] = true, -- for gleam interop
   ["solargraph"] = true,
   ["tsserver"] = true,
+  ["racket_langserver"] = true,
   -- ["fsautocomplete"] = true,
 }
+
+-- lspconfig["racket_langserver"].setup {
+--   on_attach = on_attach,
+--   capabilties = capabilities,
+--   -- cmd = { "racket", "--lib", "racket-langserver", "--", "--stdio" },
+--   -- filetypes = { "racket" },
+--   -- settings = {
+--   --   racket = {
+--   --     -- racket-langserver settings
+--   --   },
+--   -- },
+-- }
 
 -- setsup lsps which installations are not handled with
 -- mason
