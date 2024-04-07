@@ -13,7 +13,7 @@
   nvim = pkgs.neovim-unwrapped;
   profileDirectory = config.home.profileDirectory;
   # I must use this insead of '${nvim}/bin/nvim' otherwise the extraPrograms
-  # for nvim are not found (I don't know why) 
+  # for nvim are not found (I don't know why)
   nvimPath = "${profileDirectory}/bin/nvim";
 in {
   # I do this to avaoid the possibility of using the nvim installed by
