@@ -24,7 +24,7 @@
       license = licenses.ofl;
     };
   };
-  # TODO monolisa must be added here too
+  # TODO MonoLisa must be added here too
 in {
   fonts.fontconfig.enable = true;
 
@@ -34,7 +34,7 @@ in {
     atkinson-hyperlegible
     kp-font # my standard tex font
 
-    julia-mono # used by kitty
+    julia-mono # used by kitty/fish
     jetbrains-mono
 
     (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})

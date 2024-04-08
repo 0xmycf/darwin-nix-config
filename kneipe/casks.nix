@@ -13,6 +13,7 @@
 
   "deepl"
   "obs"
+  "zoom"
 
   "steam"
   "nvidia-geforce-now"
