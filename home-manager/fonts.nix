@@ -29,13 +29,14 @@ in {
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    fira-code
-    atkinson-hyperlegible
+    fira-code # NOTE: has no italics
     cascadia-code
-    kp-font
+    atkinson-hyperlegible
+    kp-font # my standard tex font
 
-    julia-mono
+    julia-mono # used by kitty
     jetbrains-mono
-    courier-prime
+
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
   ];
 }
