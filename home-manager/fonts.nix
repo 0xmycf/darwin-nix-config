@@ -24,6 +24,7 @@
       license = licenses.ofl;
     };
   };
+  # TODO monolisa must be added here too
 in {
   fonts.fontconfig.enable = true;
 
@@ -32,5 +33,9 @@ in {
     atkinson-hyperlegible
     cascadia-code
     kp-font
+
+    julia-mono
+    jetbrains-mono
+    courier-prime
   ];
 }
