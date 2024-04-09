@@ -21,7 +21,7 @@ keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", { silent = true })
 -- It also supports open/vsplit/etc operations, do refer to "definition_action_keys"
 -- It also supports tagstack
 -- Use <C-t> to jump back
-keymap("n", "<leader>hg", "<cmd>Lspsaga peek_definition<CR>")
+keymap("n", "<leader>pd", "<cmd>Lspsaga peek_definition<CR>")
 
 keymap("n", "E", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
 
