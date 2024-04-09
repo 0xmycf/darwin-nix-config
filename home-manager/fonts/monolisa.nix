@@ -9,6 +9,10 @@ in {
   options = with lib; {
     fonts.monolisa = {
       enable = mkEnableOption "MonoLisa";
+      url = mkOption {
+        type = types.str;
+        example = "http://192.168.0.227:3333/data/monolisa.zip";
+      };
     };
   };
 
@@ -20,8 +24,7 @@ in {
         version = "1";
 
         src = pkgs.fetchzip {
-          # this is a local fileserver on my raspberry pi
-          url = "http://192.168.0.227:3333/data/monolisa.zip";
+          url = cfg.url;
           hash = "sha256-RzHjXCaFGUdRGjEkyVJDyY7OsWG8sqKsCGcZyBPmmPU=";
         };
 
