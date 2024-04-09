@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./fonts
-    # ./fonts/font-options.nix
+    ./fonts/font-options.nix
   ];
 
   fonts.fontconfig.enable = true;

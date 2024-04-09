@@ -8,5 +8,5 @@
     recursive = true;
   };
 
-  # fonts.program-specific = [pkgs.julia-mono];
+  fonts.program-specific = [pkgs.julia-mono];
 }
