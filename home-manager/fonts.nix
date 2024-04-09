@@ -7,7 +7,7 @@
 
   fonts = {
     monolisa.enable = true;
-    kp-fonts.enable = true;
+    kp-fonts.enable = false;
   };
 
   home.packages = with pkgs; [
