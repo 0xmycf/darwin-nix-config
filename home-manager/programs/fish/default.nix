@@ -51,7 +51,7 @@ in {
     shellAbbrs = {
       # TODO install this via home-manager
       # tea = "${teatimer}/bin/teatimer";
-      sshpi = "ssh pi@192.168.2.155";
+      sshpi = "kitty +kitten ssh pi@192.168.2.45";
 
       cc = "cd && clear";
       vim = "nvim";
