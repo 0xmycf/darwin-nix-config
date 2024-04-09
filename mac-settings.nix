@@ -1,5 +1,4 @@
 # some things cannot be set:
-# EnableStandardClickToShowDesktop for example
 {
   pkgs,
   lib,
@@ -74,5 +73,11 @@
 
   system.defaults.loginwindow = {
     GuestEnabled = false;
+  };
+
+  system.defaults.CustomUserPreferences = {
+    "com.apple.WindowManager" = {
+      EnableStandardClickToShowDesktop = false;
+    };
   };
 }
