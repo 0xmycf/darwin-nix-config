@@ -13,6 +13,10 @@ in {
         type = types.str;
         example = "http://192.168.0.227:3333/data/monolisa.zip";
       };
+      hash = mkOption {
+        type = types.str;
+        example = lib.fakeHash;
+      };
     };
   };
 
@@ -25,7 +29,7 @@ in {
 
         src = pkgs.fetchzip {
           url = cfg.url;
-          hash = "sha256-RzHjXCaFGUdRGjEkyVJDyY7OsWG8sqKsCGcZyBPmmPU=";
+          hash = cfg.hash;
         };
 
         installPhase = ''
