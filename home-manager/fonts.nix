@@ -5,9 +5,12 @@
 
   fonts.fontconfig.enable = true;
 
+  # see ./fonts/default.nix
+  # for more information
+  # TLDR: these add monolisa and kp-fonts to home.packages
   fonts = {
     monolisa.enable = true;
-    kp-fonts.enable = false;
+    kp-fonts.enable = true;
   };
 
   home.packages = with pkgs; [
