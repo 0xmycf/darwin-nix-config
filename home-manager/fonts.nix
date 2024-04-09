@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   imports = [
     ./fonts
     ./fonts/font-options.nix
@@ -19,14 +24,15 @@
     kp-fonts.enable = false;
   };
 
-  home.packages = with pkgs; [
-    fira-code # NOTE: has no italics
-    cascadia-code
-    atkinson-hyperlegible
+  home.packages = with pkgs;
+    lib.lists.unique [
+      fira-code # NOTE: has no italics
+      cascadia-code
+      atkinson-hyperlegible
 
-    jetbrains-mono
+      jetbrains-mono
 
-    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
-  ];
-  # // fonts.program-specific;
+      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+    ]
+    ++ config.fonts.program-specific;
 }
