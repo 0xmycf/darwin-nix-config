@@ -29,11 +29,9 @@
     lib.lists.unique [
       fira-code # NOTE: has no italics
       cascadia-code
-      atkinson-hyperlegible
-
       jetbrains-mono
 
-      (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+      atkinson-hyperlegible
     ]
     ++ config.fonts.program-specific;
 }

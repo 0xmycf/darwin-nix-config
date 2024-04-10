@@ -8,5 +8,8 @@
     recursive = true;
   };
 
-  fonts.program-specific = [pkgs.julia-mono];
+  fonts.program-specific = with pkgs; [
+    julia-mono
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+  ];
 }

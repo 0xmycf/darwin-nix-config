@@ -32,6 +32,12 @@
     };
   };
 
+  programs.watson = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+  };
+
   xdg.configFile.linearmouse = {
     source = ../.config/linearmouse;
     recursive = true;
