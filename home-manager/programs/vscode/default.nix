@@ -1,16 +1,20 @@
 {
   lib,
   pkgs,
+  config,
   ...
 }: let
   sets = lib.attrsets;
+  homeDir = config.home.homeDirectory;
   files = builtins.readDir ../../.config/nvim-snippets;
   fileData = with builtins; (mapAttrs (path: type: let
     length = stringLength path;
     fileEnding = substring (length - 5) length path;
   in
     if type != "directory" && fileEnding == ".json"
-    then fromJSON (readFile path)
+    # this needs to be an absoulte path
+    # then fromJSON (readFile "${homeDir}/.config/nix-darwin/home-manager/.config/nvim-snippets/${path}")
+    then fromJSON (readFile (../../.config/nvim-snippets + "/${path}"))
     else "")
   files);
   cleanedFileData = sets.filterAttrs (key: value: value == "") fileData;
@@ -19,6 +23,8 @@
   in {"${fileName key}" = value;})
   cleanedFileData;
 in {
+  home.packages = [pkgs.nodejs];
+
   programs.vscode = {
     enable = true;
 
@@ -49,7 +55,6 @@ in {
           sha256 = "sha256-xKxIMYVhCTfCHwG/ecfn/ae3pr4Ku/37KBB4lbHWgNI=";
         }
       ];
-    # languageSnippets = snippets;
 
     userSettings = {
       "workbench.iconTheme" = "material-icon-theme";
@@ -113,6 +118,7 @@ in {
       };
     };
 
+    languageSnippets = snippets;
     keybindings = builtins.fromJSON (builtins.readFile ../../.config/vscode/keybindings.json);
   };
 }
