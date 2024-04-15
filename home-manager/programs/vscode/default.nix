@@ -116,6 +116,7 @@ in {
       "extensions.experimental.affinity" = {
         "asvetliakov.vscode-neovim" = 1;
       };
+      "pvs.path" = "${homeDir}/Documents/programming/pvs/pvs-7.1.0";
     };
 
     languageSnippets = snippets;
