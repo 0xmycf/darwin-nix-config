@@ -2,6 +2,7 @@
   imports = [
     ./neovim
     ./fish
+    ./vscode
     ./teatimer.nix
     ./git.nix
     ./kitty.nix

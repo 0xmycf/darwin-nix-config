@@ -8,7 +8,8 @@
 
   "intellij-idea"
   "jetbrains-toolbox"
-  "visual-studio-code"
+  # vscode can be setup with home-manager even on macos
+  # "visual-studio-code"
   "neovide"
 
   "deepl"
