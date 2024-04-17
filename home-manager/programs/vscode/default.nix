@@ -12,8 +12,6 @@
     fileEnding = substring (length - 5) length path;
   in
     if type != "directory" && fileEnding == ".json"
-    # this needs to be an absoulte path
-    # then fromJSON (readFile "${homeDir}/.config/nix-darwin/home-manager/.config/nvim-snippets/${path}")
     then fromJSON (readFile (../../.config/nvim-snippets + "/${path}"))
     else "")
   files);

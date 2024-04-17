@@ -20,7 +20,6 @@ in {
     interactiveShellInit = ''
       fish_add_path "${homeDir}/my-scripts/bin"
 
-
       fish_vi_key_bindings
       bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
       set fish_cursor_default block
@@ -57,6 +56,7 @@ in {
       vim = "nvim";
       v = "nvim";
       ls = "ls -GF";
+      app = "open -jga";
       wordle = "open https://wordle.at";
 
       dev = "nix develop --command fish";
