@@ -386,4 +386,9 @@ require("lazy").setup({
     end,
     -- ft = "haskell",
   },
+
+  {
+    "vim-crystal/vim-crystal",
+    ft = "crystal",
+  }
 }, lazy_opts)

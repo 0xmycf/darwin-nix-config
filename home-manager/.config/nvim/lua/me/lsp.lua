@@ -238,6 +238,7 @@ local not_by_mason = {
   ["solargraph"] = true,
   ["tsserver"] = true,
   ["racket_langserver"] = true,
+  ["crystalline"] = true,
   -- ["fsautocomplete"] = true,
 }
 
