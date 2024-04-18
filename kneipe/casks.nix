@@ -6,6 +6,8 @@
   "linearmouse"
   "obsidian"
 
+  "raycast"
+
   "intellij-idea"
   "jetbrains-toolbox"
   # vscode can be setup with home-manager even on macos

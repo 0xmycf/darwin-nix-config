@@ -2596,14 +2596,6 @@
         "when": "editorTextFocus && neovim.mode != 'insert'"
     },
     {
-        "key": "alt+l",
-        "command": ""
-    },
-    {
-        "key": "ctrl+u",
-        "command": ""
-    },
-    {
         "key": "shift+ctrl+r",
         "command": "editor.action.rename"
     }
