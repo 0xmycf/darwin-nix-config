@@ -1,6 +1,6 @@
 {homeDir}: ''
   set -l INBOX '${homeDir}/Library/Mobile Documents/iCloud~md~obsidian/Documents/Tvault/000 Inbox/'
-  set -l DATE (date "+%Y-%m-%dT%H%m%SZ")
+  set -l DATE (date "+%Y%m%dT%H%m%SZ")
   set -l DATE_2 (date "+%Y-%m-%dT%H:%m:%SZ")
 
   read -P "Title: " TITLE

@@ -1,7 +1,7 @@
 {homeDir}: ''
 
   set -l INBOX '${homeDir}/Library/Mobile Documents/icloud~md~obsidian/Documents/Tvault/200 Literature Notes/'
-  set -l DATE (date "+%Y-%m-%dT%H%m%SZ")
+  set -l DATE (date "+%Y%m%dT%H%m%SZ")
   set -l DATE_2 (date "+%Y-%m-%dT%H:%m:%SZ")
 
   read -P "Title: " TITLE
