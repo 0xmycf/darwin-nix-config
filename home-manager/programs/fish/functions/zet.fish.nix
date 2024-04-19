@@ -15,5 +15,5 @@
       echo "$LINE" >> "$FILENAME"
   end
 
-  nvim +:6 "$FILENAME"
+  nvim +:8 "$FILENAME"
 ''
