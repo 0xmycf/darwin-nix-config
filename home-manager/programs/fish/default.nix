@@ -34,8 +34,10 @@ in {
         body = builtins.readFile ./functions/fish_prompt.fish;
       };
       zet = {
-        # TODO setup obsidian
         body = (import ./functions/zet.fish.nix) {inherit homeDir;};
+      };
+      lit = {
+        body = (import ./functions/lit.fish.nix) {inherit homeDir;};
       };
       now = {
         body = builtins.readFile ./functions/now.fish;
