@@ -10,7 +10,7 @@
   touch "$FILENAME"
 
   set -l NEWLINE \n\n"---"
-  set -l FRONTMATTER "---"\n"title: $TITLE"\n"created_at: $DATE_2"\n"tags: [#literature-note]"\n"topics: []"\n"authors: []"\n"aliases: [$TITLE]"\n"---"
+  set -l FRONTMATTER "---"\n"title: $TITLE"\n"created_at: $DATE_2"\n"tags: [literature-note]"\n"topics: []"\n"authors: []"\n"aliases: [$TITLE]"\n"---"
 
   for LINE in $FRONTMATTER "# $TITLE" $NEWLINE "# References";
       echo "$LINE" >> "$FILENAME"

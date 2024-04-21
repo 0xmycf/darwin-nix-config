@@ -50,19 +50,19 @@ require("mason").setup {
 
 require("mason-lspconfig").setup {
   ensure_installed = {}, --, vim.deepcopy(lsps),
-  automatic_installation =  false,
-    -- {
-    -- exclude = {
-    --   "julials",
-    --   "hls",
-    --   "ocamllsp",
-    --    -- managd by nix
-    --   "gopls",
-    --   "gleam",
-    --   "erlangls",
-    --   "solargraph",
-    --   "fsautocomplete",
-    -- },
+  automatic_installation = false,
+  -- {
+  -- exclude = {
+  --   "julials",
+  --   "hls",
+  --   "ocamllsp",
+  --    -- managd by nix
+  --   "gopls",
+  --   "gleam",
+  --   "erlangls",
+  --   "solargraph",
+  --   "fsautocomplete",
+  -- },
   -- },
 }
 
@@ -92,13 +92,15 @@ local on_attach = function(server, bufnr)
   map("n", "gi", vim.lsp.buf.implementation, bufopts)
   map("n", "<Leader>D", vim.lsp.buf.type_definition, bufopts)
   map("n", "gr", vim.lsp.buf.references, bufopts)
-  map("n", "<Leader>q", vim.lsp.buf.format, bufopts)
+  if filetype ~= "crystal" then
+    map("n", "<Leader>q", vim.lsp.buf.format, bufopts)
+  end
 
   local codeLensCallback = function()
-    local filetype = vim.api.nvim_buf_get_option(0, "filetype")
-    if filetype == "ocaml" then
+    local filetype2 = vim.api.nvim_buf_get_option(0, "filetype")
+    if filetype2 == "ocaml" then
       require("me.codelens").refresh_virtlines()
-    elseif filetype ~= "java" then
+    elseif filetype2 ~= "java" then
       vim.lsp.codelens.refresh()
     end
   end
@@ -239,6 +241,7 @@ local not_by_mason = {
   ["tsserver"] = true,
   ["racket_langserver"] = true,
   ["crystalline"] = true,
+  ["sourcekit"] = true,
   -- ["fsautocomplete"] = true,
 }
 
