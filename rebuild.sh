@@ -65,19 +65,20 @@ darwin-rebuild switch --flake .?submodules=1#Golden-Delicous || (cat darwin-swit
 # Get current generation metadata
 current=$(darwin-rebuild --list-generations | grep current)
 
+# fixVscode
+echo "Fixing vscode settings..."
+CODE=fixVscode
+if [[ "$CODE" -eq 1 ]]; then
+    echo "Moved an existing settings.json to a backup file next to it."
+fi
+echo "Done fixing vscode settings..."
+
+
 # Commit all changes with the generation metadata
 git commit -am "$current"
 
 # Back to where you were
 popd
-
-# fixVscode
-echo "Fixing vscode settings..."
-CODE=fixVscode
-if test "$CODE" -eq 1; then
-    echo "Moved an existing settings.json to a backup file next to it."
-fi
-echo "Done fixing vscode settings..."
 
 # Notify all OK!
 echo "Darwin-Nix Rebuilt OK!"
