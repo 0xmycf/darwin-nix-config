@@ -17,14 +17,14 @@
 set -e
 
 # doesnt work well with nix as vscode expects a mutable file
-function fixVscode() 
+fixVscode() 
 {
-    set -l VSCODESETTINGS="$HOME/Library/Application Support/Code/User/"
-    set -l NOW="$(date +"%Y%m%d%H%M%S")"
-    set -l BAK=0
+    VSCODESETTINGS="$HOME/Library/Application Support/Code/User/"
+    NOW="$(date +"%Y%m%d%H%M%S")"
+    BAK=0
     if test -f "$VSCODESETTINGS/settings.json"; then
         mv "$VSCODESETTINGS/settings.json" "$VSCODESETTINGS/$NOW-settings.bak.json"
-        set -l BAK=1
+        BAK=1
     fi
     ln -sf "$HOME/.config/nix-darwin/home-manager/.config/vscode/settings.json" "$VSCODESETTINGS/settings.json"
     return "$BAK"
