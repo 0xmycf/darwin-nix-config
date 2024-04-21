@@ -73,7 +73,7 @@ popd
 
 # fixVscode
 echo "Fixing vscode settings..."
-set -l CODE=fixVscode
+CODE=fixVscode
 if test "$CODE" -eq 1; then
     echo "Moved an existing settings.json to a backup file next to it."
 fi
