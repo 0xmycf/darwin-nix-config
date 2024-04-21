@@ -16,6 +16,20 @@
 # A rebuild script that commits on a successful build
 set -e
 
+# doesnt work well with nix as vscode expects a mutable file
+function fixVscode() 
+{
+    set -l VSCODESETTINGS="$HOME/Library/Application Support/Code/User/"
+    set -l NOW="$(date +"%Y%m%d%H%M%S")"
+    set -l BAK=0
+    if test -f "$VSCODESETTINGS/settings.json"; then
+        mv "$VSCODESETTINGS/settings.json" "$VSCODESETTINGS/$NOW-settings.bak.json"
+        set -l BAK=1
+    fi
+    ln -sf "$HOME/.config/nix-darwin/home-manager/.config/vscode/settings.json" "$VSCODESETTINGS/settings.json"
+    return "$BAK"
+}
+
 # Edit your config
 # $EDITOR configuration.nix
 
@@ -56,6 +70,14 @@ git commit -am "$current"
 
 # Back to where you were
 popd
+
+# fixVscode
+echo "Fixing vscode settings..."
+set -l CODE=fixVscode
+if test "$CODE" -eq 1; then
+    echo "Moved an existing settings.json to a backup file next to it."
+fi
+echo "Done fixing vscode settings..."
 
 # Notify all OK!
 echo "Darwin-Nix Rebuilt OK!"

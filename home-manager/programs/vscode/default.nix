@@ -59,8 +59,8 @@ in {
         }
       ];
 
-    # this way settings  can be changed from withing vscode without having to rebuild the entire system
-    userSettings = config.lib.file.mkOutOfStoreSymlink "${homeDir}/.config/nix-darwin/home-manager/.config/vscode/settings.json";
+    # this doesnt work well
+    # userSettings = builtins.fromJSON (builtins.readFile ../../.config/vscode/settings.json);
 
     languageSnippets = snippets;
     keybindings = builtins.fromJSON (builtins.readFile ../../.config/vscode/keybindings.json);
