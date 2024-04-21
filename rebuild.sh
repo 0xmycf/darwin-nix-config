@@ -16,19 +16,7 @@
 # A rebuild script that commits on a successful build
 set -e
 
-# doesnt work well with nix as vscode expects a mutable file
-fixVscode() 
-{
-    VSCODESETTINGS="$HOME/Library/Application Support/Code/User/"
-    NOW="$(date +"%Y%m%d%H%M%S")"
-    BAK=0
-    if test -f "$VSCODESETTINGS/settings.json"; then
-        mv "$VSCODESETTINGS/settings.json" "$VSCODESETTINGS/$NOW-settings.bak.json"
-        BAK=1
-    fi
-    ln -sf "$HOME/.config/nix-darwin/home-manager/.config/vscode/settings.json" "$VSCODESETTINGS/settings.json"
-    return "$BAK"
-}
+source ./vscode.sh
 
 # Edit your config
 # $EDITOR configuration.nix

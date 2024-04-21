@@ -18,10 +18,12 @@ end
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- toggle visibility of file tree
-nvomap("<C-t>", function()
-  require("nvim-tree.api").tree.toggle()
-end)
+if not vim.g.vscode then
+  -- toggle visibility of file tree
+  nvomap("<C-t>", function()
+    require("nvim-tree.api").tree.toggle()
+  end)
+end
 
 -- exit to normal mode
 map({ "i", "v", "o" }, "<C-c>", "<Esc>", { silent = true })

@@ -2598,5 +2598,13 @@
     {
         "key": "shift+ctrl+r",
         "command": "editor.action.rename"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "editor.action.inlineSuggest.commit"
+    },
+    {
+        "key": "cmd+shift+enter",
+        "command": "github.copilot.generate"
     }
 ]

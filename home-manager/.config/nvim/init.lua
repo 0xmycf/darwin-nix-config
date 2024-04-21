@@ -25,3 +25,6 @@ vim.cmd("vmap mke S}i\\<ESC>a")
 
 vim.cmd("map <leader>cn :cn<CR>")
 vim.cmd("map <leader>cp :cp<CR>")
+
+if vim.g.vscode then
+end
