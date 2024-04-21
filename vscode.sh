@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+# doesnt work well with nix as vscode expects a mutable file
+fixVscode() 
+{
+    VSCODESETTINGS="$HOME/Library/Application Support/Code/User/"
+    NOW="$(date +"%Y%m%d%H%M%S")"
+    if [[ -f "$VSCODESETTINGS/settings.json" ]]; then
+        echo "Backing up current settings.json to $VSCODESETTINGS/$NOW-settings.bak.json"
+        mv "$VSCODESETTINGS/settings.json" "$VSCODESETTINGS/$NOW-settings.bak.json"
+    else 
+        echo "No settings.json found, creating one"
+    fi
+
+    ln -sf "$HOME/.config/nix-darwin/home-manager/.config/vscode/settings.json" "$VSCODESETTINGS/settings.json"
+}
+
