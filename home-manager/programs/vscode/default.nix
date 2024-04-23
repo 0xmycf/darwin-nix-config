@@ -36,7 +36,9 @@ in {
         github.copilot-chat
         github.copilot
 
+        # Usually when I need vscode I also need python
         ms-pyright.pyright
+        ms-python.python
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
