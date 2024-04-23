@@ -241,8 +241,14 @@ local not_by_mason = {
   ["tsserver"] = true,
   ["racket_langserver"] = true,
   ["crystalline"] = true,
-  ["sourcekit"] = true,
-  -- ["fsautocomplete"] = true,
+  ["sourcekit"] = {
+    on_attach = on_attach,
+    capabilties = capabilities,
+    filetypes = { "swift" },
+    cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
+  },
+  ["sqls"] = true,
+  -- nextserver
 }
 
 -- lspconfig["racket_langserver"].setup {

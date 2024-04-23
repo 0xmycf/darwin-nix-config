@@ -35,6 +35,8 @@ in {
 
         github.copilot-chat
         github.copilot
+
+        ms-pyright.pyright
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {

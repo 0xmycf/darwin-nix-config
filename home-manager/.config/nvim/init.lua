@@ -27,4 +27,11 @@ vim.cmd("map <leader>cn :cn<CR>")
 vim.cmd("map <leader>cp :cp<CR>")
 
 if vim.g.vscode then
+else
+  vim.cmd [[
+  let g:omni_sql_no_default_maps = 1
+  let g:ftplugin_sql_omni_key = '<leader>sql'
+  ]]
+  vim.g.omni_sql_no_default_maps = 1
+  vim.g.ftplugin_sql_omni_key = '<leader>sql'
 end

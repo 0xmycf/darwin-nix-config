@@ -15,6 +15,31 @@ local group = M.group
 local cmd = M.cmd
 
 cmd("FileType") {
+  pattern = { "sql" },
+  callback = function()
+    vim.g.omni_sql_no_default_maps = 1
+    vim.g.ftplugin_sql_omni_key = '<leader>sql'
+    vim.cmd [[
+    let b:did_ftplugin = 1
+    " unmap <buffer> <C-C>R
+    " unmap <buffer> <C-C>L
+    " unmap <buffer> <C-C>l
+    " unmap <buffer> <C-C>c
+    " unmap <buffer> <C-C>v
+    " unmap <buffer> <C-C>p
+    " unmap <buffer> <C-C>t
+    " unmap <buffer> <C-C>s
+    " unmap <buffer> <C-C>T
+    " unmap <buffer> <C-C>o
+    " unmap <buffer> <C-C>f
+    " unmap <buffer> <C-C>k
+    " unmap <buffer> <C-C>a
+    ]]
+  end,
+  group = group("sql_omni"),
+}
+
+cmd("FileType") {
   pattern = {
     "ml",
     "ocaml",
