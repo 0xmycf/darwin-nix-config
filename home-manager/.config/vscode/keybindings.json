@@ -2594,6 +2594,7 @@
     },
     {
         "key": "ctrl+enter",
-        "command": "jupyter.runcell"
+        "command": "jupyter.runcell",
+        "when": "!editorTextFocus"
     }
 ]

@@ -29,7 +29,8 @@ in {
     # TODO
     extensions = with pkgs.vscode-extensions;
       [
-        asvetliakov.vscode-neovim
+        # asvetliakov.vscode-neovim
+        vscodevim.vim
         pkief.material-icon-theme
         ms-toolsai.jupyter
 
