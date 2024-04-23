@@ -1,10 +1,5 @@
 [
     {
-        "key": "ctrl+c",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
-    },
-    {
         "key": "shift+cmd+7",
         "command": "-editor.action.commentLine",
         "when": "editorTextFocus && !editorReadonly"
@@ -51,16 +46,6 @@
         "key": "cmd+up",
         "command": "-cursorTop",
         "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "-extension.vim_ctrl+c",
-        "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
     },
     {
         "command": "editor.action.commentLine",
@@ -2606,5 +2591,9 @@
     {
         "key": "cmd+shift+enter",
         "command": "github.copilot.generate"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "jupyter.runcell"
     }
 ]
