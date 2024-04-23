@@ -2596,5 +2596,15 @@
         "key": "ctrl+enter",
         "command": "jupyter.runcell",
         "when": "!editorTextFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "extension.vim_escape",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-extension.vim_ctrl+c",
+        "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
     }
 ]
