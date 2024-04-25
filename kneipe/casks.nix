@@ -38,6 +38,8 @@
   "microsoft-excel"
   "microsoft-powerpoint"
   "adobe-acrobat-reader"
+
+  "virtualbox"
 ]
 # Missing:
 #
