@@ -59,8 +59,8 @@ in {
         {
           name = "vscode-pvs";
           publisher = "paolomasci";
-          version = "1.0.64";
-          sha256 = "sha256-xKxIMYVhCTfCHwG/ecfn/ae3pr4Ku/37KBB4lbHWgNI=";
+          version = "1.0.65";
+          sha256 = "sha256-j3RcmDkFlWLjKq4bzENoYr2rZfLo22jN/NO7OkmvBZs=";
         }
       ];
 
