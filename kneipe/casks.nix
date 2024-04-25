@@ -40,6 +40,7 @@
   "adobe-acrobat-reader"
 
   "virtualbox"
+  "racket"
 ]
 # Missing:
 #
