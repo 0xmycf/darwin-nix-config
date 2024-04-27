@@ -22,7 +22,7 @@
       hash = "sha256-RzHjXCaFGUdRGjEkyVJDyY7OsWG8sqKsCGcZyBPmmPU=";
     };
     # i can also use this inside a flake when doing a project
-    kp-fonts.enable = false;
+    kp-fonts.enable = true;
   };
 
   home.packages = with pkgs;
