@@ -7,8 +7,16 @@
   };
   teatimer = pkgs.haskellPackages.callCabal2nix "teatimer" teatimerGithub {};
   teatimerNoHaddock = pkgs.haskell.lib.dontHaddock teatimer;
+
+  gen-gitignore = pkgs.fetchFromGitHub {
+    owner = "0xmycf";
+    repo = "cli-gitignore-generator";
+    rev = "3a7d029af7aa8c619936a05a9554261fca28b34f";
+    sha256 = "sha256-61wmXbrVimUeiE5taT9CgRhJnQtRmXsRt77pNd0qUY0=";
+  };
 in {
   home.packages = [
     teatimerNoHaddock
+    gen-gitignore
   ];
 }

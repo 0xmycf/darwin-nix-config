@@ -3,7 +3,7 @@
     ./neovim
     ./fish
     ./vscode
-    ./teatimer.nix
+    ./my-haskell-tools.nix
     ./git.nix
     ./kitty.nix
   ];
