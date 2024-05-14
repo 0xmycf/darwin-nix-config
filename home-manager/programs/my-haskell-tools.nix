@@ -17,6 +17,6 @@
 in {
   home.packages = [
     teatimerNoHaddock
-    gen-gitignore
+    (import gen-gitignore {inherit pkgs;}).gen-gitignore
   ];
 }
