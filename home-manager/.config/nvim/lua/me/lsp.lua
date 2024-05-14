@@ -242,6 +242,7 @@ local not_by_mason = {
   ["tsserver"] = true,
   ["racket_langserver"] = true,
   ["crystalline"] = true,
+  ["serve_d"] = true,
   ["sourcekit"] = {
     on_attach = on_attach,
     capabilties = capabilities,
