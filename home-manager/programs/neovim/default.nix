@@ -51,6 +51,7 @@ in {
       nodejs_20
       nil
       lua-language-server
+      pyright
 
       # its always good to have these installed outside of a flake
       # since those are common filetypes across projects and configs

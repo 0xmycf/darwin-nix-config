@@ -9,9 +9,9 @@ local lsps = {
   "jsonls",
   "yamlls",
   "texlab",
-  "ltex",  -- langaugetool
+  "ltex", -- langaugetool
   "rust_analyzer",
-  "jdtls", -- later
+  -- "jdtls", -- later
   "gradle_ls",
   -- always good to have
   "html",
@@ -196,6 +196,7 @@ require("mason-lspconfig").setup_handlers {
       on_attach = on_attach,
       capabilties = capabilities,
       autostart = false,
+      cmd = { "jdt-language-server" },
     }
   end
 
@@ -248,6 +249,13 @@ local not_by_mason = {
     cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
   },
   ["sqls"] = true,
+  ["jdtls"] = {
+    on_attach = on_attach,
+    capabilties = capabilities,
+    autostart = false,
+    -- needs fixing
+    cmd = { "jdt-language-server" }, -- , "-data", "/tmp/jdtlangdata/" .. vim.fn["getcwd"]() },
+  },
   -- nextserver
 }
 

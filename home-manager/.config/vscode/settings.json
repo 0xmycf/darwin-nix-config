@@ -83,5 +83,6 @@
     ],
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": false,
-    "pvs.path": "/Users/mycf/Documents/programming/pvs/pvs-7.1.0"
+    "pvs.path": "/Users/mycf/Documents/programming/pvs/pvs-7.1.0",
+    "pvs.pvsLibraryPath": "/Users/mycf/Documents/programming/pvs/meine/landau/"
 }
