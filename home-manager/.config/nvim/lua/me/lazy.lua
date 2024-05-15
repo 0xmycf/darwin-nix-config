@@ -18,7 +18,8 @@ local fn_dev_repos = require("me.private.private").local_plugins
 local lazy_opts = {
   lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
   install = {
-    colorscheme = { "onedark" },
+    -- colorscheme = { "onedark" },
+    colorscheme = { "catppuccin-latte" },
   },
   ui = {
     border = "rounded",
@@ -317,7 +318,7 @@ require("lazy").setup({
     priority = 1000,
     config = function()
       require("catppuccin").setup {
-        flavour = "mocha"
+        flavour = "latte"
       }
     end,
   },

@@ -85,4 +85,47 @@ require("onedark").setup {
   highlights = overrides,
 }
 
-require("onedark").load()
+-- require("onedark").load()
+
+require("catppuccin").setup({
+  flavour = "auto", -- latte, frappe, macchiato, mocha
+  background = {    -- :h background
+    light = "latte",
+    dark = "mocha",
+  },
+  styles = {                 -- Handles the styles of general hi groups (see `:h highlight-args`):
+    comments = { "italic" }, -- Change the style of comments
+    conditionals = {},
+    loops = {},
+    functions = {},
+    keywords = {},
+    strings = {},
+    variables = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
+    types = {},
+    operators = {},
+    -- miscs = {}, -- Uncomment to turn off hard-coded styles
+  },
+  color_overrides = {},
+  custom_highlights = function(colors)
+    return {
+      ["@constructor.haskell"] = { fg = colors.yellow },
+      ["@symbol.haskell"]      = { fg = colors.white },
+      ["@preproc.haskell"]     = { fg = colors.white },
+      ["@repeat.haskell"]      = { fg = colors.pink },
+      ["@include.haskell"]     = { fg = colors.pink },
+      ["@namespace.haskell"]   = { fg = colors.yellow },
+      ["@variable.haskell"]    = { fg = colors.white },
+      -- ["@conditional.haskell"] = { fg = colors.pink }, -- ???
+      ["@operator.haskell"]    = { fg = colors.pink },
+      ["@type"]                = { fg = colors.yellow },
+      ["@variable.parameter"]  = { fg = colors.text },
+      ["@module"]              = { fg = colors.yellow },
+    }
+  end,
+})
+
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
