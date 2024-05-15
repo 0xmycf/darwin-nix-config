@@ -1,4 +1,6 @@
 [
-  # haskell
-  # "ghcup"
+  # dlang
+  "dub"
+  "dmd"
+  "dcd"
 ]
