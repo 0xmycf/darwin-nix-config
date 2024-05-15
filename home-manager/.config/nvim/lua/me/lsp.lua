@@ -195,7 +195,6 @@ require("mason-lspconfig").setup_handlers {
     lspconfig["jdtls"].setup {
       on_attach = on_attach,
       capabilties = capabilities,
-      autostart = false,
       cmd = { "jdt-language-server" },
     }
   end
@@ -253,9 +252,8 @@ local not_by_mason = {
   ["jdtls"] = {
     on_attach = on_attach,
     capabilties = capabilities,
-    autostart = false,
     -- needs fixing
-    cmd = { "jdt-language-server" }, -- , "-data", "/tmp/jdtlangdata/" .. vim.fn["getcwd"]() },
+    cmd = { "jdt-language-server", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
   -- nextserver
 }
