@@ -43,7 +43,35 @@ in {
         body = builtins.readFile ./functions/now.fish;
       };
       mtt = {
-        body = "mv $argv[1] ${homeDir}/.Trash/"; # macos probably TODO setup linux
+        body = ''
+          now=$(date +%s)
+
+          for x in $argv; do
+            mv $x ${homeDir}/.Trash/$now-$x;
+          end;
+        '';
+      };
+      color-swap = {
+        body = ''
+          if test -z $argv
+            echo "Usage: color-swap <theme>"
+            return 1
+          end
+
+          # TODO we should probably link instead
+          # we should also link from the nix config folder instead
+
+          mv ${homeDir}/.config/kitty/current-theme.conf ${homeDir}/.config/kitty/current-theme.conf.bak || echo "No previous theme found"
+
+          if test $argv[1] = "SpaceGray";
+            ln -s ${homeDir}/.config/nix-darwin/home-manager/.config/kitty/Space\ Gray.conf ${homeDir}/.config/kitty/current-theme.conf
+          else if test $argv[1] = "Catppuccin";
+            ln -s ${homeDir}/.config/nix-darwin/home-manager/.config/kitty/Catppuccin-Latte.conf ${homeDir}/.config/kitty/current-theme.conf
+          else
+            echo "Theme not found"
+            return 1
+          end
+        '';
       };
     };
 
