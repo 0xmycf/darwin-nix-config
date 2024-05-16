@@ -70,6 +70,21 @@ local overrides = {
   ["@type"]                = { fg = colors.yellow, fmt = "italic" },
 }
 
+local function color_swap(args)
+  local bg = args.fargs[1]
+  if bg == "dark" then
+    require("onedark").load()
+    vim.cmd("set background=dark")
+    vim.cmd.colorscheme "onedark"
+  elseif bg == "light" then
+    require("catppuccin").load()
+    vim.cmd("set background=light")
+    vim.cmd.colorscheme "catppuccin"
+  end
+end
+
+vim.api.nvim_create_user_command('ColorSwap', color_swap, { nargs = 1 })
+
 require("onedark").setup {
   -- Change code style
   -- Options are italic, bold, underline, none
