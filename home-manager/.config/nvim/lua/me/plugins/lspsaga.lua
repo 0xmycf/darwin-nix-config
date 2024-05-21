@@ -28,6 +28,7 @@ keymap("n", "E", "<cmd>Lspsaga show_cursor_diagnostics<CR>", { silent = true })
 -- jump diagnostic
 keymap("n", "<leader><F3>", "<cmd>Lspsaga diagnostic_jump_prev<CR>", { silent = true })
 keymap("n", "<F3>", "<cmd>Lspsaga diagnostic_jump_next<CR>", { silent = true })
+
 -- Only jump to error
 keymap("n", "<leader><F2>", function()
   require("lspsaga.diagnostic"):goto_prev { severity = vim.diagnostic.severity.ERROR }

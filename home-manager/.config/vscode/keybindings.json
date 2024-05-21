@@ -535,10 +535,6 @@
         "key": "shift+cmd+a"
     },
     {
-        "command": "workbench.action.showAllSymbols",
-        "key": "cmd+o"
-    },
-    {
         "command": "workbench.action.quickOpen",
         "key": "shift+cmd+o"
     },
@@ -1779,10 +1775,6 @@
         "key": "shift+cmd+a"
     },
     {
-        "command": "workbench.action.showAllSymbols",
-        "key": "cmd+o"
-    },
-    {
         "command": "workbench.action.quickOpen",
         "key": "shift+cmd+o"
     },
@@ -2561,12 +2553,7 @@
         "when": "!editorTextFocus"
     },
     {
-        "key": "shift+h",
-        "command": "editor.action.format",
-        "when": "!editorTextFocus"
-    },
-    {
-        "key": "ctrl+m",
+        "key": "ctrl+t",
         "command": "workbench.files.action.focusFilesExplorer",
         "when": "editorTextFocus"
     },
@@ -2606,5 +2593,64 @@
         "key": "ctrl+c",
         "command": "-extension.vim_ctrl+c",
         "when": "editorTextFocus && vim.active && vim.overrideCtrlC && vim.use<C-c> && !inDebugRepl"
+    },
+    {
+        "command": "list.focusDown",
+        "key": "ctrl+j",
+        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "command": "list.focusUp",
+        "key": "ctrl+j",
+        "when": "listFocus && !inputFocus && !treestickyScrollFocused"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-selectPrevCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-selectNextCodeAction",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-editor.action.refactor",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+o",
+        "command": "-workbench.action.showAllSymbols"
     }
 ]

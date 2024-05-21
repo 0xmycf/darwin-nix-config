@@ -74,14 +74,16 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping.scroll_docs(-4),
     ["<C-+>"] = cmp.mapping.complete(),
     ["±"] = cmp.mapping.abort(), -- <M-+>
-    ["<Tab>"] = cmp.mapping(function(fallback)
+    ["<C-j>"] = cmp.mapping(function(fallback)
+    -- ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
       else
         fallback()
       end
     end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
+    -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+    ["<C-k>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item { behavior = cmp.SelectBehavior.Select }
       else

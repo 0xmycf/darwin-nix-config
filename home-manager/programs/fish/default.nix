@@ -44,7 +44,7 @@ in {
       };
       mtt = {
         body = ''
-          now=$(date +%s)
+          set -l now (date +%s)
 
           for x in $argv; do
             mv $x ${homeDir}/.Trash/$now-$x;
