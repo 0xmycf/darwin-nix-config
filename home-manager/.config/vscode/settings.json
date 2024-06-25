@@ -87,5 +87,9 @@
     "pvs.pvsLibraryPath": "/Users/mycf/Documents/programming/pvs/meine/landau/",
     "d.dubCompiler": "dmd",
     "d.stdlibPath": "auto",
-    "d.dubPath": "/usr/local/bin/dub"
+    "d.dubPath": "/usr/local/bin/dub",
+    "editor.unicodeHighlight.allowedCharacters": {
+        "∨": true
+    },
+    "d.servedPath": "/Users/mycf/.vscode/extensions/webfreak.code-d-0.23.2/bin/serve-d"
 }

@@ -46,9 +46,15 @@ in {
         body = ''
           set -l now (date +%s)
 
-          for x in $argv; do
+          for x in $argv;
             mv $x ${homeDir}/.Trash/$now-$x;
           end;
+        '';
+      };
+      vault-bib = {
+        body = ''
+          set -l path '${homeDir}/Library/Mobile Documents/icloud~md~obsidian/Documents/Tvault/attachments/vault.bib'
+          nvim + $path
         '';
       };
       color-swap = {

@@ -4,3 +4,5 @@ result/
 darwin-switch.log
 my-scripts/
 home-manager/.config/stylish-haskell/
+home-manager/.config/nvim/ftdetect
+home-manager/.config/nvim/syntax

@@ -22,7 +22,9 @@
     tree
     watchexec
     pandoc
-    openconnect
+    openconnect # vpn
+
+    umlet # Free, open-source UML tool with a simple user interface
 
     # this is a cask on macos
     # neovide
