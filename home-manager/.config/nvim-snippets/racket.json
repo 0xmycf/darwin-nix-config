@@ -1,0 +1,43 @@
+{
+    "racket-struct-doc": {
+        "prefix": ["doc-struct"],
+        "body": [
+            "; A $1 is a structure: (make-$1 $2)",
+            "; interp. $3"
+        ]
+    },
+    "racket-struct": {
+        "prefix": ["struct"],
+        "body": [
+            "(define-struct $1 ($2))",
+            "; A $1 is a structure: (make-$1 $2)",
+            "; interp. $3"
+        ]
+    },
+    "racket-function-doc": {
+        "prefix": ["doc-func"],
+        "body": [
+            "; $1 $2 -> $3",
+            "; interp. $4"
+        ]
+    },
+    "racket-function": {
+        "prefix": ["func"],
+        "body": [
+            "; $1 $2 -> $4",
+            "; interp. $5",
+            "(define ($1 $2) $3)"
+        ]
+    },
+    "racket-sum-type": {
+        "prefix": ["sum-type"],
+        "body": [
+            "(define-type $1",
+            "  (literal (value number?))",
+            "  (addition (left Expression?) (right Expression?)))",
+            "; A $1 is one of:",
+            "; - $2",
+            "; interp. $4"
+        ]
+    }
+}
