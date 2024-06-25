@@ -61,6 +61,7 @@ cmd("FileType") {
     "r",
     "rmd",
     "gleam",
+    "racket",
   },
   callback = function(ev)
     local local_opts = {
@@ -125,6 +126,19 @@ cmd("BufEnter") {
     set formatoptions-=r
     setlocal formatoptions-=r
   ]]
+  end,
+}
+
+cmd("VimEnter") {
+  callback = function()
+    if vim.o.background == "dark" then
+      require("onedark").load()
+      vim.cmd.colorscheme "onedark"
+    else
+      vim.cmd.colorscheme "catppuccin"
+    end
+    -- this fixes lualine, because otherwise there is some weird bug
+    require("me.plugins.lualine")
   end,
 }
 

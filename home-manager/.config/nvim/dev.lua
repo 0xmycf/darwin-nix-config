@@ -12,3 +12,5 @@ require("me.private.private") -- mine muhahahaha
 require("me.dev_globals")
 
 vim.o.spell = false
+
+-- vim.cmd("source ./syntax/peano.vim")

@@ -100,7 +100,7 @@ require("onedark").setup {
   highlights = overrides,
 }
 
-require("onedark").load()
+-- require("onedark").load()
 
 require("catppuccin").setup({
   flavour = "auto", -- latte, frappe, macchiato, mocha

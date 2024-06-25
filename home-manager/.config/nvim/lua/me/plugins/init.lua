@@ -7,6 +7,7 @@ if not ok then
   print("treesitter not working: ", reason)
 end
 
-require("me.plugins.lualine")
+-- moved to autocmds
+-- require("me.plugins.lualine")
 require("me.plugins.comment")
 require("me.plugins.cmp")
