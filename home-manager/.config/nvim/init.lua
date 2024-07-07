@@ -85,3 +85,6 @@ let &t_RT = "\e[23;2t"
 " kitty that do not support background color erase.
 let &t_ut=''
 ]]
+
+vim.print("Remove conceallevel after you've finished the beweisaufgabe")
+vim.o["conceallevel"] = 0

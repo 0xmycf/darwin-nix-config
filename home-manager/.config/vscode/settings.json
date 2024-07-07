@@ -41,7 +41,6 @@
     "cSpell.language": "en,en-GB,de-DE,de",
     "zenMode.hideLineNumbers": false,
     "vim.vimrc.enable": true,
-    "editor.cursorBlinking": "smooth",
     "telemetry.telemetryLevel": "off",
     "workbench.colorTheme": "Spacegray Ocean Dark",
     "files.autoSave": "onWindowChange",
@@ -91,5 +90,6 @@
     "editor.unicodeHighlight.allowedCharacters": {
         "∨": true
     },
-    "d.servedPath": "/Users/mycf/.vscode/extensions/webfreak.code-d-0.23.2/bin/serve-d"
+    "d.servedPath": "/Users/mycf/.vscode/extensions/webfreak.code-d-0.23.2/bin/serve-d",
+    "editor.cursorSurroundingLines": 12
 }

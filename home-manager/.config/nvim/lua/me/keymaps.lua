@@ -54,6 +54,7 @@ end)
 noremap("n", "<Leader>fg", builtin.live_grep)
 noremap("n", "<Leader>fb", builtin.buffers)
 noremap("n", "<Leader>fh", builtin.help_tags)
+noremap("n", "<Leader>fc", builtin.commands)
 
 -- escape the terminal without killing it
 noremap("t", "<Esc>", "<C-\\><C-n>")

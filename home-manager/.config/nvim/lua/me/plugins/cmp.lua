@@ -104,6 +104,9 @@ cmp.setup {
     -- Copilot Source
     { name = "copilot",   group_index = 2 },
 
+    -- latex
+    { name = "latex_symbols", option = { strategy = 1 }, },
+
     -- other
     { name = "nvim_lsp",  priority = 9 },
     { name = "vsnip" },

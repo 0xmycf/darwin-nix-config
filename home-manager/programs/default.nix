@@ -6,6 +6,7 @@
     ./my-haskell-tools.nix
     ./git.nix
     ./kitty.nix
+    ./haskell.nix
   ];
 
   programs.thefuck = {

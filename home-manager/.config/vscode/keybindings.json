@@ -2563,11 +2563,6 @@
         "when": "!editorFocus"
     },
     {
-        "key": "shift+k",
-        "command": "editor.action.showHover",
-        "when": "editorTextFocus && neovim.mode != 'insert'"
-    },
-    {
         "key": "shift+ctrl+r",
         "command": "editor.action.rename"
     },

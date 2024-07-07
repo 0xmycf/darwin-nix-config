@@ -39,6 +39,10 @@
   "microsoft-powerpoint"
   "adobe-acrobat-reader"
 
+  # Keyboard
+  "via"
+
+  # Uni
   "virtualbox"
   "racket"
 ]
