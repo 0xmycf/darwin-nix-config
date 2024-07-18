@@ -145,6 +145,7 @@ require("lazy").setup({
                 tex      = false,
                 markdown = false,
                 java     = false,
+                txt      = false,
             }
             vim.g.copilot_no_tab_map = true
             -- I cant get this to work

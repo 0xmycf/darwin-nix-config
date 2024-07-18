@@ -255,6 +255,12 @@ local not_by_mason = {
     -- needs fixing
     cmd = { "jdt-language-server", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
+  -- c#
+  -- ["omnisharp"] = true,
+  ["omnisharp"] =  true --[[ {
+    cmd = { "omnisharp", "--languageserver" },
+  } ]],
+  -- ["csharp_ls"] = true,
   -- nextserver
 }
 

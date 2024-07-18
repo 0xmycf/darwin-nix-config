@@ -88,6 +88,8 @@ in {
       # tea = "${teatimer}/bin/teatimer";
       sshpi = "kitty +kitten ssh pi@192.168.2.45";
 
+      fg = "fg %";
+
       cc = "cd && clear";
       vim = "nvim";
       v = "nvim";

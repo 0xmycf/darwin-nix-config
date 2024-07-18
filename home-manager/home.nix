@@ -23,6 +23,7 @@
     watchexec
     pandoc
     openconnect # vpn
+    pdfgrep
 
     # because its nice to have a working version of python installed
     (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))
