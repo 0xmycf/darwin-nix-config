@@ -60,10 +60,15 @@ noremap("n", "<Leader>fc", builtin.commands)
 noremap("t", "<Esc>", "<C-\\><C-n>")
 
 -- window resizing
-noremap("n", "<Leader>+", "<cmd>resize +1<cr>")
-noremap("n", "<Leader>-", "<cmd>resize -1<cr>")
-noremap("n", "<Leader><Leader>+", "<cmd>vertical resize +1<cr>")
-noremap("n", "<Leader><Leader>-", "<cmd>vertical resize -1<cr>")
+noremap("n", "<Leader>+", "<cmd>resize +2<cr>")
+noremap("n", "<Leader>-", "<cmd>resize -2<cr>")
+noremap("n", "<Leader><Leader>+", "<cmd>vertical resize +2<cr>")
+noremap("n", "<Leader><Leader>-", "<cmd>vertical resize -2<cr>")
+
+noremap("n", "<leader>=", "<cmd>vertical resize 87<cr>")
+
+-- session
+noremap("n", "<leader>mks", "<cmd>mksession!<cr>")
 
 -- moving around text like vscode
 -- mac compatible
