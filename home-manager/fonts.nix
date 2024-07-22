@@ -18,7 +18,7 @@
     monolisa = {
       enable = true;
       # this is a local fileserver on my raspberry pi
-      url = "http://192.168.0.227:3333/data/monolisa.zip";
+      url = "http://192.168.0.227:8090/data/monolisa.zip";
       hash = "sha256-RzHjXCaFGUdRGjEkyVJDyY7OsWG8sqKsCGcZyBPmmPU=";
     };
     # i can also use this inside a flake when doing a project

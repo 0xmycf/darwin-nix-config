@@ -11,7 +11,7 @@ in {
       enable = mkEnableOption "MonoLisa";
       url = mkOption {
         type = types.str;
-        example = "http://192.168.0.227:3333/data/monolisa.zip";
+        example = "http://192.168.0.227:8090/data/monolisa.zip";
       };
       hash = mkOption {
         type = types.str;
