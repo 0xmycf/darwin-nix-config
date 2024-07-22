@@ -5,8 +5,7 @@ local opts = {
   encoding = "utf-8",
   -- be iMproved (basically remove backwards support with vi)
   compatible = false,
-  -- add a colored column after 83 chars (doesnt work mh)
-  colorcolumn = 83,
+  colorcolumn = "87",
   -- font used by neovide or other graphical UI
   guifont = "MonoLisa:12",
   -- guifont = "BQN386 Unicode:18", -- Set this font for use with neovide
@@ -59,7 +58,7 @@ local opts = {
   -- always show tabs
   showtabline = 2,
 
-  conceallevel = 1,
+  conceallevel = 2,
 }
 
 vim.cmd([[

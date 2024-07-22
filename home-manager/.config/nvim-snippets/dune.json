@@ -1,0 +1,12 @@
+{
+    "disable warnings as errors": {
+        "prefix": [
+            "flags",
+            "warn",
+            "error"
+        ],
+        "body": [
+            "(flags (:standard -warn-error -A))"
+        ]
+    }
+}
