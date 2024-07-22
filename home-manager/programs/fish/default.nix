@@ -88,7 +88,7 @@ in {
       # tea = "${teatimer}/bin/teatimer";
       sshpi = "kitty +kitten ssh pi@192.168.2.45";
 
-      fg = "fg %";
+      fg = "fg %"; # this doesnt seem to work as I expect it
 
       cc = "cd && clear";
       vim = "nvim";

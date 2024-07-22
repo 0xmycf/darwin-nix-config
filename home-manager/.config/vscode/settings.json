@@ -42,7 +42,7 @@
     "zenMode.hideLineNumbers": false,
     "vim.vimrc.enable": true,
     "telemetry.telemetryLevel": "off",
-    "workbench.colorTheme": "Spacegray Ocean Dark",
+    "workbench.colorTheme": "Alt Catppuccin Latte",
     "files.autoSave": "onWindowChange",
     "editor.bracketPairColorization.enabled": false,
     "notebook.cellFocusIndicator": "border",

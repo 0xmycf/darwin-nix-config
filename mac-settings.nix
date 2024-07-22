@@ -1,10 +1,5 @@
 # some things cannot be set:
-{
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: {
+{...}: {
   users.users.mycf = {
     name = "mycf";
     home = "/Users/mycf";
