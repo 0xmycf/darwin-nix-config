@@ -39,35 +39,35 @@ cmd("FileType") {
     group = group("sql_omni"),
 }
 
-cmd("FileType") {
+cmd("BufEnter") {
     pattern = {
-        "ml",
-        "ocaml",
-        "lua",
-        "ruby",
-        "markdown",
-        "haskell",
-        "lhaskell",
-        "cabal",
-        "scala",
-        "purescript",
-        "purs",
-        "tex",
-        "latex",
-        "svelte",
-        "html",
-        "typst",
-        "nix",
-        "r",
-        "rmd",
-        "gleam",
-        "racket",
+        "*.ml",
+        -- "ocaml",
+        "*.lua",
+        "*.rb",
+        "*.md",
+        "*.hs",
+        "*.lhs",
+        "*.cabal",
+        "*.scala",
+        -- "*.purescript",
+        "*.purs",
+        "*.tex",
+        -- "latex",
+        -- "svelte",
+        "*.html",
+        "*.typst",
+        "*.nix",
+        "*.r",
+        "*.rmd",
+        "*.gleam",
+        "*.rkt",
     },
     callback = function(ev)
         local local_opts = {
-            tabstop = 2,
+            tabstop     = 2,
             softtabstop = 2,
-            shiftwidth = 2,
+            shiftwidth  = 2,
         }
 
         for key, value in pairs(local_opts) do
@@ -102,6 +102,7 @@ cmd("FileType") {
             vim.bo[ev.buf][key] = value
         end
         vim.cmd('set noexpandtab')
+        vim.print("foo")
 
         vim.cmd('set indentkeys-=}')
         vim.cmd('set indentkeys-={')
@@ -111,13 +112,13 @@ cmd("FileType") {
     group = group("go_tab_width"),
 }
 
-cmd("FileType") {
-    pattern = { "rmd" },
-    callback = function()
-        vim.cmd('set conceallevel=0')
-    end,
-    group = group("nospellcheck"),
-}
+-- cmd("FileType") {
+--     pattern = { "rmd" },
+--     callback = function()
+--         vim.cmd('set conceallevel=0')
+--     end,
+--     group = group("nospellcheck"),
+-- }
 
 cmd("BufEnter") {
     pattern = { "*" },
