@@ -34,6 +34,7 @@
     interval = {
       Hour = 17;
       Minute = 0;
+      Weekday = 1;
     };
     options = "--delete-older-than 30d";
   };

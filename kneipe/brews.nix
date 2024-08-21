@@ -1,6 +1,2 @@
 [
-  # dlang
-  # "dub"
-  # "dmd"
-  # "dcd"
 ]

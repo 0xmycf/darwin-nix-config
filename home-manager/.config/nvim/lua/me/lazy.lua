@@ -132,7 +132,24 @@ require("lazy").setup({
     -- R (statistics)
     {
         "jalvesaq/Nvim-R",
-        lazy = false,
+        lazy = true,
+        ft = { "rmd" , "r" },
+    },
+
+    { "nat-418/tcl.nvim",
+      ft = { "tcl" },
+      config = function() 
+        require('tcl').setup()
+      end,
+    },
+
+    { "mfussenegger/nvim-lint",
+      ft = { "tcl" },
+      config = function() 
+        require('lint').linters_by_ft = {
+          markdown = {'vale',}
+        }
+      end, 
     },
 
     -- copilot (?) Siwtch to the unoffical lua version?

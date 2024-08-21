@@ -12,6 +12,7 @@
   "jetbrains-toolbox"
   # vscode can be setup with home-manager even on macos
   # "visual-studio-code"
+  "zed"
   "neovide"
 
   "deepl"
@@ -43,8 +44,8 @@
   "via"
 
   # Uni
-  "virtualbox"
-  "racket"
+  # "virtualbox"
+  # "racket"
 ]
 # Missing:
 #

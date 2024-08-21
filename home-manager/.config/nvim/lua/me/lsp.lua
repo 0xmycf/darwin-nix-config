@@ -257,7 +257,8 @@ local not_by_mason = {
   },
   -- c#
   -- ["omnisharp"] = true,
-  ["omnisharp"] =  true --[[ {
+  ["zls"] = true,
+  ["omnisharp"] = true --[[ {
     cmd = { "omnisharp", "--languageserver" },
   } ]],
   -- ["csharp_ls"] = true,
