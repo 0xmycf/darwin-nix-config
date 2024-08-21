@@ -2,7 +2,13 @@
     "nixpkgs": {
         "prefix": "url.nixpkgs",
         "body": [
-            "nixpkgs.url =  \"github:nixos/nixpkgs/23.11\";" 
+            "nixpkgs.url =  \"github:nixos/nixpkgs/24.05\";" 
+        ]
+    },
+    "nixpkgs-unstable": {
+        "prefix": "url.unstable",
+        "body": [
+            "nixpkgs.url =  \"github:nixos/nixpkgs/nixos-untable\";" 
         ]
     },
     "utils.url" : {

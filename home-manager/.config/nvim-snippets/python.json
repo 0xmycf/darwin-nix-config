@@ -15,5 +15,11 @@
             "########################################",
             "$0"
         ]
+    },
+    "no-arg-type-pyright": {
+        "prefix": "no-arg-type-pyright",
+        "body": [
+            "# pyright: reportArgumentType=false"
+        ]
     }
 }
