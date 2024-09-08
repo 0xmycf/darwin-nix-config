@@ -43,8 +43,8 @@ nvomap("L", "<cmd>bnext<cr>", { silent = true })
 nvomap("H", "<cmd>bprevious<cr>", { silent = true })
 
 -- better tab navigation
-noremap("n", "<Tab>", "<cmd>tabnext<cr>")
-noremap("n", "<C-Tab>", "<cmd>tabprevious<cr>")
+-- noremap("n", "<Tab>", "<cmd>tabnext<cr>")
+-- noremap("n", "<C-Tab>", "<cmd>tabprevious<cr>")
 
 -- fuzzy finder mappings
 local builtin = require("telescope.builtin")
