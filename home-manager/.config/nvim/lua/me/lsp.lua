@@ -253,7 +253,8 @@ local not_by_mason = {
     on_attach = on_attach,
     capabilties = capabilities,
     -- needs fixing
-    cmd = { "jdt-language-server", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
+    -- cmd = { "jdt-language-server", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
+    cmd = { "jdtls", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
   -- c#
   -- ["omnisharp"] = true,
