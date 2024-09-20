@@ -238,7 +238,7 @@ local not_by_mason = {
   },
   ["erlangls"] = true, -- for gleam interop
   ["solargraph"] = true,
-  ["tsserver"] = true,
+  ["ts_ls"] = true,
   ["racket_langserver"] = true,
   ["crystalline"] = true,
   ["serve_d"] = true,
