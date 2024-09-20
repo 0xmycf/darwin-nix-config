@@ -6,6 +6,13 @@
         ],
         "prefix": "sout"
     },
+    "soutv": {
+        "languages": ["java"],
+        "body": [
+            "System.out.println(\" ${1:foo} = \" + ${1:foo});"
+        ],
+        "prefix": "soutv"
+    },
     "sprint": {
         "languages": ["java"],
         "body": [
@@ -28,5 +35,32 @@
             "}"
         ],
         "prefix": "psvm"
+    },
+    "for": {
+        "languages": ["java"],
+        "prefix": "for",
+        "body": [
+            "for (int ${1:i} = 0; ${1:i} < $2; ${1:i}++) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "foreach": {
+        "languages": ["java"],
+        "prefix": "foreach",
+        "body": [
+            "for (var $1 : $2) {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "while": {
+        "languages": ["java"],
+        "prefix": "while",
+        "body": [
+            "while ($1) {",
+            "\t$0",
+            "}"
+        ]
     }
 }

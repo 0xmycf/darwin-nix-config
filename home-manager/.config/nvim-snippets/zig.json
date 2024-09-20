@@ -1,0 +1,6 @@
+{
+    "std_import": {
+        "prefix": "std_import",
+        "body": "const std = @import(\"std\");"
+    } 
+}
