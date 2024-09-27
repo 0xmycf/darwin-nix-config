@@ -32,5 +32,12 @@
             "import           Text.Blaze.Html5.Attributes"
         ],
         "description": "imports for the views (imports blaze)"
+    },
+    "tracev": {
+        "prefix": [ "tracev" ],
+        "body": [
+            "traceM \\$ \"${1:var}: \" <> ${1:var}"
+        ],
+        "description": "imports for the views (imports blaze)"
     }
 }
