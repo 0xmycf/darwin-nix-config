@@ -27,10 +27,13 @@
     # openconnect # vpn
     pdfgrep
 
+    # for cloudflare services, such as tunnels
+    cloudflared
+
     # because its nice to have a working version of python installed
     (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))
 
-    umlet # Free, open-source UML tool with a simple user interface
+    # umlet # Free, open-source UML tool with a simple user interface
 
     # this is a cask on macos
     # neovide
