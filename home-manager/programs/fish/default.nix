@@ -4,6 +4,7 @@
   ...
 }: let
   homeDir = config.home.homeDirectory;
+  username = config.home.username;
 in {
   home.file = {
     ".config/fish/conf.d/omf.fish".source = ./functions/omf.fish;
@@ -17,9 +18,11 @@ in {
     enable = true;
 
     # TODO setup my-scripts with nix
+    # TODO change my hard-coded username
     interactiveShellInit = ''
       fish_add_path "${homeDir}/my-scripts/bin"
       fish_add_path "${homeDir}/.gem/ruby/3.2.0/bin"
+      fish_add_path "/etc/profiles/per-user/${username}/bin"
 
       fish_vi_key_bindings
       bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'
