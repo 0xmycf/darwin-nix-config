@@ -21,8 +21,6 @@ in {
     # TODO change my hard-coded username
     interactiveShellInit = ''
       fish_add_path "${homeDir}/my-scripts/bin"
-      fish_add_path "${homeDir}/.gem/ruby/3.2.0/bin"
-      set -gx PATH "/etc/profiles/per-user/${username}/bin" $PATH
 
       fish_vi_key_bindings
       bind -M insert \cc 'set fish_bind_mode default; commandline -f repaint'

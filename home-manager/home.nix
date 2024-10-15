@@ -34,8 +34,8 @@
     (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))
 
     # sometimes I need ruby
-    ruby_3_2 # TODO how to install the gem i made?
-    solargraph
+    # ruby_3_2
+    # solargraph
 
     # umlet # Free, open-source UML tool with a simple user interface
 
