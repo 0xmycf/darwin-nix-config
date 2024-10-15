@@ -33,6 +33,10 @@
     # because its nice to have a working version of python installed
     (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))
 
+    # sometimes I need ruby
+    ruby_3_2 # TODO how to install the gem i made?
+    solargraph
+
     # umlet # Free, open-source UML tool with a simple user interface
 
     # this is a cask on macos
