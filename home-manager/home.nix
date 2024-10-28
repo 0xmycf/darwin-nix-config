@@ -34,7 +34,8 @@
     (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))
 
     # sometimes I need ruby
-    # ruby_3_2
+    ruby_3_2
+    ruby-lsp
     # solargraph
 
     # umlet # Free, open-source UML tool with a simple user interface

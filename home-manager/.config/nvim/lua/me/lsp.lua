@@ -237,7 +237,12 @@ local not_by_mason = {
     },
   },
   ["erlangls"] = true, -- for gleam interop
-  ["solargraph"] = true,
+  -- ["solargraph"] = true,
+  ["ruby_lsp"] = {
+    on_attach = on_attach,
+    capabilties = capabilities,
+    filetypes = { "ruby" },
+  },
   ["ts_ls"] = true,
   ["racket_langserver"] = true,
   ["crystalline"] = true,
