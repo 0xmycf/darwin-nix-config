@@ -16,7 +16,7 @@
   # for nvim are not found (I don't know why)
   nvimPath = "${profileDirectory}/bin/nvim";
 in {
-  # I do this to avaoid the possibility of using the nvim installed by
+  # I do this to avoid the possibility of using the nvim installed by
   # homebrew a second time (via casks for neovide)
   programs.fish.shellAliases = {
     nvim = nvimPath;
