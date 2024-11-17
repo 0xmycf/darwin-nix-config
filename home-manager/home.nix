@@ -43,7 +43,8 @@ in {
     cloudflared
 
     # statistics
-    R
+    # R
+    (rWrapper.override {packages = with rPackages; [tidyverse readODS];})
     # rstudio (homebrew)
     # julia # might be relevant later on
 
