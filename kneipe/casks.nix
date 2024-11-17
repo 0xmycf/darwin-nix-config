@@ -46,10 +46,12 @@
   # Uni
   # "virtualbox"
   # "racket"
+  "rstudio"
 ]
 # Missing:
 #
 # DxO PhotoLab 6
 # FoundryVTT
 # DungeonDraft
+# minecraft
 

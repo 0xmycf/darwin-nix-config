@@ -30,11 +30,16 @@
     # for cloudflare services, such as tunnels
     cloudflared
 
+    # statistics
+    R
+    # rstudio (homebrew)
+    # julia # might be relevant later on
+
     # because its nice to have a working version of python installed
     (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))
 
     # sometimes I need ruby
-    (ruby_3_2.withPackages (ps: with ps; [bundler ruby-lsp]))
+    (ruby_3_2.withPackages (ps: with ps; [bundler ruby-lsp solargraph]))
     # solargraph
 
     # umlet # Free, open-source UML tool with a simple user interface

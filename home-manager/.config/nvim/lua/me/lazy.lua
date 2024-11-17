@@ -131,9 +131,10 @@ require("lazy").setup({
 
     -- R (statistics)
     {
-        "jalvesaq/Nvim-R",
+        "R-nvim/R.nvim",
         lazy = true,
         ft = { "rmd" , "r" },
+        version = "~0.1.0",
     },
 
     { "nat-418/tcl.nvim",
@@ -153,54 +154,55 @@ require("lazy").setup({
     },
 
     -- copilot (?) Siwtch to the unoffical lua version?
-    {
-        "github/copilot.vim",
-        cond = gh_copilot.vim,
-        config = function()
-            vim.g.copilot_filetypes = {
-                latex    = false,
-                tex      = false,
-                markdown = false,
-                java     = false,
-                txt      = false,
-            }
-            vim.g.copilot_no_tab_map = true
-            -- I cant get this to work
-            -- vim.keymap.set("i", "<C-j>", vim.fn["copilot#Accept"]{ "" }, { silent = true, remap = false, })
-            vim.cmd [[
-      imap <silent><script><expr> <C-CR> copilot#Accept('\\<CR>')
-      highlight CopilotSuggestion guifg=#00000 ctermfg=8
-      ]]
-        end
-    },
+    -- {
+    --     "github/copilot.vim",
+    --     cond = gh_copilot.vim,
+    --     config = function()
+    --         vim.g.copilot_filetypes = {
+    --             latex    = false,
+    --             tex      = false,
+    --             markdown = false,
+    --             java     = false,
+    --             txt      = false,
+    --         }
+    --         vim.g.copilot_no_tab_map = true
+    --         -- I cant get this to work
+    --         -- vim.keymap.set("i", "<C-j>", vim.fn["copilot#Accept"]{ "" }, { silent = true, remap = false, })
+    --         vim.cmd [[
+    --   imap <silent><script><expr> <C-CR> copilot#Accept('\\<CR>')
+    --   highlight CopilotSuggestion guifg=#00000 ctermfg=8
+    --   ]]
+    --     end
+    -- },
 
-    {
-        "zbirenbaum/copilot.lua",
-        cmd = "Copilot",
-        cond = gh_copilot.lua,
-        event = "InsertEnter",
-        config = function()
-            require("copilot").setup({
-                suggestion = {
-                    auto_trigger = true, -- def = false
-                    keymap = {
-                        accept = "<C-CR>",
-                        next = "ø", -- <M-o>
-                        prev = "⁄", -- <M-i>
-                        dismiss = "±", -- <M-+>
-                    }
-                },
-                panel = { enabled = false },
-                filetypes = {
-                    latex    = false,
-                    tex      = false, -- I never know which is which
-                    markdown = false,
-                    java     = false,
-                    rmd      = false,
-                },
-            })
-        end
-    },
+    -- {
+    --     "zbirenbaum/copilot.lua",
+    --     cmd = "Copilot",
+    --     cond = gh_copilot.lua,
+    --     event = "InsertEnter",
+    --     config = function()
+    --         require("copilot").setup({
+    --             suggestion = {
+    --                 auto_trigger = true, -- def = false
+    --                 keymap = {
+    --                     accept = "<C-CR>",
+    --                     next = "ø", -- <M-o>
+    --                     prev = "⁄", -- <M-i>
+    --                     dismiss = "±", -- <M-+>
+    --                 }
+    --             },
+    --             panel = { enabled = false },
+    --             filetypes = {
+    --                 latex    = false,
+    --                 tex      = false, -- I never know which is which
+    --                 markdown = false,
+    --                 java     = false,
+    --                 rmd      = false,
+    --             },
+    --         })
+    --     end,
+    --     autostart = false;
+    -- },
 
     {
         "lukas-reineke/indent-blankline.nvim",
