@@ -1,4 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  # yanked from neovim/default.nix
+  profileDirectory = config.home.profileDirectory;
+  rpath = "${profileDirectory}/bin/r";
+in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -13,6 +21,10 @@
     ./programs # programs imports all programs
     ./fonts.nix
   ];
+
+  home.sessionVariables = {
+    RSTUDIO_WHICH_R = rpath;
+  };
 
   home.packages = with pkgs; [
     alejandra # nix formatter
