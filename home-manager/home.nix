@@ -44,7 +44,7 @@ in {
 
     # statistics
     # R
-    (rWrapper.override {packages = with rPackages; [tidyverse readODS];})
+    (rWrapper.override {packages = with rPackages; [tidyverse readODS languageserver readxl xlsx];})
     # rstudio (homebrew)
     # julia # might be relevant later on
 
