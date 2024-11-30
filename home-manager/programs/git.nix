@@ -32,6 +32,7 @@ in {
       ".DS_Store"
       "result"
       "result/"
+      ".metals/"
     ];
     # hooks = []; # TODO
   };

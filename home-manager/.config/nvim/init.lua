@@ -1,3 +1,4 @@
+vim.g.maplocalleader = ";"
 require("me.lazy")
 require("me.options")
 require("me.lsp")

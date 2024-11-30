@@ -19,7 +19,7 @@ local lsps = {
   "bashls",
   "clangd",
   "dockerls",
-  "r_language_server",
+  -- "r_language_server",
   -- zettelkasten / markdown
   "marksman",
   -- nix
@@ -261,6 +261,7 @@ local not_by_mason = {
     -- cmd = { "jdt-language-server", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
     cmd = { "jdtls", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
+  ["r_language_server"] = true,
   -- c#
   -- ["omnisharp"] = true,
   ["zls"] = true,

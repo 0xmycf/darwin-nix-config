@@ -14,7 +14,6 @@
     self,
     home-manager,
     nix-darwin,
-    nixpkgs,
     ...
   }: {
     # Build darwin flake using:
