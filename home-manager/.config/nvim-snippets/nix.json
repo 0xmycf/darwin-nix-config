@@ -8,7 +8,7 @@
     "nixpkgs-unstable": {
         "prefix": "url.unstable",
         "body": [
-            "nixpkgs.url =  \"github:nixos/nixpkgs/nixos-untable\";" 
+            "nixpkgs.url =  \"github:nixos/nixpkgs/nixos-unstable\";"
         ]
     },
     "utils.url" : {
