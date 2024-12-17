@@ -39,6 +39,15 @@ cmd("FileType") {
     group = group("sql_omni"),
 }
 
+-- disables the conceallevel that I use for markdown for example
+cmd("BufEnter") {
+  pattern = { "*.json", "*.xml", "*.toml", "*.rmd" },
+    callback = function(ev)
+      vim.o["conceallevel"] = 0
+    end,
+    group = group("no_conceallevel"),
+}
+
 cmd("BufEnter") {
     pattern = {
         "*.ml",
@@ -62,6 +71,7 @@ cmd("BufEnter") {
         "*.rmd",
         "*.gleam",
         "*.rkt",
+        "*dart",
     },
     callback = function(ev)
         local local_opts = {

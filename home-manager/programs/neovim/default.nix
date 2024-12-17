@@ -52,6 +52,7 @@ in {
       nil
       lua-language-server
       pyright
+      # fish-lsp
 
       # its always good to have these installed outside of a flake
       # since those are common filetypes across projects and configs

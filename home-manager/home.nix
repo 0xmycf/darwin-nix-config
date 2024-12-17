@@ -39,6 +39,8 @@ in {
     # openconnect # vpn
     pdfgrep
 
+    texliveMedium
+
     # for cloudflare services, such as tunnels
     cloudflared
 

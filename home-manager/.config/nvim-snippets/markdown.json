@@ -1,6 +1,8 @@
 {
     "statistik-korretkur...": {
-        "prefix": "empty",
-        "body": [ ]
-    } 
+        "prefix": "normal",
+        "body": [
+            "(normal war eigentlich gemeint, siehe Tutorium)"
+        ]
+    }
 }
