@@ -1,0 +1,16 @@
+{
+    "disable formatting": {
+        "prefix": [
+            "ocamlformat disable",
+            "[@@oc",
+            "format disable"
+        ],
+        "body": [
+            "[@@ocamlformat \"disable\"]"
+        ] 
+    },
+    "fail wip": {
+        "prefix": ["wip", "todo"],
+        "body": ["failwith \"wip\""]
+    }
+}

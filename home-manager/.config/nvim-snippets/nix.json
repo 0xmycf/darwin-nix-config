@@ -2,7 +2,14 @@
     "nixpkgs": {
         "prefix": "url.nixpkgs",
         "body": [
-            "nixpkgs.url =  \"github:nixos/nixpkgs/24.05\";" 
+            "nixpkgs.url =  \"github:nixos/nixpkgs/nixos-24.11\";"
+        ]
+    },
+    "nixpkgs-darwin": {
+        "note": "this probably doesnt work",
+        "prefix": "url.darwin",
+        "body": [
+            "nixpkgs.url =  \"github:nixos/nixpkgs/nixpkgs-darwin-24.11\";"
         ]
     },
     "nixpkgs-unstable": {
@@ -11,11 +18,10 @@
             "nixpkgs.url =  \"github:nixos/nixpkgs/nixos-unstable\";"
         ]
     },
-    "utils.url" : {
+    "utils.url": {
         "prefix": "url.utils",
         "body": [
             "utils.url = \"github:numtide/flake-utils\";"
         ]
     }
-
 }
