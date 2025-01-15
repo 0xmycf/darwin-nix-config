@@ -47,6 +47,9 @@
   # "virtualbox"
   # "racket"
   "rstudio"
+
+  # it is what it is
+  "docker"
 ]
 # Missing:
 #
