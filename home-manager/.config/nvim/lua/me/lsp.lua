@@ -5,7 +5,7 @@
 -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 local lsps = {
   "pyright",
-  "lua_ls",
+  -- "lua_ls",
   "jsonls",
   "yamlls",
   "texlab",

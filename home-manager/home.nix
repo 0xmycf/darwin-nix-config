@@ -46,10 +46,22 @@ in {
 
     # statistics
     # R
-    (rWrapper.override {packages = with rPackages; [tidyverse readODS languageserver readxl xlsx];})
+    (rWrapper.override {
+      packages = with rPackages; [
+        tidyverse
+        readODS
+        languageserver
+        readxl
+        xlsx
+        DescTools
+        nortest
+      ];
+    })
     gettext
     # rstudio (homebrew)
     # julia # might be relevant later on
+
+    docker # No way around of allocating 60GB of storage data
 
     # because its nice to have a working version of python installed
     (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))

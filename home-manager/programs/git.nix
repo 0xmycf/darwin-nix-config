@@ -33,6 +33,7 @@ in {
       "result"
       "result/"
       ".metals/"
+      "Session.vim"
     ];
     # hooks = []; # TODO
   };

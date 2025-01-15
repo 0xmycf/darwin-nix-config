@@ -13,4 +13,4 @@ require("me.dev_globals")
 
 vim.o.spell = false
 
--- vim.cmd("source ./syntax/peano.vim")
+vim.cmd("au BufRead,BufNewFile *.lambda set filetype=lambda")
