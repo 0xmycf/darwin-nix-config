@@ -39,6 +39,10 @@ in {
     # openconnect # vpn
     pdfgrep
 
+    # midnight commander
+    # a cli file system manager
+    mc
+
     # local llms
     ollama
     oterm
