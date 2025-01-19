@@ -66,7 +66,7 @@ in {
     # julia # might be relevant later on
 
     # because its nice to have a working version of python installed
-    (python311.withPackages (ps: with ps; [numpy pandas matplotlib]))
+    (python311.withPackages (ps: with ps; [numpy pandas polars matplotlib requests]))
 
     # sometimes I need ruby
     (ruby_3_2.withPackages (ps: with ps; [bundler ruby-lsp solargraph]))
