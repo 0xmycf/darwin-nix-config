@@ -39,6 +39,10 @@ in {
     # openconnect # vpn
     pdfgrep
 
+    # local llms
+    ollama
+    oterm
+
     texliveMedium
 
     # for cloudflare services, such as tunnels
