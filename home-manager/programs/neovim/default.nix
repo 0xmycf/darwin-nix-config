@@ -52,6 +52,10 @@ in {
       nil
       lua-language-server
       pyright
+
+      # rust-analyzer
+      zls
+
       # fish-lsp
 
       # its always good to have these installed outside of a flake

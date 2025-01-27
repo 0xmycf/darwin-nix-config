@@ -61,7 +61,7 @@ in {
 
     functions = {
       fish_prompt = {
-        # this depends on the oh-my-fish (their lib secifically) being installed
+        # this depends on the oh-my-fish (their lib specifically) being installed
         body = builtins.readFile ./functions/fish_prompt.fish;
       };
       zet = {
@@ -109,6 +109,10 @@ in {
             return 1
           end
         '';
+      };
+      nixshell = {
+        # this depends on the oh-my-fish (their lib secifically) being installed
+        body = builtins.readFile ./functions/nixshell.fish;
       };
     };
 

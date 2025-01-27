@@ -38,6 +38,11 @@ in {
     # this one is broken, last knwon rev with working version * 5a6c471 (HEAD -> main)  156   2024-07-22 09:54:15   (current)
     # openconnect # vpn
     pdfgrep
+    ffmpeg
+
+    # Low Level stuff
+    rustup
+    zig
 
     # midnight commander
     # a cli file system manager
