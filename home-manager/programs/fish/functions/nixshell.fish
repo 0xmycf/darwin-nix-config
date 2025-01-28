@@ -2,4 +2,8 @@ set -l packages ""
 for x in $argv
     set packages "nixpkgs#"$x
 end
-nix shell $packages --command fish
+
+# for editing the prompt
+set -x IN_NIX_SHELL 1
+
+nix shell $packages
