@@ -190,15 +190,6 @@ require("mason-lspconfig").setup_handlers {
       }
     }
   end,
-
-  ["jdtls"] = function()
-    lspconfig["jdtls"].setup {
-      on_attach = on_attach,
-      capabilties = capabilities,
-      cmd = { "jdt-language-server" },
-    }
-  end
-
 }
 
 local not_by_mason = {

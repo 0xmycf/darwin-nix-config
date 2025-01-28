@@ -110,7 +110,7 @@ in {
           end
         '';
       };
-      nixshell = {
+      nshell = {
         # this depends on the oh-my-fish (their lib secifically) being installed
         body = builtins.readFile ./functions/nixshell.fish;
       };
