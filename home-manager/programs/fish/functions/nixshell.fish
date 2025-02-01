@@ -1,6 +1,6 @@
 set -l packages ""
 for x in $argv
-    set packages "nixpkgs#"$x
+    set packages $packages "nixpkgs#"$x
 end
 
 # for editing the prompt
