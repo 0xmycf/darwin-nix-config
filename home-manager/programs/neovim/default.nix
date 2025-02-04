@@ -53,7 +53,6 @@ in {
       lua-language-server
       pyright
 
-      # rust-analyzer
       zls
 
       # fish-lsp

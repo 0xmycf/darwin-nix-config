@@ -252,7 +252,12 @@ local not_by_mason = {
     -- cmd = { "jdt-language-server", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
     cmd = { "jdtls", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
-  ["r_language_server"] = true,
+  ["r_language_server"] = {
+    on_attach = on_attach,
+    capabilties = capabilties,
+    filetypes = { "r", "rmd" },
+    autostart = false,
+  },
   ["fish_lsp"] = true,
   ["dartls"] = true,
   ["clojure_lsp"] = true,

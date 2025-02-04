@@ -146,6 +146,8 @@ in {
       hvim = "nvim (fzf)";
       hvide = "neovide (fzf)";
 
+      hbat = "bat (fzf)";
+
       # exa = "exa -l --icons --no-user --no-permissions";
       #- copium = "codium";
     };
