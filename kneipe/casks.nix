@@ -1,7 +1,7 @@
 [
   # "chrome"
   "firefox"
-  "background-music"
+  # "background-music"
   "kitty"
   "linearmouse"
   "obsidian"
