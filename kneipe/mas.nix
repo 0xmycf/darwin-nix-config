@@ -3,4 +3,5 @@
   Todoist = 585829637;
   DaisyDisk = 411643860;
   ScreenBrush = 1233965871;
+  "Signal Shifter" = 6446061552;
 }
