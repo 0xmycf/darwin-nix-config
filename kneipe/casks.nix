@@ -25,6 +25,7 @@
   "discord"
   "whatsapp"
   "telegram-desktop"
+  "slack"
 
   # these are version 2 which I dont own
   # I can manually install v1 from the website
