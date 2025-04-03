@@ -21,7 +21,7 @@ in {
 
         src = pkgs.fetchzip {
           url = "https://mirrors.ctan.org/fonts/kpfonts-otf.zip";
-          hash = "sha256-PhwH2N/ZtI+fl5RXQ5BBH5dKvX6MOlZs4qxztWUhD2o=";
+          hash = "sha256-gH1KokrGdPuc25w0hKbhdKNRJc+cCfjMnipAU0apeh8=";
         };
 
         installPhase = ''

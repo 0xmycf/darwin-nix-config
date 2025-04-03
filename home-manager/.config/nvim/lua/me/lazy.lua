@@ -176,34 +176,34 @@ require("lazy").setup({
   --     end
   -- },
 
-  -- {
-  --     "zbirenbaum/copilot.lua",
-  --     cmd = "Copilot",
-  --     cond = gh_copilot.lua,
-  --     event = "InsertEnter",
-  --     config = function()
-  --         require("copilot").setup({
-  --             suggestion = {
-  --                 auto_trigger = true, -- def = false
-  --                 keymap = {
-  --                     accept = "<C-CR>",
-  --                     next = "ø", -- <M-o>
-  --                     prev = "⁄", -- <M-i>
-  --                     dismiss = "±", -- <M-+>
-  --                 }
-  --             },
-  --             panel = { enabled = false },
-  --             filetypes = {
-  --                 latex    = false,
-  --                 tex      = false, -- I never know which is which
-  --                 markdown = false,
-  --                 java     = false,
-  --                 rmd      = false,
-  --             },
-  --         })
-  --     end,
-  --     autostart = false;
-  -- },
+  {
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      cond = gh_copilot.lua,
+      event = "InsertEnter",
+      config = function()
+          require("copilot").setup({
+              suggestion = {
+                  auto_trigger = true, -- def = false
+                  keymap = {
+                      accept = "<C-CR>",
+                      next = "ø", -- <M-o>
+                      prev = "⁄", -- <M-i>
+                      dismiss = "±", -- <M-+>
+                  }
+              },
+              panel = { enabled = false },
+              filetypes = {
+                  latex    = false,
+                  tex      = false, -- I never know which is which
+                  markdown = false,
+                  java     = false,
+                  rmd      = false,
+              },
+          })
+      end,
+      -- autostart = false;
+  },
 
   {
     "lukas-reineke/indent-blankline.nvim",

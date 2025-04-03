@@ -10,6 +10,6 @@
 
   fonts.program-specific = with pkgs; [
     julia-mono
-    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
+    nerd-fonts.symbols-only
   ];
 }

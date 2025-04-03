@@ -27,6 +27,9 @@
   "telegram-desktop"
   "slack"
 
+  # work and geography stuff
+  "qgis"
+
   # these are version 2 which I dont own
   # I can manually install v1 from the website
   #######################
@@ -37,9 +40,11 @@
   "logitech-g-hub"
   "logitech-options"
 
+  "microsoft-word" # as sad as it is
   "microsoft-excel"
   "microsoft-powerpoint"
-  "adobe-acrobat-reader"
+  # "adobe-acrobat-reader"
+  "skim"
 
   # Keyboard
   "via"
