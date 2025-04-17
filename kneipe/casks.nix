@@ -1,7 +1,5 @@
 [
-  # "chrome"
   "firefox"
-  # "background-music"
   "kitty"
   "linearmouse"
   "obsidian"
@@ -25,19 +23,15 @@
   "discord"
   "whatsapp"
   "telegram-desktop"
+
+  # work
   "slack"
+  "docker"
 
   # work and geography stuff
   "qgis"
 
-  # these are version 2 which I dont own
-  # I can manually install v1 from the website
-  #######################
-  # "affinity-designer"
-  # "affinity-photo"
-  #######################
-
-  "logitech-g-hub"
+  # "logitech-g-hub" # i had issues installing this the last time and installed it manually for now (chmod error)
   "logitech-options"
 
   "microsoft-word" # as sad as it is
@@ -51,11 +45,6 @@
 
   # Uni
   # "virtualbox"
-  # "racket"
-  "rstudio"
-
-  # it is what it is
-  "docker"
 ]
 # Missing:
 #
@@ -63,4 +52,11 @@
 # FoundryVTT
 # DungeonDraft
 # minecraft
+############################################
+# these are version 2 which I dont own
+# I can manually install v1 from the website
+############################################
+# "affinity-designer"
+# "affinity-photo"
+############################################
 

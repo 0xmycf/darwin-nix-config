@@ -57,23 +57,6 @@ in {
     # for cloudflare services, such as tunnels
     cloudflared
 
-    # statistics
-    # R
-    (rWrapper.override {
-      packages = with rPackages; [
-        tidyverse
-        readODS
-        languageserver
-        readxl
-        xlsx
-        DescTools
-        nortest
-      ];
-    })
-    gettext
-    # rstudio (homebrew)
-    # julia # might be relevant later on
-
     # because its nice to have a working version of python installed
     (python311.withPackages (ps: with ps; [numpy pandas polars matplotlib requests]))
 

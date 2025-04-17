@@ -1,5 +1,20 @@
 # What has changed
 
+## 2025-04-18
+
+### Added
+
+- `nix-homebrew` to pin homebrew to the flake
+
+### Modified
+
+- Changed system from `x86` to `aarch`
+
+### Removed
+
+- `logitech-ghub` since it caused some chmod trouble (installed it manually)
+- `R` and the its related things
+
 ## 2025-02-17
 
 ### Added

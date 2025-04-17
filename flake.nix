@@ -8,18 +8,26 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # managing the homebrew installation through nix
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
     self,
     home-manager,
     nix-darwin,
+    nix-homebrew,
     ...
   }: {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#Golden-Delicous
     darwinConfigurations."Golden-Delicous" = nix-darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
+      system = "aarch64-darwin";
       modules = [
         ./configuration.nix
         ./mac-settings.nix
@@ -31,6 +39,20 @@
           home-manager.users.mycf = import ./home-manager/home.nix;
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
+        }
+
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            # Install Homebrew under the default prefix
+            enable = true;
+
+            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
+            enableRosetta = true;
+
+            # User owning the Homebrew prefix
+            user = "mycf";
+          };
         }
       ];
       specialArgs = {inherit inputs;};

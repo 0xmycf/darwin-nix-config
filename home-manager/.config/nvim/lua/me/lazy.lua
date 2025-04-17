@@ -130,12 +130,12 @@ require("lazy").setup({
   },
 
   -- R (statistics)
-  {
-    "R-nvim/R.nvim",
-    lazy = true,
-    ft = { "rmd", "r" },
-    version = "~0.1.0",
-  },
+  -- {
+  --   "R-nvim/R.nvim",
+  --   lazy = true,
+  --   ft = { "rmd", "r" },
+  --   version = "~0.1.0",
+  -- },
 
   -- { "nat-418/tcl.nvim",
   --   ft = { "tcl" },
