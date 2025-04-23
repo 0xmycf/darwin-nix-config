@@ -51,11 +51,11 @@ in {
       nodejs_20
       nil
       lua-language-server
-      pyright
+      basedpyright # pyright didnt work anymore and I couldn't figure out why
 
       zls
 
-      # fish-lsp
+      fish-lsp
 
       # its always good to have these installed outside of a flake
       # since those are common filetypes across projects and configs

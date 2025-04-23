@@ -58,7 +58,17 @@ in {
     cloudflared
 
     # because its nice to have a working version of python installed
-    (python311.withPackages (ps: with ps; [numpy pandas polars matplotlib requests]))
+    (python311.withPackages (ps:
+      with ps; [
+        numpy
+        pandas
+        polars
+        matplotlib
+        seaborn
+        requests
+        # jupyterlab
+        # jupyterlab-vim
+      ]))
 
     # sometimes I need ruby
     (ruby_3_2.withPackages (ps: with ps; [bundler ruby-lsp solargraph]))

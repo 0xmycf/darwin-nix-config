@@ -112,7 +112,7 @@ cmd("FileType") {
             vim.bo[ev.buf][key] = value
         end
         vim.cmd('set noexpandtab')
-        vim.print("foo")
+        -- vim.print("foo")
 
         vim.cmd('set indentkeys-=}')
         vim.cmd('set indentkeys-={')
@@ -156,8 +156,8 @@ cmd("BufEnter") {
         if name ~= nil then
             local _, err = pcall(vim.cmd, "loadview")
             if err ~= nil and err ~= "" then
-                vim.print("No view found for " .. name)
-                print("Error is: " .. vim.inspect(err))
+                -- vim.print("No view found for " .. name)
+                -- print("Error is: " .. vim.inspect(err))
             end
         end
     end,
