@@ -1,11 +1,9 @@
 {
   lib,
   pkgs,
-  config,
   ...
 }: let
   sets = lib.attrsets;
-  homeDir = config.home.homeDirectory;
   files = builtins.readDir ../../.config/nvim-snippets;
   fileData = with builtins; (mapAttrs (path: type: let
     length = stringLength path;
@@ -26,6 +24,8 @@ in {
   programs.vscode = {
     enable = true;
 
+    package = pkgs.vscodium;
+
     profiles.default = {
       extensions = with pkgs.vscode-extensions;
         [
@@ -36,6 +36,9 @@ in {
 
           github.copilot-chat
           github.copilot
+
+          # csv
+          mechatroner.rainbow-csv
 
           # Usually when I need vscode I also need python
           ms-pyright.pyright

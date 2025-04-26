@@ -37,6 +37,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.mycf = import ./home-manager/home.nix;
+          home-manager.backupFileExtension = ".home-manager.bak";
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
         }
