@@ -66,8 +66,6 @@ in {
         matplotlib
         seaborn
         requests
-        # jupyterlab
-        # jupyterlab-vim
       ]))
 
     # sometimes I need ruby

@@ -82,67 +82,11 @@ require("lazy").setup({
 
   },
 
-  -- -- pandoc integration
-  -- {
-  -- 	"aspeddro/pandoc.nvim",
-  -- 	ft = { "markdown", "md", "rmd", "pandoc" },
-  -- 	config = function()
-  -- 		require 'pandoc'.setup({
-  -- 			mappings = {
-  -- 				-- normal mode
-  -- 				n = {
-  -- 					['<leader>pr'] = function()
-  -- 						require('pandoc.render').init()
-  -- 					end
-  -- 				}
-  -- 			}
-  -- 		}
-  -- 		)
-  -- 	end,
-  -- },
-
-  -- -- pandoc
-  -- -- I would load them lazily but then they wont work
-  -- {
-  --   "vim-pandoc/vim-pandoc",
-  --   -- ft = { "markdown" , "pandoc", "rmd" },
-  -- },
-  -- {
-  --   "vim-pandoc/vim-pandoc-syntax",
-  --   -- ft = { "markdown" , "pandoc", "rmd" },
-  -- },
-
-
-  -- -- pandoc cite integration
-  -- -- bibliography should be included in the yaml frontmatter
-  -- {
-  -- 	"aspeddro/cmp-pandoc.nvim",
-  -- 	ft = { "markdown", "md", "rmd", "pandoc" },
-  -- 	config = function()
-  -- 		require("cmp_pandoc").setup()
-  -- 	end,
-  -- },
-
   -- gleam programming language
   {
     "gleam-lang/gleam.vim",
     ft = "gleam",
   },
-
-  -- R (statistics)
-  -- {
-  --   "R-nvim/R.nvim",
-  --   lazy = true,
-  --   ft = { "rmd", "r" },
-  --   version = "~0.1.0",
-  -- },
-
-  -- { "nat-418/tcl.nvim",
-  --   ft = { "tcl" },
-  --   config = function()
-  --     require('tcl').setup()
-  --   end,
-  -- },
 
   {
     "mfussenegger/nvim-lint",
@@ -153,28 +97,6 @@ require("lazy").setup({
       }
     end,
   },
-
-  -- copilot (?) Siwtch to the unoffical lua version?
-  -- {
-  --     "github/copilot.vim",
-  --     cond = gh_copilot.vim,
-  --     config = function()
-  --         vim.g.copilot_filetypes = {
-  --             latex    = false,
-  --             tex      = false,
-  --             markdown = false,
-  --             java     = false,
-  --             txt      = false,
-  --         }
-  --         vim.g.copilot_no_tab_map = true
-  --         -- I cant get this to work
-  --         -- vim.keymap.set("i", "<C-j>", vim.fn["copilot#Accept"]{ "" }, { silent = true, remap = false, })
-  --         vim.cmd [[
-  --   imap <silent><script><expr> <C-CR> copilot#Accept('\\<CR>')
-  --   highlight CopilotSuggestion guifg=#00000 ctermfg=8
-  --   ]]
-  --     end
-  -- },
 
   {
       "zbirenbaum/copilot.lua",
