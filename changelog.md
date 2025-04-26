@@ -1,5 +1,23 @@
 # What has changed
 
+## 2025-04-26
+
+### Added
+
+- `git` profile for work
+
+### Modified
+
+- `vscode.<foo>` to `vscode.profiles.default.<foo>`
+
+### Removed
+
+- `jetbrains-toolbox` (I manage everything through nix anyway)
+- some *todo* annotations
+- vscode pvs plugin
+  + this does not work on MX chips
+  + I would use Lean in the future if I need / want to
+
 ## 2025-04-18
 
 ### Added

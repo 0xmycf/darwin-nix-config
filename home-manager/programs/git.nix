@@ -7,7 +7,6 @@
 in {
   programs.gh = {
     enable = true;
-    extensions = []; # TODO add copiolt later
   };
 
   programs.git = {
@@ -26,6 +25,10 @@ in {
         path = "${homeDir}/.config/WingChun/.gitconfig";
         condition = "gitdir:~/Documents/WingChun/";
       }
+      {
+        path = "${homeDir}/.config/work/.gitconfig";
+        condition = "gitdir:~/Documents/work/";
+      }
     ];
 
     ignores = [
@@ -41,5 +44,10 @@ in {
   xdg.configFile.WingChun = {
     source = ./../.config/private/wc-submodules/.gitconfig;
     target = "WingChun/.gitconfig";
+  };
+
+  xdg.configFile.work = {
+    source = ./../.config/private/arbeit-submodules/.gitconfig;
+    target = "work/.gitconfig";
   };
 }
