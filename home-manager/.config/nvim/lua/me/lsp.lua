@@ -4,7 +4,7 @@
 -- 'setup_lsp'
 -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 local lsps = {
-  "pyright",
+  -- "pyright",
   -- "lua_ls",
   "jsonls",
   "yamlls",
@@ -49,21 +49,8 @@ require("mason").setup {
 }
 
 require("mason-lspconfig").setup {
-  ensure_installed = {}, --, vim.deepcopy(lsps),
+  ensure_installed = {},
   automatic_installation = false,
-  -- {
-  -- exclude = {
-  --   "julials",
-  --   "hls",
-  --   "ocamllsp",
-  --    -- managd by nix
-  --   "gopls",
-  --   "gleam",
-  --   "erlangls",
-  --   "solargraph",
-  --   "fsautocomplete",
-  -- },
-  -- },
 }
 
 vim.diagnostic.config {
@@ -193,7 +180,6 @@ require("mason-lspconfig").setup_handlers {
 }
 
 local not_by_mason = {
-  -- ["pyright"] = true,
   ["basedpyright"] = true,
   ["gopls"] = true,
   ["hls"] = {
@@ -231,11 +217,6 @@ local not_by_mason = {
   },
   ["erlangls"] = true, -- for gleam interop
   ["solargraph"] = true,
-  -- ["ruby_lsp"] = { # no idea
-  --   on_attach = on_attach,
-  --   capabilties = capabilities,
-  --   filetypes = { "ruby" },
-  -- },
   ["ts_ls"] = true,
   ["racket_langserver"] = true,
   ["crystalline"] = true,
@@ -250,51 +231,31 @@ local not_by_mason = {
   ["jdtls"] = {
     on_attach = on_attach,
     capabilties = capabilities,
-    -- needs fixing
-    -- cmd = { "jdt-language-server", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
     cmd = { "jdtls", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
   ["r_language_server"] = false,
-  -- {
-  --   on_attach = on_attach,
-  --   capabilties = capabilties,
-  --   filetypes = { "r", "rmd" },
-  --   autostart = false,
-  -- },
   ["fish_lsp"] = true,
   ["dartls"] = true,
   ["clojure_lsp"] = true,
-  -- c#
-  -- ["omnisharp"] = true,
+  ["angularls"] = true,
   ["zls"] = true,
-  ["omnisharp"] = true --[[ {
-    cmd = { "omnisharp", "--languageserver" },
-  } ]],
-  -- ["csharp_ls"] = true,
-  -- nextserver
+  -- c#
+  ["omnisharp"] = true,
 }
 
--- lspconfig["racket_langserver"].setup {
---   on_attach = on_attach,
---   capabilties = capabilities,
---   -- cmd = { "racket", "--lib", "racket-langserver", "--", "--stdio" },
---   -- filetypes = { "racket" },
---   -- settings = {
---   --   racket = {
---   --     -- racket-langserver settings
---   --   },
---   -- },
--- }
+-- iterate over lsps and add those to the table above with table[server] = true
+-- 'temporary' hotfix
+for _, server in pairs(lsps) do
+  if not not_by_mason[server] then
+    not_by_mason[server] = true
+  end
+end
 
 -- setsup lsps which installations are not handled with
 -- mason
 local function setup_lsp(l_lsps)
   local mason = require("lspconfig")
   for server, config in pairs(l_lsps) do
-    if set_lsps[server] then
-      vim.print(server .. " already exists and is setup by mason!")
-      goto continue
-    end
 
     if type(config) == "table" then
       mason[server].setup(config)
@@ -304,7 +265,7 @@ local function setup_lsp(l_lsps)
         capabilities = capabilities,
       }
     end
-    ::continue::
+    -- ::continue::
   end
 end
 
