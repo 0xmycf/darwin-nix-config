@@ -91,5 +91,6 @@
         "∨": true
     },
     "d.servedPath": "/Users/mycf/.vscode/extensions/webfreak.code-d-0.23.2/bin/serve-d",
-    "editor.cursorSurroundingLines": 12
+    "editor.cursorSurroundingLines": 12,
+    "vim.enableNeovim": true
 }

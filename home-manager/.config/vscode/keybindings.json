@@ -2575,8 +2575,8 @@
         "command": "github.copilot.generate"
     },
     {
-        "key": "ctrl+enter",
-        "command": "jupyter.runcell",
+        "key": "F8",
+        "command": "jupyter.runcurrentcell",
         "when": "!editorTextFocus"
     },
     {
