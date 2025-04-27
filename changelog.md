@@ -5,10 +5,13 @@
 ### Added
 
 - `git` profile for work
+- `vscode` now also has a csv extension in path
 
 ### Modified
 
 - `vscode.<foo>` to `vscode.profiles.default.<foo>`
+- `vscode` now uses `pkgs.vscodium` instead
+  + this is also reflected in the shell scripts for fixing vscode
 
 ### Removed
 

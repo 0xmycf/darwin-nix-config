@@ -40,7 +40,6 @@
     "explorer.confirmDragAndDrop": false,
     "cSpell.language": "en,en-GB,de-DE,de",
     "zenMode.hideLineNumbers": false,
-    "vim.vimrc.enable": true,
     "telemetry.telemetryLevel": "off",
     "workbench.colorTheme": "Spacegray Ocean Dark",
     "files.autoSave": "onWindowChange",
@@ -65,7 +64,6 @@
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": true,
-    "vim.normalModeKeyBindingsNonRecursive": [],
     "vim.leader": "<space>",
     "vim.insertModeKeyBindings": [
         {
@@ -77,20 +75,26 @@
             ]
         }
     ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        }
+    ],
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
     "julia.symbolCacheDownload": true,
     "julia.enableTelemetry": false,
-    "pvs.path": "/Users/mycf/Documents/programming/pvs/pvs-7.1.0",
-    "pvs.pvsLibraryPath": "/Users/mycf/Documents/programming/pvs/cats",
-    "d.dubCompiler": "dmd",
-    "d.stdlibPath": "auto",
-    "d.dubPath": "/usr/local/bin/dub",
     "editor.unicodeHighlight.allowedCharacters": {
         "∨": true
     },
-    "d.servedPath": "/Users/mycf/.vscode/extensions/webfreak.code-d-0.23.2/bin/serve-d",
     "editor.cursorSurroundingLines": 12,
     "vim.enableNeovim": true
 }

@@ -3,7 +3,7 @@
 # doesnt work well with nix as vscode expects a mutable file
 fixVscode() 
 {
-    VSCODESETTINGS="$HOME/Library/Application Support/Code/User/"
+    VSCODESETTINGS="$HOME/Library/Application Support/VSCodium/User/"
     NOW="$(date +"%Y%m%d%H%M%S")"
     if [[ -f "$VSCODESETTINGS/settings.json" ]]; then
         echo "Backing up current settings.json to $VSCODESETTINGS/$NOW-settings.bak.json"
@@ -17,7 +17,7 @@ fixVscode()
 
 fixKeybindings()
 {
-    VSCODESETTINGS="$HOME/Library/Application Support/Code/User/"
+    VSCODESETTINGS="$HOME/Library/Application Support/VSCodium/User/"
     NOW="$(date +"%Y%m%d%H%M%S")"
     if [[ -f "$VSCODESETTINGS/keybindings.json" ]]; then
         echo "Backing up current keybindings.json to $VSCODESETTINGS/$NOW-keybindings.bak.json"

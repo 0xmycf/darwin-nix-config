@@ -2,6 +2,8 @@
 
 source ./vscode.sh
 
+echo "using vscodium instead of vscode" 
+
 fixVscode
 echo "linked vscode settings.json"
 

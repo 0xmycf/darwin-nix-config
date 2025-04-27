@@ -654,13 +654,8 @@
     },
     {
         "command": "editor.action.showHover",
-        "key": "f1",
-        "when": "editorTextFocus"
-    },
-    {
-        "command": "editor.action.showHover",
-        "key": "ctrl+j",
-        "when": "editorTextFocus"
+        "key": "shift+k",
+        "when": "editorTextFocus && vim.mode == 'Normal'"
     },
     {
         "command": "workbench.action.openRecent",
@@ -2540,15 +2535,15 @@
         "command": "workbench.action.togglePanel"
     },
     {
-        "key": "shift+cmd+l",
+        "key": "shift+l",
         "command": "workbench.action.nextEditor"
     },
     {
-        "key": "shift+cmd+h",
+        "key": "shift+h",
         "command": "workbench.action.previousEditor"
     },
     {
-        "key": "shift+l",
+        "key": "shift+cmd+l",
         "command": "editor.action.format",
         "when": "!editorTextFocus"
     },
@@ -2561,10 +2556,6 @@
         "key": "ctrl+m",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "!editorFocus"
-    },
-    {
-        "key": "shift+ctrl+r",
-        "command": "editor.action.rename"
     },
     {
         "key": "ctrl+enter",
@@ -2648,4 +2639,5 @@
         "key": "cmd+o",
         "command": "-workbench.action.showAllSymbols"
     }
+
 ]

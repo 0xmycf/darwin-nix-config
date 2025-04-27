@@ -21,7 +21,7 @@ local lsps = {
   "dockerls",
   -- "r_language_server",
   -- zettelkasten / markdown
-  "marksman",
+  -- "marksman",
   -- nix
   "nil_ls", -- idk if it works or now
 }
