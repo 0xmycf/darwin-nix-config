@@ -9,7 +9,7 @@ local lsps = {
   "jsonls",
   "yamlls",
   "texlab",
-  "ltex", -- langaugetool
+  -- "ltex", -- langaugetool
   "rust_analyzer",
   -- "jdtls", -- later
   "gradle_ls",
@@ -132,33 +132,33 @@ require("mason-lspconfig").setup_handlers {
     }
   end,
 
-  ["ltex"] = function()
-    local path = vim.fn.stdpath("config") .. "/spell/de.utf-8.add"
-
-    local cm = require("plenary").context_manager
-    local words = {}
-    cm.with(cm.open(path, "r"), function(reader)
-      for word in reader:lines() do
-        table.insert(words, word)
-      end
-    end)
-
-    lspconfig["ltex"].setup {
-      autostart = false,
-      settings = {
-        ltex = {
-          trace = { server = "verbose" },
-          language = "de-DE",
-          enabled = { "bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext",
-            "rsweave", "haskell", "python", "java" },                               -- idk if this works either
-          dictionary = { ["de-DE"] = words, ["en-GB"] = words, ["zh-CE"] = words }, -- this doesn't seem to work?
-          additionalRules = {
-            motherTongue = "de-DE",
-          },
-        }
-      }
-    }
-  end,
+  -- ["ltex"] = function()
+  --   local path = vim.fn.stdpath("config") .. "/spell/de.utf-8.add"
+  --
+  --   local cm = require("plenary").context_manager
+  --   local words = {}
+  --   cm.with(cm.open(path, "r"), function(reader)
+  --     for word in reader:lines() do
+  --       table.insert(words, word)
+  --     end
+  --   end)
+  --
+  --   lspconfig["ltex"].setup {
+  --     autostart = false,
+  --     settings = {
+  --       ltex = {
+  --         trace = { server = "verbose" },
+  --         language = "de-DE",
+  --         enabled = { "bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext",
+  --           "rsweave", "haskell", "python", "java" },                               -- idk if this works either
+  --         dictionary = { ["de-DE"] = words, ["en-GB"] = words, ["zh-CE"] = words }, -- this doesn't seem to work?
+  --         additionalRules = {
+  --           motherTongue = "de-DE",
+  --         },
+  --       }
+  --     }
+  --   }
+  -- end,
 
   ["lua_ls"] = function()
     lspconfig["lua_ls"].setup {

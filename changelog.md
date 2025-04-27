@@ -1,5 +1,11 @@
 # What has changed
 
+## 2025-04-27
+
+### Removed
+
+- Disabled `ltex` lsp
+
 ## 2025-04-26
 
 ### Added
