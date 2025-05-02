@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: let
+{config, ...}: let
   homeDir = config.home.homeDirectory;
 in {
   programs.gh = {
@@ -37,6 +33,10 @@ in {
       "result/"
       ".metals/"
       "Session.vim"
+
+      # version control system
+      ".git/"
+      ".jj/"
     ];
     # hooks = []; # TODO
   };
