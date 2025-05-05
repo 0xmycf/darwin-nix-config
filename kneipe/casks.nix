@@ -7,6 +7,7 @@
   "raycast"
 
   "intellij-idea"
+  "webstorm"
   # vscode can be setup with home-manager even on macos
   # "visual-studio-code"
   "zed"

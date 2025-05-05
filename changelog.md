@@ -1,5 +1,12 @@
 # What has changed
 
+## 2025-05-05
+
+### Added
+
+- webstorm by jetbrains
+- some mac specific configuration in `./mac-settings.nix`
+
 ## 2025-04-27
 
 ### Removed
