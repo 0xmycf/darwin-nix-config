@@ -23,7 +23,7 @@
         app = "/System/Applications/Mail.app";
       }
       {
-        app = "/System/Applications/Safari.app";
+        app = "/Applications/Safari.app";
       }
       {
         app = "/Applications/Firefox.app";
@@ -38,10 +38,10 @@
         app = "/Applications/DXOPhotoLab6.app";
       }
       {
-        app = "/Applications/Affinity%20Designer.app";
+        app = "/Applications/Affinity Designer.app";
       }
       {
-        app = "/Applications/Affinity%20Photo.app";
+        app = "/Applications/Affinity Photo.app";
       }
       {
         app = "/Applications/Obsidian.app";
