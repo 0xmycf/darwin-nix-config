@@ -14,9 +14,42 @@
     autohide-delay = 0.0;
     autohide-time-modifier = 0.0;
 
-    show-recents = true;
+    show-recents = false;
 
     orientation = "bottom";
+
+    persistent-apps = [
+      {
+        app = "/System/Applications/Mail.app";
+      }
+      {
+        app = "/System/Applications/Safari.app";
+      }
+      {
+        app = "/Applications/Firefox.app";
+      }
+      {
+        app = "/System/Applications/Music.app";
+      }
+      {
+        app = "/System/Applications/Calendar.app";
+      }
+      {
+        app = "/Applications/DXOPhotoLab6.app";
+      }
+      {
+        app = "/Applications/Affinity%20Designer.app";
+      }
+      {
+        app = "/Applications/Affinity%20Photo.app";
+      }
+      {
+        app = "/Applications/Obsidian.app";
+      }
+      {
+        app = "/Applications/kitty.app";
+      }
+    ];
   };
 
   # 0.875
@@ -36,6 +69,10 @@
 
     NSAutomaticPeriodSubstitutionEnabled = false;
     NSAutomaticCapitalizationEnabled = false;
+
+    # sound
+    "com.apple.sound.beep.feedback" = 0;
+    "com.apple.sound.beep.volume" = 0.0;
   };
 
   system.defaults.trackpad = {
@@ -70,9 +107,9 @@
     GuestEnabled = false;
   };
 
-  system.defaults.CustomUserPreferences = {
-    "com.apple.WindowManager" = {
-      EnableStandardClickToShowDesktop = false;
-    };
+  system.defaults.WindowManager = {
+    EnableStandardClickToShowDesktop = false;
+    GloballyEnabled = false; # disable StageMangaer
+    StandardHideDesktopIcons = true; # I wanna see my desktop
   };
 }
