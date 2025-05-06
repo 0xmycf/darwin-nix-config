@@ -5,7 +5,6 @@
   ...
 }: let
   homeDir = config.home.homeDirectory;
-  # username = config.home.username;
 in {
   home.file = {
     ".config/fish/conf.d/omf.fish".source = ./functions/omf.fish;
@@ -47,7 +46,6 @@ in {
     '';
 
     # TODO setup my-scripts with nix
-    # TODO change my hard-coded username
     interactiveShellInit = ''
       fish_add_path "${homeDir}/my-scripts/bin"
 
@@ -119,8 +117,6 @@ in {
     plugins = [];
 
     shellAbbrs = {
-      # TODO install this via home-manager
-      # tea = "${teatimer}/bin/teatimer";
       sshpi = "kitty +kitten ssh pi@192.168.2.45";
 
       fg = "fg %"; # this doesnt seem to work as I expect it
@@ -148,8 +144,8 @@ in {
 
       hbat = "bat (fzf)";
 
-      # exa = "exa -l --icons --no-user --no-permissions";
-      #- copium = "codium";
+      copium = "codium";
+      code = "codium";
     };
   };
 }
