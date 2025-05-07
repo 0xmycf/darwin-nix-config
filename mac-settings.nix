@@ -31,26 +31,23 @@
       # {
       #   app = "/Applications/Firefox.app";
       # }
-      {
-        app = "/System/Applications/Music.app";
-      }
-      {
-        app = "/System/Applications/Calendar.app";
-      }
-      {
-        app = "/Applications/DXOPhotoLab6.app";
-      }
-      {
-        app = "/Applications/Affinity Designer.app";
-      }
-      {
-        app = "/Applications/Affinity Photo.app";
-      }
+      # {
+      #   app = "/System/Applications/Calendar.app";
+      # }
+      # {
+      #   app = "/Applications/DXOPhotoLab6.app";
+      # }
+      # {
+      #   app = "/Applications/Affinity Designer.app";
+      # }
+      # {
+      #   app = "/Applications/Affinity Photo.app";
+      # }
       {
         app = "/Applications/Obsidian.app";
       }
       {
-        app = "/Applications/kitty.app";
+        app = "/Applications/Ghostty.app";
       }
     ];
   };

@@ -21,6 +21,10 @@ source ./vscode.sh
 # Edit your config
 # $EDITOR configuration.nix
 
+echo "deleting ~/.config/ghostty/config"
+
+mv ~/.config/ghostty/config ~/.config/ghostty/config.bak
+
 # cd to your config dir
 pushd ~/.config/nix-darwin/
 
