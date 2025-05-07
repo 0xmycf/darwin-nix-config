@@ -45,6 +45,11 @@
     recursive = true;
   };
 
+  xdg.configFile.ghostty = {
+    source = ../.config/ghostty;
+    recursive = true;
+  };
+
   xdg.configFile.rubocop = {
     text = ''
       Style/StringLiterals:

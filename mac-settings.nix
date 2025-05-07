@@ -23,11 +23,14 @@
         app = "/System/Applications/Mail.app";
       }
       {
-        app = "/Applications/Safari.app";
+        app = "/Applications/Zen.app";
       }
-      {
-        app = "/Applications/Firefox.app";
-      }
+      # {
+      #   app = "/Applications/Safari.app";
+      # }
+      # {
+      #   app = "/Applications/Firefox.app";
+      # }
       {
         app = "/System/Applications/Music.app";
       }

@@ -1,6 +1,12 @@
 [
+  # browsers
   "firefox"
+  "zen-browser"
+
+  # terminal emulators...
   "kitty"
+  "ghostty"
+
   "linearmouse"
   "obsidian"
 

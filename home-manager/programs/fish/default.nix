@@ -86,6 +86,29 @@ in {
           nvim + $path
         '';
       };
+
+      light = {
+        body = ''
+          ln -sf '${homeDir}/.config/ghostty/config-light' '${homeDir}/.config/ghostty/config'
+          set_color red
+          printf "cmd+shfit+,"
+          set_color normal
+          printf " to change the theme\n"
+          printf "\n"
+        '';
+      };
+
+      dark = {
+        body = ''
+          ln -sf '${homeDir}/.config/ghostty/config-dark' '${homeDir}/.config/ghostty/config'
+          set_color red
+          printf "cmd+shfit+,"
+          set_color normal
+          printf " to change the theme\n"
+          printf "\n"
+        '';
+      };
+
       color-swap = {
         body = ''
           if test -z $argv

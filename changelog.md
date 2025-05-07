@@ -1,5 +1,12 @@
 # What has changed
 
+## 2025-05-07
+
+### Added
+
+- `ghostty` brew cask
+- `ghostty` settings (incl. `dark` and `light` fish functions to change its colortheme)
+
 ## 2025-05-05
 
 ### Added
