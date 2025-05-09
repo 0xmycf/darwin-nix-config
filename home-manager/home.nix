@@ -42,7 +42,13 @@ in {
     ffmpeg
 
     # Low Level stuff
-    rustup
+    ## rust
+    cargo
+    rustc
+    rustfmt
+    clippy
+    rust-analyzer
+    ## zig
     zig
 
     # midnight commander
