@@ -216,8 +216,8 @@ local not_by_mason = {
     },
   },
   ["erlangls"] = true, -- for gleam interop
-  -- ["solargraph"] = true,
-  ["ruby_lsp"] = true,
+  ["solargraph"] = true,
+  -- ["ruby_lsp"] = true, -- does not work at all (installed with nix, but it tries to install some gems...)
   ["ts_ls"] = true,
   ["racket_langserver"] = true,
   ["crystalline"] = true,

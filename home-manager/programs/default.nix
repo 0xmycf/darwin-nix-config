@@ -58,6 +58,24 @@
         SupportedStyles:
           - single_quotes
           - double_quotes
+
+      AllCops:
+        TargetRubyVersion: 3.4
+
+      Style/StringLiterals:
+        Enabled: false
+
+      Layout/EmptyLinesAroundModuleBody:
+        EnforcedStyle: empty_lines
+
+      Layout/EmptyLinesAroundClassBody:
+        EnforcedStyle: empty_lines
+
+      Layout/EmptyLinesAroundMethodBody:
+        Enabled: false
+
+      Layout/EmptyLinesAroundBlockBody:
+        Enabled: false
     '';
     target = "rubocop/config.yml";
   };
