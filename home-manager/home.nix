@@ -65,7 +65,7 @@ in {
     cloudflared
 
     # because its nice to have a working version of python installed
-    (python311.withPackages (ps:
+    (python313.withPackages (ps:
       with ps; [
         numpy
         pandas
@@ -76,7 +76,7 @@ in {
       ]))
 
     # sometimes I need ruby
-    (ruby_3_2.withPackages (ps: with ps; [bundler ruby-lsp solargraph]))
+    (ruby_3_4.withPackages (ps: with ps; [bundler ruby-lsp solargraph]))
     # solargraph
 
     # umlet # Free, open-source UML tool with a simple user interface
