@@ -7,6 +7,17 @@ font-family = MonoLisa
 font-family-bold = MonoLisa
 font-family-italic = MonoLisa
 font-family-bold-italic = MonoLisa
+
+font-style = Medium
+font-style-bold = ExtraBold
+font-style-italic = Medium Italic
+font-style-bold-italic = ExtraBold Italic
+
+font-feature = +ss05,+onum,+zero,+ss01,+ss02
+
+macos-icon = holographic
+macos-icon-frame = chrome
+
 keybind = super+shift+left=previous_tab
 keybind = super+shift+right=next_tab
 
