@@ -51,6 +51,9 @@ in {
     ## zig
     zig
 
+    ## lisp that for scripts (?)
+    janet
+
     # midnight commander
     # a cli file system manager
     mc

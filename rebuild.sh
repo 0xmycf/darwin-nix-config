@@ -23,7 +23,7 @@ source ./vscode.sh
 
 echo "deleting ~/.config/ghostty/config"
 
-mv ~/.config/ghostty/config ~/.config/ghostty/config.bak
+mv ~/.config/ghostty/config ~/.config/ghostty/config.bak || echo "No ghostty config to backup, continuing..."
 
 # cd to your config dir
 pushd ~/.config/nix-darwin/
