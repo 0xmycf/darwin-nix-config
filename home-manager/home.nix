@@ -1,7 +1,7 @@
 {
   pkgs,
   config,
-  janet-lsp,
+  inputs,
   ...
 }: let
   # yanked from neovim/default.nix
@@ -54,7 +54,7 @@ in {
 
     ## lisp that for scripts (?)
     janet
-    janet-lsp
+    inputs.janet-lsp.packages.${pkgs.system}.default
 
     ## version control
     jujutsu

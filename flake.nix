@@ -18,7 +18,6 @@
 
     janet-lsp = {
       url = "github:0xmycf/nix-janet-lsp-wrapper";
-      follows = "nixpkgs";
     };
   };
 
@@ -46,7 +45,7 @@
           home-manager.backupFileExtension = ".home-manager.bak";
           # Optionally, use home-manager.extraSpecialArgs to pass
           # arguments to home.nix
-          home-manager.extraSpecialArgs = {inherit janet-lsp;};
+          home-manager.extraSpecialArgs = {inherit inputs;};
         }
 
         nix-homebrew.darwinModules.nix-homebrew
