@@ -242,6 +242,13 @@ local not_by_mason = {
   ["zls"] = true,
   -- c#
   ["omnisharp"] = true,
+  ["janet_lsp"] = true,
+  -- ["janet_lsp"] = {
+  --   on_attach = on_attach,
+  --   capabilties = capabilities,
+  --   -- if everything fails this should wokr
+  --   -- cmd = { "janet", "-i", vim.fn.expand "~" .. "/my-scripts/janet-lsp/janet-lsp.jimage" },
+  -- },
 }
 
 -- iterate over lsps and add those to the table above with table[server] = true
@@ -257,7 +264,6 @@ end
 local function setup_lsp(l_lsps)
   local mason = require("lspconfig")
   for server, config in pairs(l_lsps) do
-
     if type(config) == "table" then
       mason[server].setup(config)
     elseif type(config) == "boolean" then
