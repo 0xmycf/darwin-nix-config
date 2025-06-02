@@ -14,17 +14,9 @@
     rev = "3a7d029af7aa8c619936a05a9554261fca28b34f";
     sha256 = "sha256-61wmXbrVimUeiE5taT9CgRhJnQtRmXsRt77pNd0qUY0=";
   };
-
-  janet-lsp = pkgs.fetchFromGitHub {
-    owner = "0xmycf";
-    repo = "nix-janet-lsp-wrapper";
-    rev = "0d0551369fc6e7a65140016da0b5cb4d2101c381";
-    sha256 = "sha256-eUhCBHZN3AImtrTTrpUomIhgzhEsf44dVslvLMAypRw=";
-  };
 in {
   home.packages = [
     teatimerNoHaddock
     (import gen-gitignore {inherit pkgs;}).gen-gitignore
-    janet-lsp
   ];
 }

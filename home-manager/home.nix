@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  janet-lsp,
   ...
 }: let
   # yanked from neovim/default.nix
@@ -53,6 +54,10 @@ in {
 
     ## lisp that for scripts (?)
     janet
+    janet-lsp
+
+    ## version control
+    jujutsu
 
     # midnight commander
     # a cli file system manager

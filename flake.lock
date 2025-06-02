@@ -160,6 +160,9 @@
       "inputs": {
         "home-manager": "home-manager",
         "homebrew-cask": "homebrew-cask",
+        "janet-lsp": [
+          "nixpkgs"
+        ],
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3"
