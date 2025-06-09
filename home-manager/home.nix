@@ -7,6 +7,7 @@
   # yanked from neovim/default.nix
   profileDirectory = config.home.profileDirectory;
   rpath = "${profileDirectory}/bin/r";
+  janet = pkgs.janet;
 in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -25,6 +26,7 @@ in {
 
   home.sessionVariables = {
     RSTUDIO_WHICH_R = rpath;
+    JANET_HEADERPATH = "${janet}/include";
   };
 
   home.packages = with pkgs; [
@@ -54,6 +56,7 @@ in {
 
     ## lisp that for scripts (?)
     janet
+    jpm # janet project manager
     inputs.janet-lsp.packages.${pkgs.system}.default
 
     ## version control
