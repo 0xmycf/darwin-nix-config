@@ -27,6 +27,8 @@ in {
   home.sessionVariables = {
     RSTUDIO_WHICH_R = rpath;
     JANET_HEADERPATH = "${janet}/include";
+    JANET_LIBPATH = "${janet}/lib";
+    JANET_BINPATH = "${janet}/bin";
   };
 
   home.packages = with pkgs; [

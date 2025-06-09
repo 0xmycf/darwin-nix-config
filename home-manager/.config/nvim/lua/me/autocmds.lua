@@ -134,8 +134,8 @@ cmd("BufEnter") {
     pattern = { "*" },
     callback = function()
         vim.cmd [[
-    set formatoptions-=r
-    setlocal formatoptions-=r
+    set formatoptions-=cro
+    setlocal formatoptions-=cro
   ]]
     end,
 }
