@@ -243,6 +243,7 @@ local not_by_mason = {
   -- c#
   ["omnisharp"] = true,
   ["janet_lsp"] = true,
+  ["graphql"] = true,
   -- ["janet_lsp"] = {
   --   on_attach = on_attach,
   --   capabilties = capabilities,

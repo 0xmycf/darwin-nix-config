@@ -5,6 +5,8 @@
     home = "/Users/mycf";
   };
 
+  system.primaryUser = "mycf";
+
   system.defaults.dock = {
     magnification = true;
     largesize = 105;

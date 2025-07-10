@@ -1,7 +1,7 @@
 [
   # browsers
   "firefox"
-  "zen-browser"
+  "zen"
 
   # terminal emulators...
   "kitty"
@@ -17,7 +17,7 @@
   # vscode can be setup with home-manager even on macos
   # "visual-studio-code"
   "zed"
-  "neovide"
+  "neovide-app"
 
   "deepl"
   "obs"
@@ -32,7 +32,7 @@
 
   # work
   "slack"
-  "docker"
+  "docker-desktop"
 
   # work and geography stuff
   "qgis"
@@ -50,6 +50,7 @@
   "via"
 
   # Uni
+  "anki"
   # "virtualbox"
 ]
 # Missing:

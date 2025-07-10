@@ -9,11 +9,6 @@
     ./haskell.nix
   ];
 
-  programs.thefuck = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-  };
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;

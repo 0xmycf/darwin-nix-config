@@ -15,7 +15,7 @@ local group = M.group
 local cmd = M.cmd
 
 cmd("FileType") {
-    pattern = { "sql" },
+    pattern = { --[[ "sql" ]] },
     callback = function()
         vim.g.omni_sql_no_default_maps = 1
         vim.g.ftplugin_sql_omni_key = '<leader>sql'
@@ -72,6 +72,7 @@ cmd("BufEnter") {
         "*.gleam",
         "*.rkt",
         "*dart",
+        "*.janet"
     },
     callback = function(ev)
         local local_opts = {

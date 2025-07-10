@@ -2537,12 +2537,12 @@
     {
         "key": "shift+l",
         "command": "workbench.action.nextEditor",
-        "when": "vim.mode != 'Normal'"
+        "when": "vim.mode != 'Insert'"
     },
     {
         "key": "shift+h",
         "command": "workbench.action.previousEditor",
-        "when": "vim.mode != 'Normal'"
+        "when": "vim.mode != 'Insert'"
     },
     {
         "key": "shift+cmd+l",

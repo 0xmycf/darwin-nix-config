@@ -1,3 +1,4 @@
+vim.g.omni_sql_no_default_maps = 1
 vim.g.maplocalleader = ";"
 require("me.lazy")
 require("me.options")
