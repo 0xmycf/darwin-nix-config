@@ -1,5 +1,14 @@
 # What has changed
 
+## 2025-07-10c
+
+### Added
+- Anki as a cask
+
+### Changed
+- Renamed migrated casks (neovide, zen, docker)
+- Updated flake inputs
+
 ## 2025-05-07
 
 ### Added
