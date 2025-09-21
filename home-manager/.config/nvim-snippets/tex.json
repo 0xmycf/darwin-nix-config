@@ -38,6 +38,14 @@
             "\\textit{$1}$0"
         ]
     },
+    "mono": {
+        "scope": "tex, latex, xelatex",
+        "prefix": "mono",
+        "description": "monospace'd text",
+        "body": [
+            "\\texttt{$1}$0"
+        ]
+    },
     "bold-italic": {
         "scope": "tex, latex, xelatex",
         "prefix": "bolditalic",
@@ -92,13 +100,6 @@
         "prefix": "stehen-lassen",
         "body": [
             "% TODO kann man das so stehen lassen?"
-        ]
-    },
-    "wording": {
-        "scope": "tex, latex, xelatex, md, markdown",
-        "prefix": "wording",
-        "body": [
-            "% TODO wording"
         ]
     },
     "super-script": {
