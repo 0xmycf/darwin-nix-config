@@ -124,7 +124,7 @@ require("lazy").setup({
               },
           })
       end,
-      -- autostart = false;
+      autostart = true,
   },
 
   {

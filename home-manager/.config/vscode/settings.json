@@ -17,7 +17,7 @@
     "explorer.confirmDelete": false,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "SF Mono",
     "editor.fontLigatures": "'onum', 'ss04', 'ss08', 'ss09', 'ss03'",
     "editor.lineHeight": 0,
     "editor.fontSize": 14,
@@ -55,7 +55,7 @@
         "asvetliakov.vscode-neovim": 1
     },
     "github.copilot.enable": {
-        "latex": "false"
+        "latex": false
     },
     "vim.easymotion": true,
     "vim.surround": true,
@@ -96,5 +96,9 @@
         "∨": true
     },
     "editor.cursorSurroundingLines": 12,
-    "vim.enableNeovim": true
+    "vim.enableNeovim": true,
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    },
+    "rust-analyzer.rustc.source":null
 }

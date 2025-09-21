@@ -29,6 +29,7 @@ in {
     JANET_HEADERPATH = "${janet}/include";
     JANET_LIBPATH = "${janet}/lib";
     JANET_BINPATH = "${janet}/bin";
+    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
   };
 
   home.packages = with pkgs; [

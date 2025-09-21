@@ -240,8 +240,23 @@ local not_by_mason = {
   ["clojure_lsp"] = true,
   ["angularls"] = true,
   ["zls"] = true,
+  ["roc_ls"] = true,
   -- c#
-  ["omnisharp"] = true,
+  ["omnisharp"] = {
+  cmd = {
+   on_attach = on_attach,
+    capabilties = capabilities,
+    vim.fn.executable('OmniSharp') == 1 and 'OmniSharp' or 'omnisharp',
+    '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
+    '--hostPID',
+    tostring(vim.fn.getpid()),
+    'DotNet:enablePackageRestore=false',
+    '--encoding',
+    'utf-8',
+    '--languageserver',
+  },
+  },
+  ["fsautocomplete"] = true,
   ["janet_lsp"] = true,
   ["graphql"] = true,
   -- ["janet_lsp"] = {
