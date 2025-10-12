@@ -100,5 +100,11 @@
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
     },
-    "rust-analyzer.rustc.source":null
+    "rust-analyzer.rustc.source": null,
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "tailwindcss-intellisense.trace.server": "verbose",
+    "tailwindCSS.includeLanguages": {
+        "plaintext": "vue"
+    },
+    "github.copilot.selectedCompletionModel": ""
 }

@@ -51,7 +51,7 @@
 
   # Uni
   "anki"
-  # "virtualbox"
+  "virtualbox"
 ]
 # Missing:
 #

@@ -2522,27 +2522,27 @@
         "key": "shift+alt+f3"
     },
     {
-        "key": "F12",
+        "key": "F10",
         "command": "workbench.action.terminal.focus"
     },
     {
-        "key": "F12",
+        "key": "F10",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
     },
     {
-        "key": "shift+F12",
+        "key": "shift+F10",
         "command": "workbench.action.togglePanel"
     },
     {
         "key": "shift+l",
         "command": "workbench.action.nextEditor",
-        "when": "vim.mode != 'Insert'"
+        "when": "vim.mode != 'Insert' && editorTextFocus"
     },
     {
         "key": "shift+h",
         "command": "workbench.action.previousEditor",
-        "when": "vim.mode != 'Insert'"
+        "when": "vim.mode != 'Insert' && editorTextFocus"
     },
     {
         "key": "shift+cmd+l",
