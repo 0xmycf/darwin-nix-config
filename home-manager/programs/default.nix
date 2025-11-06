@@ -19,7 +19,10 @@
     enableBashIntegration = true;
     enableFishIntegration = true;
   };
-  programs.ripgrep.enable = true;
+  programs.ripgrep = {
+    enable = true;
+    arguments = ["--glob" "!.git/" "--glob" "!dist/" "--glob" "!node_modules/"];
+  };
 
   programs.bat = {
     enable = true;

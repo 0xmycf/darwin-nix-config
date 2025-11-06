@@ -46,6 +46,10 @@
       #   app = "/Applications/Affinity Photo.app";
       # }
       {
+        # affinity now one in all for free
+        app = "/Applications/Affinity.app";
+      }
+      {
         app = "/Applications/Obsidian.app";
       }
       {
