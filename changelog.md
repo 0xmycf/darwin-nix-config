@@ -1,6 +1,12 @@
 # What has changed
 
-## 2025-07-10c
+## 2025-11-22
+
+### Removed
+- Deleted `oterm` program from `home-manager/home.nix`
+- Disabled `ollama`, as it was refusing to build **todo: look into this and fix**
+
+## 2025-07-10
 
 ### Added
 - Anki as a cask

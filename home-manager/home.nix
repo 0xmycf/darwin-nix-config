@@ -70,8 +70,7 @@ in {
     mc
 
     # local llms
-    ollama
-    oterm
+    # ollama # TODO make this work again
 
     texliveMedium
 

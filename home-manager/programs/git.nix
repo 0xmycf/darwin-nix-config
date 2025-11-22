@@ -7,13 +7,16 @@ in {
 
   programs.git = {
     enable = true;
-    userName = "0xmycf";
-    userEmail = "mycf.mycf.mycf@gmail.com";
-    aliases = {
-      cane = "commit --amend --no-edit";
-      s = "status";
-      new = "init -b main";
-      tree = "log --graph --pretty=oneline --abbrev-commit";
+
+    settings = {
+      user.name = "0xmycf";
+      user.email = "mycf.mycf.mycf@gmail.com";
+      aliases = {
+        cane = "commit --amend --no-edit";
+        s = "status";
+        new = "init -b main";
+        tree = "log --graph --pretty=oneline --abbrev-commit";
+      };
     };
 
     includes = [
