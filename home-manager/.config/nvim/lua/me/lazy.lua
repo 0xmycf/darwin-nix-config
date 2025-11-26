@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",     -- latest stable release
+    "--branch=stable", -- latest stable release
     lazypath,
   }
 end
@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 local fn_dev_repos = require("me.private.private").local_plugins
 
 local lazy_opts = {
-  lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json",   -- lockfile generated after running update.
+  lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
   install = {
     -- colorscheme = { "onedark" },
     colorscheme = { "catppuccin-latte" },
@@ -32,7 +32,7 @@ local lazy_opts = {
 
 local gh_copilot
 do
-  local do_vim = false   -- change this whenever you want to switch to lua
+  local do_vim = false -- change this whenever you want to switch to lua
   gh_copilot = { vim = do_vim, lua = not do_vim }
 end
 
@@ -40,7 +40,7 @@ require("lazy").setup({
 
   {
     "epwalsh/obsidian.nvim",
-    version = "*",     -- recommended, use latest release instead of latest commit
+    version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
     -- ft = "markdown",
     -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
@@ -77,6 +77,19 @@ require("lazy").setup({
   },
 
   {
+    'Julian/lean.nvim',
+    event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
+
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+
+    opts = { -- see below for full configuration options
+      mappings = true,
+    }
+  },
+
+  {
     "LnL7/vim-nix",
     ft = "nix",
 
@@ -99,32 +112,32 @@ require("lazy").setup({
   },
 
   {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      cond = gh_copilot.lua,
-      event = "InsertEnter",
-      config = function()
-          require("copilot").setup({
-              suggestion = {
-                  auto_trigger = true, -- def = false
-                  keymap = {
-                      accept = "<C-CR>",
-                      next = "ø", -- <M-o>
-                      prev = "⁄", -- <M-i>
-                      dismiss = "±", -- <M-+>
-                  }
-              },
-              panel = { enabled = false },
-              filetypes = {
-                  latex    = false,
-                  tex      = false, -- I never know which is which
-                  markdown = false,
-                  java     = false,
-                  rmd      = false,
-              },
-          })
-      end,
-      autostart = true,
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    cond = gh_copilot.lua,
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({
+        suggestion = {
+          auto_trigger = true,         -- def = false
+          keymap = {
+            accept = "<C-CR>",
+            next = "ø", -- <M-o>
+            prev = "⁄", -- <M-i>
+            dismiss = "±", -- <M-+>
+          }
+        },
+        panel = { enabled = false },
+        filetypes = {
+          latex    = false,
+          tex      = false,         -- I never know which is which
+          markdown = false,
+          java     = false,
+          rmd      = false,
+        },
+      })
+    end,
+    autostart = true,
   },
 
   {
@@ -152,10 +165,10 @@ require("lazy").setup({
         },
         indent = {
           -- char = { "┋" },
-          char = "",           -- turn off for now
+          char = "", -- turn off for now
           highlight = highlightAll,
         },
-        scope = {         -- doesn't work?
+        scope = { -- doesn't work?
           enabled = false,
           highlight = highlight,
         },
@@ -255,7 +268,7 @@ require("lazy").setup({
   -- colorschemes / themes
   "0xmycf/Spacegray.vim",
   -- "joshdick/onedark.vim",
-  "navarasu/onedark.nvim",   -- lua
+  "navarasu/onedark.nvim", -- lua
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -339,7 +352,7 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-    ft = { "scala", "sbt", --[[ "java" ]] }, -- including java here means creating a .meatals folder everyhwere where a java file is, which is kind of annoying 
+    ft = { "scala", "sbt", --[[ "java" ]] }, -- including java here means creating a .meatals folder everyhwere where a java file is, which is kind of annoying
     opts = function()
       local metals_config = require("metals").bare_config()
       metals_config.on_attach = function(client, bufnr)

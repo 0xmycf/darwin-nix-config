@@ -25,6 +25,7 @@
 
   "steam"
   "nvidia-geforce-now"
+  "battle-net"
 
   "discord"
   "whatsapp"
