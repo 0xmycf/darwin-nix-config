@@ -57,6 +57,9 @@ in {
     ## zig
     zig
 
+    ## L∃∀N
+    elan
+
     ## lisp that for scripts (?)
     janet
     jpm # janet project manager

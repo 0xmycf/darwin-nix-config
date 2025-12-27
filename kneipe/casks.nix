@@ -6,6 +6,7 @@
   # terminal emulators...
   "kitty"
   "ghostty"
+  "copilot-cli"
 
   "linearmouse"
   "obsidian"
@@ -25,7 +26,9 @@
 
   "steam"
   "nvidia-geforce-now"
+
   "battle-net"
+  "curseforge"
 
   "discord"
   "whatsapp"
