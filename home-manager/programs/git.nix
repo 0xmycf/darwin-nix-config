@@ -11,7 +11,7 @@ in {
     settings = {
       user.name = "0xmycf";
       user.email = "mycf.mycf.mycf@gmail.com";
-      aliases = {
+      alias = {
         cane = "commit --amend --no-edit";
         s = "status";
         new = "init -b main";
