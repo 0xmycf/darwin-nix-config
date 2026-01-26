@@ -15,6 +15,28 @@ vim.opt.rtp:prepend(lazypath)
 
 local fn_dev_repos = require("me.private.private").local_plugins
 
+-- Workaround for Nix-managed plugins with read-only symlinks
+-- Override the :helptags command to handle read-only directories
+do
+  local original_helptags = vim.api.nvim_cmd
+  vim.api.nvim_cmd = function(cmd, opts)
+    if cmd.cmd == "helptags" then
+      -- Try to run helptags, but silently ignore E152 errors (read-only files)
+      local ok, result = pcall(original_helptags, cmd, opts)
+      if ok then
+        return result
+      elseif not ok and result and type(result) == "string" and result:match("E152") then
+        -- Silently ignore - Nix-managed doc tags are already present
+        return ""
+      else
+        -- Re-raise other errors
+        error(result)
+      end
+    end
+    return original_helptags(cmd, opts)
+  end
+end
+
 local lazy_opts = {
   lockfile = vim.fn.stdpath("config") .. "/lazy-lock.json", -- lockfile generated after running update.
   install = {
@@ -255,6 +277,7 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter",
     dev = true,
+    build = false, -- Don't try to build/generate docs for Nix-managed plugin
   },
   {
     "nvim-treesitter/playground",
