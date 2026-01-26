@@ -115,8 +115,8 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 -- Configure rustaceanvim before it loads
 vim.g.rustaceanvim = {
   server = {
-    on_attach = on_attach,
     capabilities = capabilities,
+    on_attach = on_attach,
   },
 }
 
@@ -126,7 +126,7 @@ require("mason-lspconfig").setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
     })
-    vim.lsp.enable(name)
+    -- vim.lsp.enable(name)
   end,
 
   -- ["ltex"] = function()
@@ -183,12 +183,11 @@ local not_by_mason = {
   ["gopls"] = true,
   ["hls"] = {
     on_attach = on_attach,
-    capabilties = capabilities,
+    capabilities = capabilities,
     filetypes = { "haskell", "lhaskell", "cabal" },
     flags = {
       debounce_text_changes = 150,
     },
-    capabilities = capabilities,
     settings = {
       haskell = {
         formattingProvider = "stylish-haskell",
@@ -288,7 +287,6 @@ local function setup_lsp(l_lsps)
       })
       vim.lsp.enable(server)
     end
-    -- ::continue::
   end
 end
 

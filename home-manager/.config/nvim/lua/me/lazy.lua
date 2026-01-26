@@ -278,6 +278,24 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     dev = true,
     build = false, -- Don't try to build/generate docs for Nix-managed plugin
+    config = function()
+      require("me.plugins.treesitter")
+    end,
+  },
+  {
+    "MeanderingProgrammer/treesitter-modules.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    opts = {
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "gnn",
+          node_incremental = "grn",
+          scope_incremental = "grc",
+          node_decremental = "grm",
+        },
+      },
+    },
   },
   {
     "nvim-treesitter/playground",
