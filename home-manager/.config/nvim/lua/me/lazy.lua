@@ -330,8 +330,10 @@ require("lazy").setup({
 cp  },
 
   {
-    "simrat39/rust-tools.nvim",
-    ft = "rust",
+    "mrcjkb/rustaceanvim",
+    version = "^7", -- Recommended
+    lazy = false, -- This plugin is already lazy
+    ft = { "rust" },
   },
 
   {

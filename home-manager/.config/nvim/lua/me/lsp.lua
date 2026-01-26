@@ -9,8 +9,6 @@ local lsps = {
   "jsonls",
   "yamlls",
   "texlab",
-  -- "ltex", -- langaugetool
-  "rust_analyzer",
   -- "jdtls", -- later
   "gradle_ls",
   -- always good to have
@@ -114,6 +112,14 @@ end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+-- Configure rustaceanvim before it loads
+vim.g.rustaceanvim = {
+  server = {
+    on_attach = on_attach,
+    capabilities = capabilities,
+  },
+}
+
 require("mason-lspconfig").setup_handlers {
   function(name)
     vim.lsp.config(name, {
@@ -121,15 +127,6 @@ require("mason-lspconfig").setup_handlers {
       on_attach = on_attach,
     })
     vim.lsp.enable(name)
-  end,
-
-  ["rust_analyzer"] = function()
-    require("rust-tools").setup {
-      server = {
-        on_attach = on_attach,
-        capabilities = capabilities,
-      },
-    }
   end,
 
   -- ["ltex"] = function()
