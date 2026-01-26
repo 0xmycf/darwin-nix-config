@@ -1,3 +1,5 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.g.omni_sql_no_default_maps = 1
 vim.g.maplocalleader = ";"
 require("me.lazy")

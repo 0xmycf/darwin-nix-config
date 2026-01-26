@@ -30,7 +30,8 @@ map <leader><CR> <Action>(ShowIntentionActions)
 nmap gcc         <Action>(CommentByLineComment)
 vmap gc          <Action>(CommentByLineComment)
 
-nmap gd          <Action>(GotoImplementation)
+nmap gd          <Action>(GotoDeclaration)
+nmap <leader>gd  <Action>(GotoImplementation)
 nmap <leader>gu  <Action>(FindUsages)
 
 nmap <leader>gg  <Action>(Generate)

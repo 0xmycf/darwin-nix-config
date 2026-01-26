@@ -83,6 +83,8 @@ vim.g.neovide_scroll_animation_far_lines = 0
 vim.g.neovide_scroll_animation_length = 0.0
 vim.g.neovide_remember_window_size = true
 
+vim.g.nvim_tree_respect_buf_cwd = 1
+
 if vim.fn.executable('rg') then
   vim.o.grepprg = "rg --vimgrep --hidden -g '!.git'"
 end

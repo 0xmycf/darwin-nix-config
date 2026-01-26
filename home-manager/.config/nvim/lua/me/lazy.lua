@@ -327,7 +327,7 @@ require("lazy").setup({
     config = function()
       require("me.plugins.hop")
     end,
-  },
+cp  },
 
   {
     "simrat39/rust-tools.nvim",

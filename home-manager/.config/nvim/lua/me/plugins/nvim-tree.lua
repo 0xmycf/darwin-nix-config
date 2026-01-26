@@ -112,10 +112,10 @@ require("nvim-tree").setup {
     timeout = 1000,
   },
   actions = {
-    -- when <leader>c is used, it changes the project root
+    -- when <leader>c is used, it changes the project root ----- Update: NOT ANYMORE!!!
     change_dir = {
-      enable = true,
-      global = true,
+      enable = false,
+      global = false,
     },
     open_file = {
       quit_on_open = true,
