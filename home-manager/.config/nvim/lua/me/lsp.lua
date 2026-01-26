@@ -1,67 +1,4 @@
--- the by mason installed lsps
--- for lsps which are not installed by mason
--- see the 'not_by_mason' table and the function
--- 'setup_lsp'
--- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
-local lsps = {
-  -- "pyright",
-  "lua_ls",
-  "jsonls",
-  "yamlls",
-  "texlab",
-  -- "jdtls", -- later
-  "gradle_ls",
-  -- always good to have
-  "html",
-  "cssls",
-  "bashls",
-  "clangd",
-  "dockerls",
-  -- "r_language_server",
-  -- zettelkasten / markdown
-  -- "marksman",
-  -- nix
-  "nil_ls", -- idk if it works or now
-}
-
-local set_lsps
-do
-  local set = {}
-  for _, value in pairs(lsps) do
-    set[value] = true
-  end
-  set_lsps = vim.deepcopy(set)
-end
-
-require("mason").setup {
-  ui = {
-    border = "single",
-    width = 0.8,
-    height = 0.8,
-    icons = {
-      package_installed = "◍",
-      package_pending = "◍",
-      package_uninstalled = "◍",
-    },
-  },
-}
-
-require("mason-lspconfig").setup {
-  ensure_installed = {},
-  automatic_installation = false,
-}
-
-vim.diagnostic.config {
-  virtual_text = true,
-  float = {
-    border = "single",
-  },
-  severity_sort = true,
-  underline = true,
-  update_on_insert = true,
-}
-
--- for old deleted options: 9fc462172338de76d54ad9491a9025acd1a950a9
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local on_attach = function(server, bufnr)
   local lsp_semantic_tokens = server.server_capabilities.semanticTokensProvider
   local filetype = vim.bo.filetype
@@ -110,77 +47,38 @@ local on_attach = function(server, bufnr)
   end
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
--- Configure rustaceanvim before it loads
-vim.g.rustaceanvim = {
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
-}
-
-require("mason-lspconfig").setup_handlers {
-  function(name)
-    vim.lsp.config(name, {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    })
-    -- vim.lsp.enable(name)
-  end,
-
-  -- ["ltex"] = function()
-  --   local path = vim.fn.stdpath("config") .. "/spell/de.utf-8.add"
-  --
-  --   local cm = require("plenary").context_manager
-  --   local words = {}
-  --   cm.with(cm.open(path, "r"), function(reader)
-  --     for word in reader:lines() do
-  --       table.insert(words, word)
-  --     end
-  --   end)
-  --
-  --   vim.lsp.config("ltex", {
-  --     autostart = false,
-  --     settings = {
-  --       ltex = {
-  --         trace = { server = "verbose" },
-  --         language = "de-DE",
-  --         enabled = { "bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext",
-  --           "rsweave", "haskell", "python", "java" },                               -- idk if this works either
-  --         dictionary = { ["de-DE"] = words, ["en-GB"] = words, ["zh-CE"] = words }, -- this doesn't seem to work?
-  --         additionalRules = {
-  --           motherTongue = "de-DE",
-  --         },
-  --       }
-  --     }
-  --   })
-  --   vim.lsp.enable("ltex")
-  -- end,
-
-  ["lua_ls"] = function()
-    vim.lsp.config("lua_ls", {
-      on_attach = on_attach,
-      capabilties = capabilities,
-      settings = {
-        Lua = {
-          runtime = {
-            version = "LuaJIT",
-          },
-          telemetry = false,
-          diagnostics = {
-            globals = { "vim" },
-          },
-        }
-      }
-    })
-    vim.lsp.enable("lua_ls")
-  end,
-}
-
-local not_by_mason = {
+local lsps = {
+  ["jsonls"] = true,
+  ["yamlls"] = true,
+  ["texlab"] = true,
+  ["gradle_ls"] = true,
+  ["html"] = true,
+  ["cssls"] = true,
+  ["bashls"] = true,
+  ["clangd"] = true,
+  ["dockerls"] = true,
+  ["nil_ls"] = true,
+  ["erlangls"] = true, -- for gleam interop
+  ["solargraph"] = true,
+  ["ocamllsp"] = true,
+  ["ts_ls"] = true,
+  ["racket_langserver"] = true,
+  ["crystalline"] = true,
+  ["serve_d"] = true,
+  ["sqls"] = true,
+  ["fsautocomplete"] = true,
+  ["janet_lsp"] = true,
+  ["graphql"] = true,
+  ["r_language_server"] = false,
+  ["fish_lsp"] = true,
+  ["dartls"] = true,
+  ["clojure_lsp"] = true,
+  ["angularls"] = true,
+  ["zls"] = true,
+  ["roc_ls"] = true,
   ["basedpyright"] = true,
   ["gopls"] = true,
+
   ["hls"] = {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -202,7 +100,6 @@ local not_by_mason = {
       },
     },
   },
-  ["ocamllsp"] = true,
   ["gleam"] = {
     on_attach = on_attach,
     capabilties = capabilities,
@@ -213,84 +110,83 @@ local not_by_mason = {
       },
     },
   },
-  ["erlangls"] = true, -- for gleam interop
-  ["solargraph"] = true,
-  -- ["ruby_lsp"] = true, -- does not work at all (installed with nix, but it tries to install some gems...)
-  ["ts_ls"] = true,
-  ["racket_langserver"] = true,
-  ["crystalline"] = true,
-  ["serve_d"] = true,
   ["sourcekit"] = {
     on_attach = on_attach,
     capabilties = capabilities,
     filetypes = { "swift" },
     cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
   },
-  ["sqls"] = true,
   ["jdtls"] = {
     on_attach = on_attach,
     capabilties = capabilities,
     cmd = { "jdtls", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
-  ["r_language_server"] = false,
-  ["fish_lsp"] = true,
-  ["dartls"] = true,
-  ["clojure_lsp"] = true,
-  ["angularls"] = true,
-  ["zls"] = true,
-  ["roc_ls"] = true,
   -- c#
   ["omnisharp"] = {
-  cmd = {
-   on_attach = on_attach,
-    capabilties = capabilities,
-    vim.fn.executable('OmniSharp') == 1 and 'OmniSharp' or 'omnisharp',
-    '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
-    '--hostPID',
-    tostring(vim.fn.getpid()),
-    'DotNet:enablePackageRestore=false',
-    '--encoding',
-    'utf-8',
-    '--languageserver',
+    cmd = {
+      on_attach = on_attach,
+      capabilties = capabilities,
+      vim.fn.executable('OmniSharp') == 1 and 'OmniSharp' or 'omnisharp',
+      '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
+      '--hostPID',
+      tostring(vim.fn.getpid()),
+      'DotNet:enablePackageRestore=false',
+      '--encoding',
+      'utf-8',
+      '--languageserver',
+    },
   },
-  },
-  ["fsautocomplete"] = true,
-  ["janet_lsp"] = true,
-  ["graphql"] = true,
-  -- ["janet_lsp"] = {
-  --   on_attach = on_attach,
-  --   capabilties = capabilities,
-  --   -- if everything fails this should wokr
-  --   -- cmd = { "janet", "-i", vim.fn.expand "~" .. "/my-scripts/janet-lsp/janet-lsp.jimage" },
-  -- },
+  ["lua_ls"] = {
+      on_attach = on_attach,
+      capabilties = capabilities,
+      single_file_support = true,
+      settings = {
+        Lua = {
+          runtime = {
+            version = "LuaJIT",
+          },
+          telemetry = false,
+          diagnostics = {
+            globals = { "vim" },
+          },
+        }
+      }
+    }
 }
 
--- iterate over lsps and add those to the table above with table[server] = true
--- 'temporary' hotfix
-for _, server in pairs(lsps) do
-  if not not_by_mason[server] then
-    not_by_mason[server] = true
+vim.diagnostic.config {
+  virtual_text = true,
+  float = {
+    border = "single",
+  },
+  severity_sort = true,
+  underline = true,
+  update_on_insert = true,
+}
+
+-- Configure rustaceanvim before it loads
+vim.g.rustaceanvim = {
+  server = {
+    capabilities = capabilities,
+    on_attach = on_attach,
+  },
+}
+
+for lsp, config in pairs(lsps) do
+  if config == true then
+    vim.lsp.config(lsp, {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    })
+    vim.lsp.enable(lsp)
+  elseif type(config) == "function" then
+    config()
+  elseif config ~= false then
+    vim.lsp.config(lsp, config)
+    vim.lsp.enable(lsp)
   end
 end
 
--- setsup lsps which installations are not handled with
--- mason
-local function setup_lsp(l_lsps)
-  for server, config in pairs(l_lsps) do
-    if type(config) == "table" then
-      vim.lsp.config(server, config)
-      vim.lsp.enable(server)
-    elseif type(config) == "boolean" then
-      vim.lsp.config(server, {
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
-      vim.lsp.enable(server)
-    end
-  end
-end
-
-setup_lsp(not_by_mason)
 
 return {
   on_attach = on_attach,

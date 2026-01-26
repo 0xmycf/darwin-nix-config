@@ -238,13 +238,8 @@ require("lazy").setup({
     cmd = "Telescope",
   },
 
-  -- LSP
   {
-    "williamboman/mason.nvim",
-    dependencies = {
-      "williamboman/mason-lspconfig.nvim",
       "neovim/nvim-lspconfig",
-    },
   },
 
   -- Beautify LSP
