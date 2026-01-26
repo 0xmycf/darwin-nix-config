@@ -113,14 +113,14 @@ local on_attach = function(server, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local lspconfig = require("lspconfig")
 
 require("mason-lspconfig").setup_handlers {
   function(name)
-    lspconfig[name].setup {
+    vim.lsp.config(name, {
       capabilities = capabilities,
       on_attach = on_attach,
-    }
+    })
+    vim.lsp.enable(name)
   end,
 
   ["rust_analyzer"] = function()
@@ -143,7 +143,7 @@ require("mason-lspconfig").setup_handlers {
   --     end
   --   end)
   --
-  --   lspconfig["ltex"].setup {
+  --   vim.lsp.config("ltex", {
   --     autostart = false,
   --     settings = {
   --       ltex = {
@@ -157,11 +157,12 @@ require("mason-lspconfig").setup_handlers {
   --         },
   --       }
   --     }
-  --   }
+  --   })
+  --   vim.lsp.enable("ltex")
   -- end,
 
   ["lua_ls"] = function()
-    lspconfig["lua_ls"].setup {
+    vim.lsp.config("lua_ls", {
       on_attach = on_attach,
       capabilties = capabilities,
       settings = {
@@ -175,7 +176,8 @@ require("mason-lspconfig").setup_handlers {
           },
         }
       }
-    }
+    })
+    vim.lsp.enable("lua_ls")
   end,
 }
 
@@ -278,15 +280,16 @@ end
 -- setsup lsps which installations are not handled with
 -- mason
 local function setup_lsp(l_lsps)
-  local mason = require("lspconfig")
   for server, config in pairs(l_lsps) do
     if type(config) == "table" then
-      mason[server].setup(config)
+      vim.lsp.config(server, config)
+      vim.lsp.enable(server)
     elseif type(config) == "boolean" then
-      mason[server].setup {
+      vim.lsp.config(server, {
         on_attach = on_attach,
         capabilities = capabilities,
-      }
+      })
+      vim.lsp.enable(server)
     end
     -- ::continue::
   end
