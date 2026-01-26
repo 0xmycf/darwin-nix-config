@@ -2,14 +2,14 @@
     "nixpkgs": {
         "prefix": "url.nixpkgs",
         "body": [
-            "nixpkgs.url =  \"github:nixos/nixpkgs/nixos-24.11\";"
+            "nixpkgs.url =  \"github:nixos/nixpkgs/nixos-25.11\";"
         ]
     },
     "nixpkgs-darwin": {
-        "note": "this probably doesnt work",
+        "note": "this probably doesn't work",
         "prefix": "url.darwin",
         "body": [
-            "nixpkgs.url =  \"github:nixos/nixpkgs/nixpkgs-darwin-24.11\";"
+            "nixpkgs.url =  \"github:nixos/nixpkgs/nixpkgs-darwin-25.11\";"
         ]
     },
     "nixpkgs-unstable": {
