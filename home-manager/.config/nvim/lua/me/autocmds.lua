@@ -1,25 +1,25 @@
 local M = {
-    cmd = function(events)
-        return function(opts)
-            vim.api.nvim_create_autocmd(events, opts)
-        end
-    end,
-    group = function(name)
-        return vim.api.nvim_create_augroup(name, {
-            clear = true,
-        })
-    end,
+  cmd = function(events)
+    return function(opts)
+      vim.api.nvim_create_autocmd(events, opts)
+    end
+  end,
+  group = function(name)
+    return vim.api.nvim_create_augroup(name, {
+      clear = true,
+    })
+  end,
 }
 
 local group = M.group
 local cmd = M.cmd
 
 cmd("FileType") {
-    pattern = { --[[ "sql" ]] },
-    callback = function()
-        vim.g.omni_sql_no_default_maps = 1
-        vim.g.ftplugin_sql_omni_key = '<leader>sql'
-        vim.cmd [[
+  pattern = { --[[ "sql" ]] },
+  callback = function()
+    vim.g.omni_sql_no_default_maps = 1
+    vim.g.ftplugin_sql_omni_key = '<leader>sql'
+    vim.cmd [[
     let b:did_ftplugin = 1
     " unmap <buffer> <C-C>R
     " unmap <buffer> <C-C>L
@@ -35,92 +35,92 @@ cmd("FileType") {
     " unmap <buffer> <C-C>k
     " unmap <buffer> <C-C>a
     ]]
-    end,
-    group = group("sql_omni"),
+  end,
+  group = group("sql_omni"),
 }
 
 -- disables the conceallevel that I use for markdown for example
 cmd("BufEnter") {
   pattern = { "*.json", "*.xml", "*.toml", "*.rmd" },
-    callback = function(ev)
-      vim.o["conceallevel"] = 0
-    end,
-    group = group("no_conceallevel"),
+  callback = function(ev)
+    vim.o["conceallevel"] = 0
+  end,
+  group = group("no_conceallevel"),
 }
 
 cmd("BufEnter") {
-    pattern = {
-        "*.ml",
-        -- "ocaml",
-        "*.lua",
-        "*.rb",
-        "*.md",
-        "*.hs",
-        "*.lhs",
-        "*.cabal",
-        "*.scala",
-        -- "*.purescript",
-        "*.purs",
-        "*.tex",
-        -- "latex",
-        -- "svelte",
-        "*.html",
-        "*.typst",
-        "*.nix",
-        "*.r",
-        "*.rmd",
-        "*.gleam",
-        "*.rkt",
-        "*dart",
-        "*.janet"
-    },
-    callback = function(ev)
-        local local_opts = {
-            tabstop     = 2,
-            softtabstop = 2,
-            shiftwidth  = 2,
-        }
+  pattern = {
+    "*.ml",
+    -- "ocaml",
+    "*.lua",
+    "*.rb",
+    "*.md",
+    "*.hs",
+    "*.lhs",
+    "*.cabal",
+    "*.scala",
+    -- "*.purescript",
+    "*.purs",
+    "*.tex",
+    -- "latex",
+    -- "svelte",
+    "*.html",
+    "*.typst",
+    "*.nix",
+    "*.r",
+    "*.rmd",
+    "*.gleam",
+    "*.rkt",
+    "*dart",
+    "*.janet"
+  },
+  callback = function(ev)
+    local local_opts = {
+      tabstop     = 2,
+      softtabstop = 2,
+      shiftwidth  = 2,
+    }
 
-        for key, value in pairs(local_opts) do
-            vim.bo[ev.buf][key] = value
-        end
+    for key, value in pairs(local_opts) do
+      vim.bo[ev.buf][key] = value
+    end
 
-        vim.cmd('set indentkeys-=}')
-        vim.cmd('set indentkeys-={')
-        vim.cmd('set indentkeys-=[')
-        vim.cmd('set indentkeys-=]')
-    end,
-    group = group("tab_width"),
+    vim.cmd('set indentkeys-=}')
+    vim.cmd('set indentkeys-={')
+    vim.cmd('set indentkeys-=[')
+    vim.cmd('set indentkeys-=]')
+  end,
+  group = group("tab_width"),
 }
 
 cmd("FileType") {
-    pattern = { "haskell", "bqn" },
-    callback = function()
-        vim.o.spell = false
-    end,
-    group = group("nospellcheck"),
+  pattern = { "haskell", "bqn" },
+  callback = function()
+    vim.o.spell = false
+  end,
+  group = group("nospellcheck"),
 }
 
 cmd("FileType") {
-    pattern = { "go" },
-    callback = function(ev)
-        local local_opts = {
-            tabstop = 4,
-            shiftwidth = 4,
-        }
+  pattern = { "go" },
+  callback = function(ev)
+    local local_opts = {
+      tabstop = 4,
+      shiftwidth = 4,
+    }
 
-        for key, value in pairs(local_opts) do
-            vim.bo[ev.buf][key] = value
-        end
-        vim.cmd('set noexpandtab')
-        -- vim.print("foo")
+    for key, value in pairs(local_opts) do
+      vim.bo[ev.buf][key] = value
+    end
+    vim.cmd('set noexpandtab')
+    -- vim.print("foo")
 
-        vim.cmd('set indentkeys-=}')
-        vim.cmd('set indentkeys-={')
-        vim.cmd('set indentkeys-=[')
-        vim.cmd('set indentkeys-=]')
-    end,
-    group = group("go_tab_width"),
+    vim.cmd('set indentkeys-=}')
+    vim.cmd('set indentkeys-={')
+    vim.cmd('set indentkeys-=[')
+    vim.cmd('set indentkeys-=]')
+  end,
+  group = group("go_tab_width"),
 }
 
 -- cmd("FileType") {
@@ -132,58 +132,114 @@ cmd("FileType") {
 -- }
 
 cmd("BufEnter") {
-    pattern = { "*" },
-    callback = function()
-        vim.cmd [[
+  pattern = { "*" },
+  callback = function()
+    vim.cmd [[
     set formatoptions-=cro
     setlocal formatoptions-=cro
   ]]
-    end,
+  end,
 }
 
 local function file_name()
-    local name = vim.fn.expand "%:t"
-    if name == "" then
-        return nil
-    else
-        return name
-    end
+  local name = vim.fn.expand "%:t"
+  if name == "" then
+    return nil
+  else
+    return name
+  end
 end
 
 cmd("BufEnter") {
-    pattern = { "*" },
-    callback = function()
-        local name = file_name()
-        if name ~= nil then
-            local _, err = pcall(vim.cmd, "loadview")
-            if err ~= nil and err ~= "" then
-                -- vim.print("No view found for " .. name)
-                -- print("Error is: " .. vim.inspect(err))
-            end
-        end
-    end,
+  pattern = { "*" },
+  callback = function()
+    local name = file_name()
+    if name ~= nil then
+      local _, err = pcall(vim.cmd, "loadview")
+      if err ~= nil and err ~= "" then
+        -- vim.print("No view found for " .. name)
+        -- print("Error is: " .. vim.inspect(err))
+      end
+    end
+  end,
 }
 
 cmd("BufWinLeave") {
-    pattern = { "*" },
-    callback = function()
-        if file_name() ~= nil then
-            vim.cmd "mkview"
-        end
-    end,
+  pattern = { "*" },
+  callback = function()
+    if file_name() ~= nil then
+      vim.cmd "mkview"
+    end
+  end,
 }
 
 cmd("VimEnter") {
-    callback = function()
-        if vim.o.background == "dark" then
-            require("onedark").load()
-            vim.cmd.colorscheme "onedark"
-        else
-            vim.cmd.colorscheme "catppuccin"
-        end
-        -- this fixes lualine, because otherwise there is some weird bug
-        require("me.plugins.lualine")
-    end,
+  callback = function()
+    if vim.o.background == "dark" then
+      require("onedark").load()
+      vim.cmd.colorscheme "onedark"
+    else
+      vim.cmd.colorscheme "catppuccin"
+    end
+    -- this fixes lualine, because otherwise there is some weird bug
+    require("me.plugins.lualine")
+  end,
+}
+
+local on_attach = function(server, bufnr)
+  local lsp_semantic_tokens = server.server_capabilities.semanticTokensProvider
+  local filetype = vim.bo.filetype
+  if vim.version().minor >= 9 and lsp_semantic_tokens and filetype == "java" then
+    server.server_capabilities.semanticTokensProvider = vim.NIL
+  end
+  -- Mappings. for other mappings see: ~/.config/nvim/mycoc/nativelspsaga.vim
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local map = vim.keymap.set
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  map("n", "gd", vim.lsp.buf.definition, bufopts)
+  map("n", "<Leader>cl", vim.lsp.codelens.run, bufopts)
+  map("n", "gi", vim.lsp.buf.implementation, bufopts)
+  map("n", "<Leader>D", vim.lsp.buf.type_definition, bufopts)
+  map("n", "gr", vim.lsp.buf.references, bufopts)
+  if filetype ~= "crystal" then
+    map("n", "<Leader>q", vim.lsp.buf.format, bufopts)
+  end
+
+  local codeLensCallback = function()
+    local filetype2 = vim.api.nvim_buf_get_option(0, "filetype")
+    if filetype2 == "ocaml" then
+      require("me.codelens").refresh_virtlines()
+    elseif filetype2 ~= "java" then
+      vim.lsp.codelens.refresh()
+    end
+  end
+
+  if server.server_capabilities.codeLensProvider then
+    local autocmds = require("me.autocmds")
+    local group = autocmds.group("CodeLensRefresh")
+    autocmds.cmd({
+      "BufEnter",
+      "CursorHold",
+      "InsertLeave",
+    })({
+          group = group,
+          callback = codeLensCallback,
+          buffer = bufnr,
+        })
+    autocmds.cmd("BufEnter") {
+      group = group,
+      callback = codeLensCallback,
+      buffer = bufnr,
+    }
+  end
+end
+
+cmd("LspAttach") {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    -- client == server here...
+    return on_attach(client, ev.buf)
+  end
 }
 
 return M

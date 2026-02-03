@@ -137,7 +137,7 @@ require("lazy").setup({
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     cond = gh_copilot.lua,
-    event = "InsertEnter",
+    -- event = "InsertEnter",
     config = function()
       require("copilot").setup({
         suggestion = {
@@ -159,7 +159,7 @@ require("lazy").setup({
         },
       })
     end,
-    autostart = true,
+    autostart = false,
   },
 
   {

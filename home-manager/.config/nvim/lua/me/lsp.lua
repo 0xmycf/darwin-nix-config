@@ -1,51 +1,20 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
-local on_attach = function(server, bufnr)
-  local lsp_semantic_tokens = server.server_capabilities.semanticTokensProvider
-  local filetype = vim.bo.filetype
-  if vim.version().minor >= 9 and lsp_semantic_tokens and filetype == "java" then
-    server.server_capabilities.semanticTokensProvider = vim.NIL
-  end
-  -- Mappings. for other mappings see: ~/.config/nvim/mycoc/nativelspsaga.vim
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local map = vim.keymap.set
-  local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  map("n", "gd", vim.lsp.buf.definition, bufopts)
-  map("n", "<Leader>cl", vim.lsp.codelens.run, bufopts)
-  map("n", "gi", vim.lsp.buf.implementation, bufopts)
-  map("n", "<Leader>D", vim.lsp.buf.type_definition, bufopts)
-  map("n", "gr", vim.lsp.buf.references, bufopts)
-  if filetype ~= "crystal" then
-    map("n", "<Leader>q", vim.lsp.buf.format, bufopts)
-  end
 
-  local codeLensCallback = function()
-    local filetype2 = vim.api.nvim_buf_get_option(0, "filetype")
-    if filetype2 == "ocaml" then
-      require("me.codelens").refresh_virtlines()
-    elseif filetype2 ~= "java" then
-      vim.lsp.codelens.refresh()
-    end
-  end
-
-  if server.server_capabilities.codeLensProvider then
-    local autocmds = require("me.autocmds")
-    local group = autocmds.group("CodeLensRefresh")
-    autocmds.cmd({
-      "BufEnter",
-      "CursorHold",
-      "InsertLeave",
-    })({
-          group = group,
-          callback = codeLensCallback,
-          buffer = bufnr,
-        })
-    autocmds.cmd("BufEnter") {
-      group = group,
-      callback = codeLensCallback,
-      buffer = bufnr,
+-- Configure rustaceanvim before it loads
+vim.g.rustaceanvim = {
+  server = {
+    capabilities = capabilities,
+    settings = {
+      ["rust-analyzer"] = {
+        checkOnSave = {
+          command = "clippy",
+          extraArgs = { "--", "-A", "clippy::pedantic" },
+        }
+      }
     }
-  end
-end
+  },
+}
+
 
 local lsps = {
   ["jsonls"] = true,
@@ -58,7 +27,7 @@ local lsps = {
   ["clangd"] = true,
   ["dockerls"] = true,
   ["nil_ls"] = true,
-  ["erlangls"] = true, -- for gleam interop
+  -- ["erlangls"] = true, -- for gleam interop
   ["solargraph"] = true,
   ["ocamllsp"] = true,
   ["ts_ls"] = true,
@@ -80,7 +49,6 @@ local lsps = {
   ["gopls"] = true,
 
   ["hls"] = {
-    on_attach = on_attach,
     capabilities = capabilities,
     filetypes = { "haskell", "lhaskell", "cabal" },
     flags = {
@@ -100,8 +68,8 @@ local lsps = {
       },
     },
   },
+
   ["gleam"] = {
-    on_attach = on_attach,
     capabilties = capabilities,
     filetypes = { "gleam" },
     cmd = { "gleam", "lsp" },
@@ -110,21 +78,21 @@ local lsps = {
       },
     },
   },
+
   ["sourcekit"] = {
-    on_attach = on_attach,
     capabilties = capabilities,
     filetypes = { "swift" },
     cmd = { "/Library/Developer/CommandLineTools/usr/bin/sourcekit-lsp" },
   },
+
   ["jdtls"] = {
-    on_attach = on_attach,
     capabilties = capabilities,
     cmd = { "jdtls", "-data", vim.fn.expand("~") .. "/.local/share/jdtls/" .. vim.fn["getcwd"]() },
   },
+
   -- c#
   ["omnisharp"] = {
     cmd = {
-      on_attach = on_attach,
       capabilties = capabilities,
       vim.fn.executable('OmniSharp') == 1 and 'OmniSharp' or 'omnisharp',
       '-z', -- https://github.com/OmniSharp/omnisharp-vscode/pull/4300
@@ -136,22 +104,23 @@ local lsps = {
       '--languageserver',
     },
   },
+
   ["lua_ls"] = {
-      on_attach = on_attach,
-      capabilties = capabilities,
-      single_file_support = true,
-      settings = {
-        Lua = {
-          runtime = {
-            version = "LuaJIT",
-          },
-          telemetry = false,
-          diagnostics = {
-            globals = { "vim" },
-          },
-        }
+    capabilties = capabilities,
+    single_file_support = true,
+    settings = {
+      Lua = {
+        runtime = {
+          version = "LuaJIT",
+        },
+        telemetry = false,
+        diagnostics = {
+          globals = { "vim" },
+        },
       }
     }
+  }
+
 }
 
 vim.diagnostic.config {
@@ -164,31 +133,30 @@ vim.diagnostic.config {
   update_on_insert = true,
 }
 
--- Configure rustaceanvim before it loads
-vim.g.rustaceanvim = {
-  server = {
-    capabilities = capabilities,
-    on_attach = on_attach,
-  },
+local defaults = {
+  capabilities = capabilities,
+  root_dir = function(_, on_dir) on_dir(vim.fn.getcwd()) end -- this was very important for some lsps to start, not sure why
 }
 
-for lsp, config in pairs(lsps) do
+for lsp_name, config in pairs(lsps) do
   if config == true then
-    vim.lsp.config(lsp, {
-      on_attach = on_attach,
-      capabilities = capabilities,
-    })
-    vim.lsp.enable(lsp)
+    vim.lsp.config(lsp_name, defaults)
   elseif type(config) == "function" then
     config()
   elseif config ~= false then
-    vim.lsp.config(lsp, config)
-    vim.lsp.enable(lsp)
+    local with_defaults = vim.tbl_deep_extend("force", {}, defaults, config)
+    vim.lsp.config(lsp_name, with_defaults)
   end
 end
 
+do
+  local lsp_names = {}
+  for lsp_name, _ in pairs(lsps) do
+    lsp_names[#lsp_names + 1] = lsp_name
+  end
+  vim.lsp.enable(lsp_names) -- some still dont start up, but most do now
+end
 
 return {
-  on_attach = on_attach,
   capabilities = capabilities,
 }
