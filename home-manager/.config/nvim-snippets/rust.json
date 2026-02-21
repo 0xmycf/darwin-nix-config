@@ -1,0 +1,15 @@
+
+{
+    "deriveDebug": {
+        "prefix": "debug",
+        "body": "#[derive(Debug)]"
+    }, 
+    "deriveDebugClone": {
+        "prefix": "clonedebug",
+        "body": "#[derive(Debug, Clone)]"
+    }, 
+    "struct_with_derive": {
+        "prefix": "mkstruct",
+        "body": ["#[derive(Debug, Clone)]", "struct $0 {}"]
+    } 
+}

@@ -169,6 +169,8 @@ in {
 
       copium = "codium";
       code = "codium";
+
+      flegvim = "${homeDir}/my-scripts/bin/flegmon nvim | xargs nvim";
     };
   };
 }
