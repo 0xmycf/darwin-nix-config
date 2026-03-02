@@ -1,5 +1,5 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "pvs",
     "workbench.colorCustomizations": {
         "symbolIcon.keywordForeground": "#9586CF"
     },
@@ -106,5 +106,7 @@
     "tailwindCSS.includeLanguages": {
         "plaintext": "vue"
     },
-    "github.copilot.selectedCompletionModel": ""
+    "github.copilot.selectedCompletionModel": "",
+    "pvs.path": "/Users/mycf/Documents/programming/pvs/PVS",
+    "pvs.pvsLibraryPath": "/Users/mycf/Documents/programming/pvs/PVS"
 }

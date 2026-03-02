@@ -8,6 +8,7 @@
   profileDirectory = config.home.profileDirectory;
   rpath = "${profileDirectory}/bin/r";
   janet = pkgs.janet;
+  homeDir = config.home.homeDirectory;
 in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -30,6 +31,7 @@ in {
     JANET_LIBPATH = "${janet}/lib";
     JANET_BINPATH = "${janet}/bin";
     RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+    LEDGER_FILE = "${homeDir}/documents/finances/f2026.journal";
   };
 
   home.packages = with pkgs; [
@@ -71,6 +73,9 @@ in {
     # midnight commander
     # a cli file system manager
     mc
+
+    # finances
+    hledger
 
     # local llms
     # ollama # TODO make this work again
