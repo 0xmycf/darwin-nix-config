@@ -58,7 +58,7 @@ local opts = {
   -- always show tabs
   showtabline = 2,
 
-  conceallevel = 2,
+  conceallevel = 0,
 }
 
 vim.cmd([[

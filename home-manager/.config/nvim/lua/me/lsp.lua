@@ -56,8 +56,7 @@ local lsps = {
     },
     settings = {
       haskell = {
-        formattingProvider = "stylish-haskell",
-        -- formattingProvider = "fourmolu",
+        formattingProvider = "fourmolu", -- better divs, and just overall more unified styling applied
         cabalFormattingProvider = "cabalfmt",
         plugin = {
           tactics = { -- wingman

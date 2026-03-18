@@ -1,5 +1,12 @@
 # What has changed
 
+## 2026-03-18
+
+### Changed
+- Changed haskell lsp formatting provider from `stylish-haskell` to `fourmolu`
+  + fourmolu creates smaller diffs on imports while also applying more unified 
+    overall styling
+
 ## 2025-11-22
 
 ### Removed
