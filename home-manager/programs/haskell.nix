@@ -14,21 +14,17 @@
         containers
         # unordered-containers
         text
-        # transformers
-        # mtl
+        transformers
+        mtl
         bytestring
         vector
-        # linear
+        linear
         filepath
         deepseq
         time
         directory
         megaparsec
-        # optics
-        # optics-core
-        # optics-operators # fails to build
-        # optics-extra
-        # optics-th
+        lens
         optparse-applicative
       ]))
   ];
