@@ -107,6 +107,6 @@
         "plaintext": "vue"
     },
     "github.copilot.selectedCompletionModel": "",
-    "pvs.path": "/Users/mycf/Documents/programming/pvs/PVS",
-    "pvs.pvsLibraryPath": "/Users/mycf/Documents/programming/pvs/PVS"
+    "pvs.path": "/Users/mycf/PVS/pvs-8.0",
+    "pvs.pvsLibraryPath": "/Users/mycf/PVS/pvs-8.0/nasalib/",
 }

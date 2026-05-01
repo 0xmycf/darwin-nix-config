@@ -78,7 +78,7 @@ in {
     hledger
 
     # local llms
-    # ollama # TODO make this work again
+    ollama # TODO make this work again
 
     texliveMedium
 
