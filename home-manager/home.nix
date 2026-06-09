@@ -51,6 +51,8 @@ in {
 
     tldr
 
+    llama-cpp
+
     tree
     watchexec
     pandoc
@@ -72,7 +74,7 @@ in {
     zig
 
     ## L∃∀N
-    elan
+    # elan
 
     ## lisp that for scripts (?)
     janet
@@ -84,7 +86,7 @@ in {
 
     # midnight commander
     # a cli file system manager
-    mc
+    # mc
 
     # finances
     hledger
