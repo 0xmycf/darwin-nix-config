@@ -21,7 +21,7 @@
 in {
   home.packages = [pkgs.nodejs];
 
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
 
     package = pkgs.vscodium;

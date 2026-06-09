@@ -48,7 +48,7 @@ in {
     package = nvim;
 
     extraPackages = with pkgs; [
-      nodejs_20
+      nodejs # _20
       nil
       lua-language-server
       basedpyright # pyright didnt work anymore and I couldn't figure out why
@@ -66,17 +66,18 @@ in {
       # - vscode-eslint-language-server
       # - vscode-json-language-server
       # - vscode-html-language-server
-      nodePackages_latest.vscode-langservers-extracted
+      vscode-langservers-extracted
 
       # bash
       shellcheck
-      nodePackages_latest.bash-language-server
+      bash-language-server
 
       yaml-language-server
     ];
 
     withNodeJs = true;
     withPython3 = true;
+    withRuby = false;
 
     plugins = [
       ts

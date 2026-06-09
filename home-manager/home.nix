@@ -9,6 +9,18 @@
   rpath = "${profileDirectory}/bin/r";
   janet = pkgs.janet;
   homeDir = config.home.homeDirectory;
+  ollamaRenamed = pkgs.buildEnv {
+    name = "ollama-no-conflict";
+    paths = [pkgs.ollama];
+    pathsToLink = ["/bin"];
+
+    # lets hope this doesn't break more stuff...
+    postBuild = ''
+      if [ -f $out/bin/generator ]; then
+        mv $out/bin/generator $out/bin/ollama-generator
+      fi
+    '';
+  };
 in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -78,7 +90,8 @@ in {
     hledger
 
     # local llms
-    ollama # TODO make this work again
+    # ollama # TODO make this work again
+    ollamaRenamed
 
     texliveMedium
 
@@ -86,18 +99,27 @@ in {
     cloudflared
 
     # because its nice to have a working version of python installed
-    (python313.withPackages (ps:
-      with ps; [
-        numpy
-        pandas
-        polars
-        matplotlib
-        seaborn
-        requests
-      ]))
+    (python313.withPackages (
+      ps:
+        with ps; [
+          numpy
+          pandas
+          polars
+          matplotlib
+          seaborn
+          requests
+        ]
+    ))
 
     # sometimes I need ruby
-    (ruby_3_4.withPackages (ps: with ps; [bundler ruby-lsp solargraph]))
+    (ruby_3_4.withPackages (
+      ps:
+        with ps; [
+          bundler
+          ruby-lsp
+          solargraph
+        ]
+    ))
     # solargraph
 
     # umlet # Free, open-source UML tool with a simple user interface

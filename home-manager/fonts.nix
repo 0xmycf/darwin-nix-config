@@ -16,7 +16,7 @@
   # TLDR: these add monolisa and kp-fonts to home.packages
   fonts = {
     monolisa = {
-      enable = true;
+      enable = false;
       # this is a local fileserver on my raspberry pi
       url = "http://192.168.0.227:8094/data/monolisa.zip";
       hash = "sha256-RzHjXCaFGUdRGjEkyVJDyY7OsWG8sqKsCGcZyBPmmPU=";
