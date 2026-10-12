@@ -8,6 +8,9 @@
 - Locked only the new overlay input; all existing input revisions are preserved.
 
 ### Changed
+- Migrated `rebuild.sh` to jj for snippet checks, Nix diffs, and recording a
+  successful rebuild; preserved changeset descriptions alongside generation
+  metadata and updated the snippet commit/push instructions.
 - Documented Chrome as a fallback for VIA's web-based Keychron launcher.
 - Pinned Home Manager's Rust toolchain to `1.97.1`, including Cargo, rustfmt,
   Clippy, rust-analyzer, Rust sources, and GeoEngine's requested LLVM tools from

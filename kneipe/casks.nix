@@ -1,7 +1,7 @@
 [
   # browsers
   # "firefox"
-  # "chrome" is further down defined {644F17E1-574E-4C2F-947F-2AFC2DA04252} 
+  # "chrome" is further down defined {644F17E1-574E-4C2F-947F-2AFC2DA04252}
   "zen"
 
   # terminal emulators...

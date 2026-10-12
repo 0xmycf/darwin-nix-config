@@ -29,16 +29,18 @@ mv ~/.config/ghostty/config ~/.config/ghostty/config.bak || echo "No ghostty con
 pushd ~/.config/nix-darwin/
 
 # # Early return if no changes were detected (thanks @singiamtel!)
-# if git diff --quiet '*.nix'; then
+# if [[ -z "$(jj diff --name-only 'glob:**/*.nix')" ]]; then
 #     echo "No changes detected, exiting."
 #     popd
 #     exit 0
 # fi
 
-if ! git diff --quiet 'home-manager/.config/nvim-snippets/'; then
+snippet_changes=$(jj diff --name-only 'home-manager/.config/nvim-snippets/')
+if [[ -n "$snippet_changes" ]]; then
     echo "There are still changes in the nvim-snippets config folder."
     echo "Go to home-manager/.config/nvim-snippets/ and commit the changes."
-    echo "cd home-manager/.config/nvim-snippets/ && git add . && git commit && git push" && cd ../../..
+    echo 'From this repository: jj commit home-manager/.config/nvim-snippets/ -m "Update Neovim snippets"'
+    echo 'Push the snippets commit with jj git push using your usual bookmark workflow.'
     exit 1
 fi
 
@@ -47,7 +49,7 @@ alejandra . &>/dev/null \
   || ( alejandra . ; echo "formatting failed!" && exit 1)
 
 # Shows your changes
-git diff -U0 '*.nix'
+jj --no-pager diff --git --context 0 'glob:**/*.nix'
 
 echo "Darwin-Nix Rebuilding..."
 
@@ -66,8 +68,15 @@ fi
 echo "Done fixing vscode settings..."
 
 
-# Commit all changes with the generation metadata
-git commit -am "$current"
+# Preserve the changeset description and record the successful generation.
+# jj commit finalizes @ and creates a fresh working-copy change on top.
+description=$(jj log --no-graph -r @ -T 'description')
+if [[ -n "$description" ]]; then
+    description=$(printf '%s\n\n%s' "$description" "$current")
+else
+    description=$current
+fi
+jj commit -m "$description"
 
 # Back to where you were
 popd
