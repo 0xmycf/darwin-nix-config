@@ -1,12 +1,13 @@
 [
   # browsers
-  "firefox"
+  # "firefox"
+  # "chrome" is further down defined {644F17E1-574E-4C2F-947F-2AFC2DA04252} 
   "zen"
 
   # terminal emulators...
   "kitty"
   "ghostty"
-  "copilot-cli"
+  # "copilot-cli"
 
   "linearmouse"
   "obsidian"
@@ -14,11 +15,12 @@
   "raycast"
 
   "intellij-idea"
-  "webstorm"
+  # "webstorm"
   # vscode can be setup with home-manager even on macos
   # "visual-studio-code"
   "zed"
   "neovide-app"
+  "chatgpt"
 
   "deepl"
   "obs"
@@ -32,14 +34,14 @@
 
   "discord"
   "whatsapp"
-  "telegram-desktop"
+  # "telegram-desktop"
 
   # work
   "slack"
   "docker-desktop"
 
   # work and geography stuff
-  "qgis"
+  # "qgis"
 
   # "logitech-g-hub" # i had issues installing this the last time and installed it manually for now (chmod error)
   "logitech-options"
@@ -48,14 +50,15 @@
   "microsoft-excel"
   "microsoft-powerpoint"
   # "adobe-acrobat-reader"
-  "skim"
+  # "skim"
 
   # Keyboard
   "via"
+  # "chrome" # fallback if via doesnt work (keychron launcher in the web needs chrome) # {644F17E1-574E-4C2F-947F-2AFC2DA04252}
 
   # Uni
   "anki"
-  "virtualbox"
+  #  "virtualbox"
 ]
 # Missing:
 #

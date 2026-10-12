@@ -3,6 +3,9 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -39,6 +42,7 @@
         ./kneipe/brew.nix
         home-manager.darwinModules.home-manager
         {
+          nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.mycf = import ./home-manager/home.nix;

@@ -1,5 +1,23 @@
 # What has changed
 
+## 2026-10-12
+
+### Added
+- `chatgpt` as a Homebrew cask.
+- `rust-overlay` following the existing locked `nixpkgs` input.
+- Locked only the new overlay input; all existing input revisions are preserved.
+
+### Changed
+- Documented Chrome as a fallback for VIA's web-based Keychron launcher.
+- Pinned Home Manager's Rust toolchain to `1.97.1`, including Cargo, rustfmt,
+  Clippy, rust-analyzer, Rust sources, and GeoEngine's requested LLVM tools from
+  the same release.
+- Pointed `RUST_SRC_PATH` at the pinned toolchain's standard library sources.
+
+### Removed
+- Disabled the Homebrew casks `firefox`, `copilot-cli`, `webstorm`,
+  `telegram-desktop`, `qgis`, `skim`, and `virtualbox` by commenting them out.
+
 ## 2026-03-18
 
 ### Changed

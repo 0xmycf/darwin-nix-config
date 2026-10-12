@@ -9,6 +9,9 @@
   rpath = "${profileDirectory}/bin/r";
   janet = pkgs.janet;
   homeDir = config.home.homeDirectory;
+  rustToolchain = pkgs.rust-bin.stable."1.97.1".default.override {
+    extensions = ["rust-src" "rust-analyzer" "llvm-tools"];
+  };
   ollamaRenamed = pkgs.buildEnv {
     name = "ollama-no-conflict";
     paths = [pkgs.ollama];
@@ -42,7 +45,7 @@ in {
     JANET_HEADERPATH = "${janet}/include";
     JANET_LIBPATH = "${janet}/lib";
     JANET_BINPATH = "${janet}/bin";
-    RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+    RUST_SRC_PATH = "${rustToolchain}/lib/rustlib/src/rust/library";
     LEDGER_FILE = "${homeDir}/documents/finances/f2026.journal";
   };
 
@@ -65,11 +68,7 @@ in {
 
     # Low Level stuff
     ## rust
-    cargo
-    rustc
-    rustfmt
-    clippy
-    rust-analyzer
+    rustToolchain # cargo, rustc, rustfmt, clippy, rust-analyzer, rust-src, and llvm-tools
     ## zig
     zig
 
